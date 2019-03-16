@@ -1105,7 +1105,7 @@ Description: "HTML-template"
   min-height: 100vh;
 }
 .landing-page .content-bg-wrap {
-  background: url("../../img/landing-users.png") repeat 0 0;
+  background: url("../images/landing-users.png") repeat 0 0;
   -webkit-animation: sidedownscroll 30s linear infinite;
           animation: sidedownscroll 30s linear infinite;
 }
@@ -2123,23 +2123,23 @@ Description: "HTML-template"
 }
 /*------------- #SECTION --------------*/
 .bg-section1 {
-  background-image: url("../../img/bg-section1.png");
+  background-image: url("../images/bg-section1.png");
 }
 
 .bg-section2 {
-  background-image: url("../../img/bg-section2.png");
+  background-image: url("../images/bg-section2.png");
 }
 
 .bg-section3 {
-  background-image: url("../../img/bg-section3.png");
+  background-image: url("../images/bg-section3.png");
 }
 
 .bg-section4 {
-  background-image: url("../../img/bg-section4.png");
+  background-image: url("../images/bg-section4.png");
 }
 
 .bg-section5 {
-  background-image: url("../../img/bg-section5.png");
+  background-image: url("../images/bg-section5.png");
 }
 
 section {
@@ -2362,7 +2362,7 @@ section {
 }
 
 .stunning-header-bg1 {
-  background-image: url("../../img/landing-users.png");
+  background-image: url("../images/landing-users.png");
 }
 
 .breadcrumbs-item {
@@ -5887,39 +5887,39 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
 }
 
 .bg-account {
-  background-image: url("../../img/top-header3.png");
+  background-image: url("../images/top-header3.png");
 }
 
 .bg-birthday {
-  background-image: url("../../img/top-header6.png");
+  background-image: url("../images/top-header6.png");
 }
 
 .bg-badges {
-  background-image: url("../../img/top-header4.png");
+  background-image: url("../images/top-header4.png");
 }
 
 .bg-events {
-  background-image: url("../../img/top-header5.png");
+  background-image: url("../images/top-header5.png");
 }
 
 .bg-weather {
-  background-image: url("../../img/top-header6.png");
+  background-image: url("../images/top-header6.png");
 }
 
 .bg-group {
-  background-image: url("../../img/bg-group.png");
+  background-image: url("../images/bg-group.png");
 }
 
 .bg-music {
-  background-image: url("../../img/top-header7.png");
+  background-image: url("../images/top-header7.png");
 }
 
 .bg-landing {
-  background-image: url("../../img/landing-bg.jpg");
+  background-image: url("../images/landing-bg.jpg");
 }
 
 .bg-users {
-  background-image: url("../../img/bg-users.png");
+  background-image: url("../images/bg-users.png");
 }
 
 .main-header-content {
@@ -8986,7 +8986,7 @@ ol ol li {
 
 .today-events-thumb {
   position: relative;
-  background-image: url("../../img/bg-event-day.jpg");
+  background-image: url("../images/bg-event-day.jpg");
   text-align: center;
   padding: 25px;
   color: #fff;
@@ -10293,7 +10293,7 @@ ol ol li {
 .testimonial-header-thumb {
   height: 90px;
   overflow: hidden;
-  background-image: url("../../img/testimonial-header.png");
+  background-image: url("../images/testimonial-header.png");
   background-size: cover;
 }
 
@@ -10694,7 +10694,7 @@ ol ol li {
   position: relative;
   padding: 50px 40px;
   color: #fff;
-  background-image: url("../../img/contact-bg.png");
+  background-image: url("../images/contact-bg.png");
   background-size: cover;
   background-repeat: no-repeat;
   width: 40%;
@@ -12759,7 +12759,7 @@ ol ol li {
 }
 /*------------- #W-BIRTHDAY-ALERT --------------*/
 .w-birthday-alert {
-  background-image: url("../../img/bg-birthdays.jpg");
+  background-image: url("../images/bg-birthdays.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 25px;
@@ -12826,7 +12826,7 @@ ol ol li {
 
 /*------------- #W-ACTION --------------*/
 .w-action {
-  background-image: url("../../img/landing-bg.jpg");
+  background-image: url("../../images/landing-bg.jpg");
   padding: 50px 45px 40px;
   text-align: center;
   color: #fff;
@@ -12875,7 +12875,7 @@ ol ol li {
 
 /*------------- #W-WEATHER --------------*/
 .w-wethear {
-  background-image: url("../../img/bg-wethear.jpg");
+  background-image: url("../images/bg-wethear.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   padding: 25px;
@@ -13393,7 +13393,7 @@ ol ol li {
   padding: 25px;
   color: #fff;
   position: relative;
-  background: url(../../img/bg-birthdays.jpg) no-repeat;
+  background: url("../../images/bg-birthdays.jpg") no-repeat;
   background-size: cover;
   border-radius: 5px;
 }

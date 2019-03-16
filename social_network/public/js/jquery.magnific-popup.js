@@ -788,7 +788,7 @@
 							if(el.is('img')) {
 								el.attr('src', value);
 							} else {
-								el.replaceWith( $('<img>').attr('src', value).attr('class', el.attr('class')) );
+								el.replaceWith( $('<images>').attr('src', value).attr('class', el.attr('class')) );
 							}
 						} else {
 							el.attr(arr[1], value);
@@ -1132,7 +1132,7 @@
 			markup: '<div class="mfp-figure">'+
 			'<div class="mfp-close"></div>'+
 			'<figure>'+
-			'<div class="mfp-img"></div>'+
+			'<div class="mfp-images"></div>'+
 			'<figcaption>'+
 			'<div class="mfp-bottom-bar">'+
 			'<div class="mfp-title"></div>'+
@@ -1296,10 +1296,10 @@
 					imgSt = mfp.st.image;
 
 
-				var el = template.find('.mfp-img');
+				var el = template.find('.mfp-images');
 				if(el.length) {
 					var img = document.createElement('img');
-					img.className = 'mfp-img';
+					img.className = 'mfp-images';
 					if(item.el && item.el.find('img').length) {
 						img.alt = item.el.find('img').attr('alt');
 					}
@@ -1697,7 +1697,7 @@
 				_mfpOn(OPEN_EVENT+ns, function() {
 
 					if(gSt.navigateByImgClick) {
-						mfp.wrap.on('click'+ns, '.mfp-img', function() {
+						mfp.wrap.on('click'+ns, '.mfp-images', function() {
 							if(mfp.items.length > 1) {
 								mfp.next();
 								return false;
@@ -1802,7 +1802,7 @@
 				_mfpTrigger('LazyLoad', item);
 
 				if(item.type === 'image') {
-					item.img = $('<img class="mfp-img" />').on('load.mfploader', function() {
+					item.img = $('<images class="mfp-images" />').on('load.mfploader', function() {
 						item.hasSize = true;
 					}).on('error.mfploader', function() {
 						item.hasSize = true;

@@ -23,7 +23,7 @@ childProcess.exec('java -version', function (error) {
     'Attribute “autocomplete” not allowed on element “button” at this point.',
     'Attribute “title” not allowed on element “circle” at this point.',
     'Bad value “tablist” for attribute “role” on element “nav”.',
-    'Element “img” is missing required attribute “src”.',
+    'Element “images” is missing required attribute “src”.',
     'Element “legend” not allowed as child of element “div” in this context.*'
   ].join('|')
 

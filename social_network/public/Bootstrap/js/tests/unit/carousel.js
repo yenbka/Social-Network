@@ -140,7 +140,7 @@ $(function () {
     var carouselHTML = '<div id="myCarousel" class="carousel slide">' +
         '<div class="carousel-inner">' +
         '<div class="carousel-item active">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>First Thumbnail label</h4>' +
         '<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ' +
@@ -149,7 +149,7 @@ $(function () {
         '</div>' +
         '</div>' +
         '<div class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>Second Thumbnail label</h4>' +
         '<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ' +
@@ -158,7 +158,7 @@ $(function () {
         '</div>' +
         '</div>' +
         '<div class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>Third Thumbnail label</h4>' +
         '<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ' +
@@ -195,7 +195,7 @@ $(function () {
     var carouselHTML = '<div id="myCarousel" class="carousel slide">' +
         '<div class="carousel-inner">' +
         '<div class="carousel-item active">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>First Thumbnail label</h4>' +
         '<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ' +
@@ -204,7 +204,7 @@ $(function () {
         '</div>' +
         '</div>' +
         '<div class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>Second Thumbnail label</h4>' +
         '<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ' +
@@ -213,7 +213,7 @@ $(function () {
         '</div>' +
         '</div>' +
         '<div class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>Third Thumbnail label</h4>' +
         '<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ' +
@@ -250,7 +250,7 @@ $(function () {
     var template = '<div id="myCarousel" class="carousel slide">' +
         '<div class="carousel-inner">' +
         '<div class="carousel-item active">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>First Thumbnail label</h4>' +
         '<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ' +
@@ -259,7 +259,7 @@ $(function () {
         '</div>' +
         '</div>' +
         '<div class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>Second Thumbnail label</h4>' +
         '<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ' +
@@ -268,7 +268,7 @@ $(function () {
         '</div>' +
         '</div>' +
         '<div class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>Third Thumbnail label</h4>' +
         '<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ' +
@@ -297,7 +297,7 @@ $(function () {
     var template = '<div id="myCarousel" class="carousel slide">' +
         '<div class="carousel-inner">' +
         '<div class="carousel-item active">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>First Thumbnail label</h4>' +
         '<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ' +
@@ -306,7 +306,7 @@ $(function () {
         '</div>' +
         '</div>' +
         '<div class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>Second Thumbnail label</h4>' +
         '<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ' +
@@ -315,7 +315,7 @@ $(function () {
         '</div>' +
         '</div>' +
         '<div class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>Third Thumbnail label</h4>' +
         '<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ' +
@@ -344,19 +344,19 @@ $(function () {
     var template = '<div id="myCarousel" class="carousel slide">' +
         '<div class="carousel-inner">' +
         '<div class="carousel-item active">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>First Thumbnail label</h4>' +
         '</div>' +
         '</div>' +
         '<div class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>Second Thumbnail label</h4>' +
         '</div>' +
         '</div>' +
         '<div class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>Third Thumbnail label</h4>' +
         '</div>' +
@@ -387,7 +387,7 @@ $(function () {
     var templateHTML = '<div id="myCarousel" class="carousel slide">' +
         '<div class="carousel-inner">' +
         '<div class="carousel-item active">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>First Thumbnail label</h4>' +
         '<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ' +
@@ -396,7 +396,7 @@ $(function () {
         '</div>' +
         '</div>' +
         '<div class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>Second Thumbnail label</h4>' +
         '<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ' +
@@ -405,7 +405,7 @@ $(function () {
         '</div>' +
         '</div>' +
         '<div class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<div class="carousel-caption">' +
         '<h4>Third Thumbnail label</h4>' +
         '<p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec ' +
@@ -449,11 +449,11 @@ $(function () {
     var templateHTML = '<div id="myCarousel" class="carousel" data-interval="1814">' +
         '<div class="carousel-inner">' +
         '<div class="carousel-item active">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '</div>' +
         '<script type="text/x-metamorph" id="thingy"/>' +
         '<div class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '</div>' +
         '<div class="carousel-item">' +
         '</div>' +
@@ -475,11 +475,11 @@ $(function () {
     var templateHTML = '<div id="myCarousel" class="carousel" data-interval="1814">' +
         '<div class="carousel-inner">' +
         '<div class="carousel-item active">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '</div>' +
         '<script type="text/x-metamorph" id="thingy"/>' +
         '<div class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '</div>' +
         '<div class="carousel-item">' +
         '</div>' +
@@ -501,13 +501,13 @@ $(function () {
     var templateHTML = '<div id="myCarousel" class="carousel" data-interval="false">' +
         '<div class="carousel-inner">' +
         '<div id="first" class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '</div>' +
         '<div id="second" class="carousel-item active">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '</div>' +
         '<div id="third" class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '</div>' +
         '</div>' +
         '</div>'
@@ -529,13 +529,13 @@ $(function () {
     var templateHTML = '<div id="myCarousel" class="carousel" data-interval="false">' +
         '<div class="carousel-inner">' +
         '<div id="first" class="carousel-item active">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '</div>' +
         '<div id="second" class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '</div>' +
         '<div id="third" class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '</div>' +
         '</div>' +
         '</div>'
@@ -557,7 +557,7 @@ $(function () {
     var templateHTML = '<div id="myCarousel" class="carousel" data-interval="false">' +
         '<div class="carousel-inner">' +
         '<div id="first" class="carousel-item active">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '</div>' +
         '</div>' +
         '</div>'
@@ -592,13 +592,13 @@ $(function () {
     var templateHTML = '<div id="myCarousel" class="carousel" data-interval="false" data-keyboard="false">' +
         '<div class="carousel-inner">' +
         '<div id="first" class="carousel-item active">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '</div>' +
         '<div id="second" class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '</div>' +
         '<div id="third" class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '</div>' +
         '</div>' +
         '</div>'
@@ -626,15 +626,15 @@ $(function () {
     var templateHTML = '<div id="myCarousel" class="carousel" data-interval="false">' +
         '<div class="carousel-inner">' +
         '<div id="first" class="carousel-item active">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '<input type="text" id="in-put">' +
         '<textarea id="text-area"></textarea>' +
         '</div>' +
         '<div id="second" class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '</div>' +
         '<div id="third" class="carousel-item">' +
-        '<img alt="">' +
+        '<images alt="">' +
         '</div>' +
         '</div>' +
         '</div>'
@@ -871,13 +871,13 @@ $(function () {
     var html = '<div id="myCarousel" class="carousel slide" data-interval="50" style="display: none;">' +
              '  <div class="carousel-inner">' +
              '    <div id="firstItem" class="carousel-item active">' +
-             '      <img alt="">' +
+             '      <images alt="">' +
              '    </div>' +
              '    <div class="carousel-item">' +
-             '      <img alt="">' +
+             '      <images alt="">' +
              '    </div>' +
              '    <div class="carousel-item">' +
-             '      <img alt="">' +
+             '      <images alt="">' +
              '    </div>' +
              '  <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>' +
              '  <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>' +
@@ -909,13 +909,13 @@ $(function () {
              '  <div id="myCarousel" class="carousel slide" data-interval="50" style="display: none;">' +
              '    <div class="carousel-inner">' +
              '      <div id="firstItem" class="carousel-item active">' +
-             '        <img alt="">' +
+             '        <images alt="">' +
              '      </div>' +
              '      <div class="carousel-item">' +
-             '        <img alt="">' +
+             '        <images alt="">' +
              '      </div>' +
              '      <div class="carousel-item">' +
-             '        <img alt="">' +
+             '        <images alt="">' +
              '      </div>' +
              '    <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>' +
              '    <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>' +

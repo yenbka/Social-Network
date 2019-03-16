@@ -2408,7 +2408,7 @@ __webpack_require__.r(__webpack_exports__);
     ACTIVE: '.active',
     ACTIVE_ITEM: '.active.carousel-item',
     ITEM: '.carousel-item',
-    ITEM_IMG: '.carousel-item img',
+    ITEM_IMG: '.carousel-item images',
     NEXT_PREV: '.carousel-item-next, .carousel-item-prev',
     INDICATORS: '.carousel-indicators',
     DATA_SLIDE: '[data-slide], [data-slide-to]',
@@ -42540,7 +42540,7 @@ var namespaceMap = {
 var isHTMLTag = makeMap(
   'html,body,base,head,link,meta,style,title,' +
   'address,article,aside,footer,header,h1,h2,h3,h4,h5,h6,hgroup,nav,section,' +
-  'div,dd,dl,dt,figcaption,figure,picture,hr,img,li,main,ol,p,pre,ul,' +
+  'div,dd,dl,dt,figcaption,figure,picture,hr,images,li,main,ol,p,pre,ul,' +
   'a,b,abbr,bdi,bdo,br,cite,code,data,dfn,em,i,kbd,mark,q,rp,rt,rtc,ruby,' +
   's,samp,small,span,strong,sub,sup,time,u,var,wbr,area,audio,map,track,video,' +
   'embed,object,param,source,canvas,script,noscript,del,ins,' +
@@ -46171,7 +46171,7 @@ var he = {
 /*  */
 
 var isUnaryTag = makeMap(
-  'area,base,br,col,embed,frame,hr,img,input,isindex,keygen,' +
+  'area,base,br,col,embed,frame,hr,images,input,isindex,keygen,' +
   'link,meta,param,source,track,wbr'
 );
 
@@ -62523,14 +62523,14 @@ var CRUMINA = {};
     var controller = new ScrollMagic.Controller();
     new ScrollMagic.Scene({
       triggerElement: ".call-to-action-animation"
-    }).setVelocity(".first-img", {
+    }).setVelocity(".first-images", {
       opacity: 1,
       bottom: "0",
       scale: "1"
     }, 1200).triggerHook(1).addTo(controller);
     new ScrollMagic.Scene({
       triggerElement: ".call-to-action-animation"
-    }).setVelocity(".second-img", {
+    }).setVelocity(".second-images", {
       opacity: 1,
       bottom: "50%",
       right: "40%"
@@ -62540,25 +62540,25 @@ var CRUMINA = {};
   CRUMINA.ImgScaleAnimation = function () {
     var controller = new ScrollMagic.Controller();
     new ScrollMagic.Scene({
-      triggerElement: ".img-scale-animation"
-    }).setVelocity(".main-img", {
+      triggerElement: ".images-scale-animation"
+    }).setVelocity(".main-images", {
       opacity: 1,
       scale: "1"
     }, 200).triggerHook(0.3).addTo(controller);
     new ScrollMagic.Scene({
-      triggerElement: ".img-scale-animation"
+      triggerElement: ".images-scale-animation"
     }).setVelocity(".first-img1", {
       opacity: 1,
       scale: "1"
     }, 1200).triggerHook(0.8).addTo(controller);
     new ScrollMagic.Scene({
-      triggerElement: ".img-scale-animation"
+      triggerElement: ".images-scale-animation"
     }).setVelocity(".second-img1", {
       opacity: 1,
       scale: "1"
     }, 1200).triggerHook(1.1).addTo(controller);
     new ScrollMagic.Scene({
-      triggerElement: ".img-scale-animation"
+      triggerElement: ".images-scale-animation"
     }).setVelocity(".third-img1", {
       opacity: 1,
       scale: "1"
@@ -62610,7 +62610,7 @@ var CRUMINA = {};
       CRUMINA.CallToActionAnimation();
     }
 
-    if ($('.img-scale-animation').length) {
+    if ($('.images-scale-animation').length) {
       CRUMINA.ImgScaleAnimation();
     }
 
@@ -62757,39 +62757,39 @@ $(document).ready(function () {
       labelField: 'name',
       searchField: ['name'],
       options: [{
-        image: 'img/avatar30-sm.jpg',
+        image: 'images/avatar30-sm.jpg',
         name: 'Marie Claire Stevens',
         message: '12 Friends in Common',
         icon: 'olymp-happy-face-icon'
       }, {
-        image: 'img/avatar54-sm.jpg',
+        image: 'images/avatar54-sm.jpg',
         name: 'Marie Davidson',
         message: '4 Friends in Common',
         icon: 'olymp-happy-face-icon'
       }, {
-        image: 'img/avatar49-sm.jpg',
+        image: 'images/avatar49-sm.jpg',
         name: 'Marina Polson',
         message: 'Mutual Friend: Mathilda Brinker',
         icon: 'olymp-happy-face-icon'
       }, {
-        image: 'img/avatar36-sm.jpg',
+        image: 'images/avatar36-sm.jpg',
         name: 'Ann Marie Gibson',
         message: 'New York, NY',
         icon: 'olymp-happy-face-icon'
       }, {
-        image: 'img/avatar22-sm.jpg',
+        image: 'images/avatar22-sm.jpg',
         name: 'Dave Marinara',
         message: '8 Friends in Common',
         icon: 'olymp-happy-face-icon'
       }, {
-        image: 'img/avatar41-sm.jpg',
+        image: 'images/avatar41-sm.jpg',
         name: 'The Marina Bar',
         message: 'Restaurant / Bar',
         icon: 'olymp-star-icon'
       }],
       render: {
         option: function option(item, escape) {
-          return '<div class="inline-items">' + (item.image ? '<div class="author-thumb"><img src="' + escape(item.image) + '" alt="avatar"></div>' : '') + '<div class="notification-event">' + (item.name ? '<span class="h6 notification-friend"></a>' + escape(item.name) + '</span>' : '') + (item.message ? '<span class="chat-message-item">' + escape(item.message) + '</span>' : '') + '</div>' + (item.icon ? '<span class="notification-icon"><svg class="' + escape(item.icon) + '"><use xlink:href="icons/icons.svg#' + escape(item.icon) + '"></use></svg></span>' : '') + '</div>';
+          return '<div class="inline-items">' + (item.image ? '<div class="author-thumb"><images src="' + escape(item.image) + '" alt="avatar"></div>' : '') + '<div class="notification-event">' + (item.name ? '<span class="h6 notification-friend"></a>' + escape(item.name) + '</span>' : '') + (item.message ? '<span class="chat-message-item">' + escape(item.message) + '</span>' : '') + '</div>' + (item.icon ? '<span class="notification-icon"><svg class="' + escape(item.icon) + '"><use xlink:href="icons/icons.svg#' + escape(item.icon) + '"></use></svg></span>' : '') + '</div>';
         },
         item: function item(_item, escape) {
           var label = _item.name;
@@ -91273,7 +91273,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       var gifSrc = this.getFile('gif');
       var gifWidth = this.previewElement.width();
       var gifHeight = this.previewElement.height();
-      this.gifElement = $("<img class='gp-gif-element' width='" + gifWidth + "' height=' " + gifHeight + " '/>");
+      this.gifElement = $("<images class='gp-gif-element' width='" + gifWidth + "' height=' " + gifHeight + " '/>");
       var wait = this.getOption('wait');
 
       if (wait) {
@@ -92316,7 +92316,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
               if (el.is('img')) {
                 el.attr('src', value);
               } else {
-                el.replaceWith($('<img>').attr('src', value).attr('class', el.attr('class')));
+                el.replaceWith($('<images>').attr('src', value).attr('class', el.attr('class')));
               }
             } else {
               el.attr(arr[1], value);
@@ -92622,7 +92622,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
   $.magnificPopup.registerModule('image', {
     options: {
-      markup: '<div class="mfp-figure">' + '<div class="mfp-close"></div>' + '<figure>' + '<div class="mfp-img"></div>' + '<figcaption>' + '<div class="mfp-bottom-bar">' + '<div class="mfp-title"></div>' + '<div class="mfp-counter"></div>' + '</div>' + '</figcaption>' + '</figure>' + '</div>',
+      markup: '<div class="mfp-figure">' + '<div class="mfp-close"></div>' + '<figure>' + '<div class="mfp-images"></div>' + '<figcaption>' + '<div class="mfp-bottom-bar">' + '<div class="mfp-title"></div>' + '<div class="mfp-counter"></div>' + '</div>' + '</figcaption>' + '</figure>' + '</div>',
       cursor: 'mfp-zoom-out-cur',
       titleSrc: 'title',
       verticalFit: true,
@@ -92772,11 +92772,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         },
             imgSt = mfp.st.image;
 
-        var el = template.find('.mfp-img');
+        var el = template.find('.mfp-images');
 
         if (el.length) {
           var img = document.createElement('img');
-          img.className = 'mfp-img';
+          img.className = 'mfp-images';
 
           if (item.el && item.el.find('img').length) {
             img.alt = item.el.find('img').attr('alt');
@@ -93143,7 +93143,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 
         _mfpOn(OPEN_EVENT + ns, function () {
           if (gSt.navigateByImgClick) {
-            mfp.wrap.on('click' + ns, '.mfp-img', function () {
+            mfp.wrap.on('click' + ns, '.mfp-images', function () {
               if (mfp.items.length > 1) {
                 mfp.next();
                 return false;
@@ -93246,7 +93246,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
         _mfpTrigger('LazyLoad', item);
 
         if (item.type === 'image') {
-          item.img = $('<img class="mfp-img" />').on('load.mfploader', function () {
+          item.img = $('<images class="mfp-images" />').on('load.mfploader', function () {
             item.hasSize = true;
           }).on('error.mfploader', function () {
             item.hasSize = true;
@@ -101378,14 +101378,14 @@ var CRUMINA = {};
     var controller = new ScrollMagic.Controller();
     new ScrollMagic.Scene({
       triggerElement: ".call-to-action-animation"
-    }).setVelocity(".first-img", {
+    }).setVelocity(".first-images", {
       opacity: 1,
       bottom: "0",
       scale: "1"
     }, 1200).triggerHook(1).addTo(controller);
     new ScrollMagic.Scene({
       triggerElement: ".call-to-action-animation"
-    }).setVelocity(".second-img", {
+    }).setVelocity(".second-images", {
       opacity: 1,
       bottom: "50%",
       right: "40%"
@@ -101395,25 +101395,25 @@ var CRUMINA = {};
   CRUMINA.ImgScaleAnimation = function () {
     var controller = new ScrollMagic.Controller();
     new ScrollMagic.Scene({
-      triggerElement: ".img-scale-animation"
-    }).setVelocity(".main-img", {
+      triggerElement: ".images-scale-animation"
+    }).setVelocity(".main-images", {
       opacity: 1,
       scale: "1"
     }, 200).triggerHook(0.3).addTo(controller);
     new ScrollMagic.Scene({
-      triggerElement: ".img-scale-animation"
+      triggerElement: ".images-scale-animation"
     }).setVelocity(".first-img1", {
       opacity: 1,
       scale: "1"
     }, 1200).triggerHook(0.8).addTo(controller);
     new ScrollMagic.Scene({
-      triggerElement: ".img-scale-animation"
+      triggerElement: ".images-scale-animation"
     }).setVelocity(".second-img1", {
       opacity: 1,
       scale: "1"
     }, 1200).triggerHook(1.1).addTo(controller);
     new ScrollMagic.Scene({
-      triggerElement: ".img-scale-animation"
+      triggerElement: ".images-scale-animation"
     }).setVelocity(".third-img1", {
       opacity: 1,
       scale: "1"
@@ -101465,7 +101465,7 @@ var CRUMINA = {};
       CRUMINA.CallToActionAnimation();
     }
 
-    if ($('.img-scale-animation').length) {
+    if ($('.images-scale-animation').length) {
       CRUMINA.ImgScaleAnimation();
     }
 
@@ -108938,39 +108938,39 @@ $(document).ready(function () {
       labelField: 'name',
       searchField: ['name'],
       options: [{
-        image: 'img/avatar30-sm.jpg',
+        image: 'images/avatar30-sm.jpg',
         name: 'Marie Claire Stevens',
         message: '12 Friends in Common',
         icon: 'olymp-happy-face-icon'
       }, {
-        image: 'img/avatar54-sm.jpg',
+        image: 'images/avatar54-sm.jpg',
         name: 'Marie Davidson',
         message: '4 Friends in Common',
         icon: 'olymp-happy-face-icon'
       }, {
-        image: 'img/avatar49-sm.jpg',
+        image: 'images/avatar49-sm.jpg',
         name: 'Marina Polson',
         message: 'Mutual Friend: Mathilda Brinker',
         icon: 'olymp-happy-face-icon'
       }, {
-        image: 'img/avatar36-sm.jpg',
+        image: 'images/avatar36-sm.jpg',
         name: 'Ann Marie Gibson',
         message: 'New York, NY',
         icon: 'olymp-happy-face-icon'
       }, {
-        image: 'img/avatar22-sm.jpg',
+        image: 'images/avatar22-sm.jpg',
         name: 'Dave Marinara',
         message: '8 Friends in Common',
         icon: 'olymp-happy-face-icon'
       }, {
-        image: 'img/avatar41-sm.jpg',
+        image: 'images/avatar41-sm.jpg',
         name: 'The Marina Bar',
         message: 'Restaurant / Bar',
         icon: 'olymp-star-icon'
       }],
       render: {
         option: function option(item, escape) {
-          return '<div class="inline-items">' + (item.image ? '<div class="author-thumb"><img src="' + escape(item.image) + '" alt="avatar"></div>' : '') + '<div class="notification-event">' + (item.name ? '<span class="h6 notification-friend"></a>' + escape(item.name) + '</span>' : '') + (item.message ? '<span class="chat-message-item">' + escape(item.message) + '</span>' : '') + '</div>' + (item.icon ? '<span class="notification-icon"><svg class="' + escape(item.icon) + '"><use xlink:href="icons/icons.svg#' + escape(item.icon) + '"></use></svg></span>' : '') + '</div>';
+          return '<div class="inline-items">' + (item.image ? '<div class="author-thumb"><images src="' + escape(item.image) + '" alt="avatar"></div>' : '') + '<div class="notification-event">' + (item.name ? '<span class="h6 notification-friend"></a>' + escape(item.name) + '</span>' : '') + (item.message ? '<span class="chat-message-item">' + escape(item.message) + '</span>' : '') + '</div>' + (item.icon ? '<span class="notification-icon"><svg class="' + escape(item.icon) + '"><use xlink:href="icons/icons.svg#' + escape(item.icon) + '"></use></svg></span>' : '') + '</div>';
         },
         item: function item(_item, escape) {
           var label = _item.name;
@@ -116585,7 +116585,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
         if (!z.gesture.slide || !z.gesture.slide.length) {
           z.gesture.slide = $(this);
           if (z.gesture.slide.length === 0) z.gesture.slide = s.slides.eq(s.activeIndex);
-          z.gesture.image = z.gesture.slide.find('img, svg, canvas');
+          z.gesture.image = z.gesture.slide.find('images, svg, canvas');
           z.gesture.imageWrap = z.gesture.image.parent('.' + s.params.zoomContainerClass);
           z.gesture.zoomMax = z.gesture.imageWrap.attr('data-swiper-zoom') || s.params.zoomMax;
 
@@ -116777,7 +116777,7 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 
         if (!z.gesture.slide) {
           z.gesture.slide = s.clickedSlide ? $(s.clickedSlide) : s.slides.eq(s.activeIndex);
-          z.gesture.image = z.gesture.slide.find('img, svg, canvas');
+          z.gesture.image = z.gesture.slide.find('images, svg, canvas');
           z.gesture.imageWrap = z.gesture.image.parent('.' + s.params.zoomContainerClass);
         }
 
