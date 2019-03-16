@@ -1255,7 +1255,7 @@ mejs.HtmlMediaElementShim = {
 			errorContent = '<a href="' + playback.url + '">';
 
 			if (poster !== '') {
-				errorContent += '<img src="' + poster + '" width="100%" height="100%" alt="" />';
+				errorContent += '<images src="' + poster + '" width="100%" height="100%" alt="" />';
 			}
 
 			errorContent += '<span>' + mejs.i18n.t('Download File') + '</span></a>';
@@ -3085,7 +3085,7 @@ if (typeof jQuery != 'undefined') {
 			t.setDimensions('100%', '100%');
 
 			// This prevents an issue when displaying poster
-			t.container.find('.mejs-poster img').css('display', 'block');
+			t.container.find('.mejs-poster images').css('display', 'block');
 
 			targetElement = t.container.find('object, embed, iframe, video');
 
@@ -3226,7 +3226,7 @@ if (typeof jQuery != 'undefined') {
 				posterImg = posterDiv.find('img');
 
 			if (posterImg.length === 0) {
-				posterImg = $('<img width="100%" height="100%" alt="" />').appendTo(posterDiv);
+				posterImg = $('<images width="100%" height="100%" alt="" />').appendTo(posterDiv);
 			}
 
 			posterImg.attr('src', url);
@@ -5340,7 +5340,7 @@ if (typeof jQuery != 'undefined') {
 
 			if (typeof img == 'undefined' || typeof img.fadeIn == 'undefined') {
 
-				t.slides.entries.imgs[index] = img = $('<img src="' + url + '">')
+				t.slides.entries.imgs[index] = img = $('<images src="' + url + '">')
 					.on('load', function() {
 						img.appendTo(t.slidesContainer)
 							.hide()

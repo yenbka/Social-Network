@@ -208,12 +208,12 @@ var CRUMINA = {};
 		var controller = new ScrollMagic.Controller();
 
 		new ScrollMagic.Scene({triggerElement: ".call-to-action-animation"})
-			.setVelocity(".first-img", {opacity: 1, bottom: "0", scale: "1"}, 1200)
+			.setVelocity(".first-images", {opacity: 1, bottom: "0", scale: "1"}, 1200)
 			.triggerHook(1)
 			.addTo(controller);
 
 		new ScrollMagic.Scene({triggerElement: ".call-to-action-animation"})
-			.setVelocity(".second-img", {opacity: 1, bottom: "50%", right: "40%"}, 1500)
+			.setVelocity(".second-images", {opacity: 1, bottom: "50%", right: "40%"}, 1500)
 			.triggerHook(1)
 			.addTo(controller);
 	};
@@ -221,22 +221,22 @@ var CRUMINA = {};
 	CRUMINA.ImgScaleAnimation = function () {
 		var controller = new ScrollMagic.Controller();
 
-		new ScrollMagic.Scene({triggerElement: ".img-scale-animation"})
-			.setVelocity(".main-img", {opacity: 1, scale: "1"}, 200)
+		new ScrollMagic.Scene({triggerElement: ".images-scale-animation"})
+			.setVelocity(".main-images", {opacity: 1, scale: "1"}, 200)
 			.triggerHook(0.3)
 			.addTo(controller);
 
-		new ScrollMagic.Scene({triggerElement: ".img-scale-animation"})
+		new ScrollMagic.Scene({triggerElement: ".images-scale-animation"})
 			.setVelocity(".first-img1", {opacity: 1, scale: "1"}, 1200)
 			.triggerHook(0.8)
 			.addTo(controller);
 
-		new ScrollMagic.Scene({triggerElement: ".img-scale-animation"})
+		new ScrollMagic.Scene({triggerElement: ".images-scale-animation"})
 			.setVelocity(".second-img1", {opacity: 1, scale: "1"}, 1200)
 			.triggerHook(1.1)
 			.addTo(controller);
 
-		new ScrollMagic.Scene({triggerElement: ".img-scale-animation"})
+		new ScrollMagic.Scene({triggerElement: ".images-scale-animation"})
 			.setVelocity(".third-img1", {opacity: 1, scale: "1"}, 1200)
 			.triggerHook(1.4)
 			.addTo(controller);
@@ -284,7 +284,7 @@ var CRUMINA = {};
 			CRUMINA.CallToActionAnimation();
 		}
 
-		if ($('.img-scale-animation').length) {
+		if ($('.images-scale-animation').length) {
 			CRUMINA.ImgScaleAnimation()
 		}
 

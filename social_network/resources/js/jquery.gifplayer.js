@@ -167,7 +167,7 @@
 			var gifWidth = this.previewElement.width();
 			var gifHeight = this.previewElement.height();
 
-			this.gifElement=$("<img class='gp-gif-element' width='"+ gifWidth + "' height=' "+ gifHeight +" '/>");
+			this.gifElement=$("<images class='gp-gif-element' width='"+ gifWidth + "' height=' "+ gifHeight +" '/>");
 
 			var wait = this.getOption('wait');
 			if(wait){

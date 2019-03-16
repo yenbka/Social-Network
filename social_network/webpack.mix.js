@@ -20,4 +20,4 @@ mix.js('resources/js/app.js', 'public/js')
     .copyDirectory('resources/js', 'public/js')
     .copyDirectory('resources/fonts', 'public/fonts')
     .copyDirectory('resources/svg-icons', 'public/svg-icons')
-    .copyDirectory('resources/img', 'public/img');
+    .copyDirectory('resources/images', 'public/images');

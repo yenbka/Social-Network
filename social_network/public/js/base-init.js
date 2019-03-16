@@ -267,12 +267,12 @@ var CRUMINA = {};
 		var controller = new ScrollMagic.Controller();
 
 		new ScrollMagic.Scene({triggerElement: ".call-to-action-animation"})
-			.setVelocity(".first-img", {opacity: 1, bottom: "0", scale: "1"}, 1200)
+			.setVelocity(".first-images", {opacity: 1, bottom: "0", scale: "1"}, 1200)
 			.triggerHook(1)
 			.addTo(controller);
 
 		new ScrollMagic.Scene({triggerElement: ".call-to-action-animation"})
-			.setVelocity(".second-img", {opacity: 1, bottom: "50%", right: "40%"}, 1500)
+			.setVelocity(".second-images", {opacity: 1, bottom: "50%", right: "40%"}, 1500)
 			.triggerHook(1)
 			.addTo(controller);
 	};
@@ -280,22 +280,22 @@ var CRUMINA = {};
 	CRUMINA.ImgScaleAnimation = function () {
 		var controller = new ScrollMagic.Controller();
 
-		new ScrollMagic.Scene({triggerElement: ".img-scale-animation"})
-			.setVelocity(".main-img", {opacity: 1, scale: "1"}, 200)
+		new ScrollMagic.Scene({triggerElement: ".images-scale-animation"})
+			.setVelocity(".main-images", {opacity: 1, scale: "1"}, 200)
 			.triggerHook(0.3)
 			.addTo(controller);
 
-		new ScrollMagic.Scene({triggerElement: ".img-scale-animation"})
+		new ScrollMagic.Scene({triggerElement: ".images-scale-animation"})
 			.setVelocity(".first-img1", {opacity: 1, scale: "1"}, 1200)
 			.triggerHook(0.8)
 			.addTo(controller);
 
-		new ScrollMagic.Scene({triggerElement: ".img-scale-animation"})
+		new ScrollMagic.Scene({triggerElement: ".images-scale-animation"})
 			.setVelocity(".second-img1", {opacity: 1, scale: "1"}, 1200)
 			.triggerHook(1.1)
 			.addTo(controller);
 
-		new ScrollMagic.Scene({triggerElement: ".img-scale-animation"})
+		new ScrollMagic.Scene({triggerElement: ".images-scale-animation"})
 			.setVelocity(".third-img1", {opacity: 1, scale: "1"}, 1200)
 			.triggerHook(1.4)
 			.addTo(controller);
@@ -343,7 +343,7 @@ var CRUMINA = {};
 			CRUMINA.CallToActionAnimation();
 		}
 
-		if ($('.img-scale-animation').length) {
+		if ($('.images-scale-animation').length) {
 			CRUMINA.ImgScaleAnimation()
 		}
 
@@ -495,17 +495,17 @@ $(document).ready(function () {
 			labelField: 'name',
 			searchField: ['name'],
 			options: [
-				{image: 'img/avatar30-sm.jpg', name: 'Marie Claire Stevens', message:'12 Friends in Common', icon:'olymp-happy-face-icon'},
-				{image: 'img/avatar54-sm.jpg', name: 'Marie Davidson', message:'4 Friends in Common', icon:'olymp-happy-face-icon'},
-				{image: 'img/avatar49-sm.jpg', name: 'Marina Polson', message:'Mutual Friend: Mathilda Brinker', icon:'olymp-happy-face-icon'},
-				{image: 'img/avatar36-sm.jpg', name: 'Ann Marie Gibson', message:'New York, NY', icon:'olymp-happy-face-icon'},
-				{image: 'img/avatar22-sm.jpg', name: 'Dave Marinara', message:'8 Friends in Common', icon:'olymp-happy-face-icon'},
-				{image: 'img/avatar41-sm.jpg', name: 'The Marina Bar', message:'Restaurant / Bar', icon:'olymp-star-icon'}
+				{image: 'images/avatar30-sm.jpg', name: 'Marie Claire Stevens', message:'12 Friends in Common', icon:'olymp-happy-face-icon'},
+				{image: 'images/avatar54-sm.jpg', name: 'Marie Davidson', message:'4 Friends in Common', icon:'olymp-happy-face-icon'},
+				{image: 'images/avatar49-sm.jpg', name: 'Marina Polson', message:'Mutual Friend: Mathilda Brinker', icon:'olymp-happy-face-icon'},
+				{image: 'images/avatar36-sm.jpg', name: 'Ann Marie Gibson', message:'New York, NY', icon:'olymp-happy-face-icon'},
+				{image: 'images/avatar22-sm.jpg', name: 'Dave Marinara', message:'8 Friends in Common', icon:'olymp-happy-face-icon'},
+				{image: 'images/avatar41-sm.jpg', name: 'The Marina Bar', message:'Restaurant / Bar', icon:'olymp-star-icon'}
 			],
 			render: {
 				option: function(item, escape) {
 					return '<div class="inline-items">' +
-						(item.image ? '<div class="author-thumb"><img src="' + escape(item.image) + '" alt="avatar"></div>' : '') +
+						(item.image ? '<div class="author-thumb"><images src="' + escape(item.image) + '" alt="avatar"></div>' : '') +
 						'<div class="notification-event">' +
 						(item.name ? '<span class="h6 notification-friend"></a>' + escape(item.name) + '</span>' : '') +
 						(item.message ? '<span class="chat-message-item">' + escape(item.message) + '</span>' : '') +
