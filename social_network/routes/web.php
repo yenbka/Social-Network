@@ -26,3 +26,11 @@ Route::get('friend', function (){
     return view('friend');
 });
 //end route friend 
+
+/*
+ * Route created by yenbka
+ */
+Route::get('chat', function (){
+    return view('chat');
+});
+//end route chat
