@@ -18,3 +18,11 @@ Route::get('/', function () {
 Route::get('/profile', function(){
     return view('profile');
 });
+
+/*
+ * Route created by yenbka
+ */
+Route::get('friend', function (){
+    return view('friend');
+});
+//end route friend 
