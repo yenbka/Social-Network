@@ -22,7 +22,7 @@ Route::get('/profile', function(){
 /*
  * Route created by yenbka
  */
-Route::get('friend', function (){
+Route::get('/friend', function (){
     return view('friend');
 });
 //end route friend 
@@ -30,7 +30,11 @@ Route::get('friend', function (){
 /*
  * Route created by yenbka
  */
-Route::get('chat', function (){
+Route::get('/chat', function (){
     return view('chat');
 });
 //end route chat
+
+Route::get('/photo', function(){
+    return view('photo');
+});
