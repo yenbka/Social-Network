@@ -38,3 +38,7 @@ Route::get('/chat', function (){
 Route::get('/photo', function(){
     return view('photo');
 });
+
+Route::get('/video', function(){
+    return view('video');
+});
