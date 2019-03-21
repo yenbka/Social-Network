@@ -19,6 +19,13 @@ Route::get('/profile', function(){
     return view('profile');
 });
 
-Route::get('/photo', function(){
+/*
+ * Route created by yenbka
+ */
+Route::get('/friend', function (){
+    return view('friend');
+});
+//end route friend 
+ưRoute::get('/photo', function(){
     return view('photo');
 });
