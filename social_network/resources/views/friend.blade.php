@@ -1,5 +1,16 @@
 @extends('layouts.master')
 @section('content')
+    @include('partials.headers-navigations.right-panel')
+
+    @include('partials.headers-navigations.right-panel-responsive')
+
+    @include('partials.headers-navigations.header-BP')
+
+    @include('partials.headers-navigations.header-BP-responsive')
+
+    <div class="header-spacer"></div>
+
+    @include('partials.headers-navigations.top-header-profile')
     <div class="container">
         <div class="row">
             <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
