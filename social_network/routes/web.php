@@ -42,3 +42,11 @@ Route::get('/photo', function(){
 Route::get('/video', function(){
     return view('video');
 });
+
+Route::get('/newsfeed', function(){
+    return view('newsfeed');
+});
+
+Route::get('/about', function(){
+    return view('about');
+});
