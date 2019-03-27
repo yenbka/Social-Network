@@ -5,8 +5,6 @@
 
     <div class="content-bg-wrap"></div>
 
-{{--    {{> headers-navigations/header-landing}}--}}
-
     <div class="header-spacer--standard"></div>
 
     <div class="container">
