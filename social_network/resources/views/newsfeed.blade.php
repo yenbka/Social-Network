@@ -2,16 +2,11 @@
 
 @section('content')
 
-
-	@include('partials.headers-navigations.left-panel')
-
-	@include('partials.headers-navigations.left-panel-responsive')
-
 	@include('partials.headers-navigations.right-panel')
 
 	@include('partials.headers-navigations.right-panel-responsive')
 
-	<!--@include('partials.headers-navigations.header-BP')-->
+	@include('partials.headers-navigations.header-BP')
 
 	@include('partials.headers-navigations.header-BP-responsive')
 
@@ -71,11 +66,11 @@
 
 			<aside class="col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-12 col-12">
 				<div class="ui-block">
-					@include('partials.widgets.w-weather')
+					{{--@include('partials.widgets.w-weather')--}}
 				</div>
 
 				<div class="ui-block">
-					@include('partials.widgets.w-calendar')
+{{--					@include('partials.widgets.w-calendar')--}}
 				</div>
 
 				<div class="ui-block">
@@ -97,7 +92,7 @@
 			<aside class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
 
 				<div class="ui-block">
-					@include('partials.widgets.w-birthsday-alert')
+{{--					@include('partials.widgets.w-birthsday-alert')--}}
 				</div>
 
 				<div class="ui-block">
@@ -106,7 +101,7 @@
 						<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 					</div>
 
-					@include('partials.widgets.w-friend-pages-added-suggestions')
+{{--					@include('partials.widgets.w-friend-pages-added-suggestions')--}}
 
 				</div>
 
@@ -117,14 +112,14 @@
 						<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 					</div>
 
-					@include('partials.widgets.w-activity-feed')
+{{--					@include('partials.widgets.w-activity-feed')--}}
 
 				</div>
 
 
 				<div class="ui-block">
 
-					@include('partials.widgets.w-action')
+{{--					@include('partials.widgets.w-action')--}}
 
 				</div>
 

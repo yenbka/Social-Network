@@ -1,16 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-
-	@include('partials.headers-navigations.left-panel')
-
-	@include('partials.headers-navigations.left-panel-responsive')
-
 	@include('partials.headers-navigations.right-panel')
 
 	@include('partials.headers-navigations.right-panel-responsive')
 
-	<!--@include('partials.headers-navigations.header-BP')-->
+	@include('partials.headers-navigations.header-BP')
 
 	@include('partials.headers-navigations.header-BP-responsive')
 
@@ -31,12 +26,12 @@
 						<div class="row">
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 
-								@include('partials.widgets.w-personal-info1')
+{{--								@include('partials.widgets.w-personal-info1')--}}
 
 							</div>
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 
-								@include('partials.widgets.w-personal-info2')
+{{--								@include('partials.widgets.w-personal-info2')--}}
 
 							</div>
 						</div>
@@ -51,12 +46,12 @@
 						<div class="row">
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 
-								@include('partials.widgets.w-personal-info3')
+{{--								@include('partials.widgets.w-personal-info3')--}}
 
 							</div>
 							<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 
-								@include('partials.widgets.w-personal-info4')
+{{--								@include('partials.widgets.w-personal-info4')--}}
 
 							</div>
 						</div>
@@ -72,7 +67,7 @@
 					</div>
 					<div class="ui-block-content">
 
-						@include('partials.widgets.w-personal-info5')
+{{--						@include('partials.widgets.w-personal-info5')--}}
 
 						@include('partials.widgets.w-socials')
 
