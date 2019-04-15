@@ -15,7 +15,7 @@ class CreateHobbiesTable extends Migration
     {
         Schema::create('hobbies', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $tabe->text('hobbie')->nullable();
+            $table->text('hobbie')->nullable();
             $table->text('movies')->nullable();
             $table->text('books')->nullable();
             $table->text('other')->nullable();

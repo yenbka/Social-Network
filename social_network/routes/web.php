@@ -14,7 +14,10 @@
 Route::get('/', function () {
     return view('landing');
 });
-
+// Authenticiate Routing
+Route:: get('login','LoginController@getLogin');
+Route:: post('login','LoginController@postLogin');
+Route:: post('register','Auth\RegisterController@register');
 Route::get('/profile', function(){
     return view('profile');
 });
@@ -43,7 +46,7 @@ Route::get('/video', function(){
     return view('video');
 });
 
-Route::get('/newsfeed', function(){
+Route::get('/home', function(){
     return view('newsfeed');
 });
 

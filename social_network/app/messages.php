@@ -10,11 +10,11 @@ class messages extends Model
      protected $table = 'messages';
     public $timestamps = false;
 
-    public function toUsers{
+    public function toUsers(){
     	return $this->belongstoMany('App\users');
     }
 
-    public function fromUser{
+    public function fromUser(){
     	return $this->belongsto('App\users');
     }
 }
