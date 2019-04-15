@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -48,11 +49,20 @@ class RegisterController extends Controller
      */
     protected function validator(array $data)
     {
+        $messages = [
+            'firstname.required' => 'Trường bắt buộc',
+            'lastname.required' => 'Trường bắt buộc',
+            'registerEmail.required' => 'Email là trường bắt buộc',            
+            'registerEmail.email' => 'Email không đúng định dạng',
+            'registerPassword.required' => 'Mật khẩu là trường bắt buộc',
+            'registerPassword.min' => 'Mật khẩu phải chứa ít nhất 6 ký tự',
+        ];
         return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8', 'confirmed'],
-        ]);
+            'firstname' => ['required', 'string', 'max:255'],
+            'lastname' => ['required', 'string', 'max:255'],
+            'registerEmail' => ['required', 'string', 'email', 'max:255', 'unique:users,email'],
+            'registerPassword' => ['required', 'string', 'min:6'],
+        ],$messages);
     }
 
     /**
@@ -64,9 +74,31 @@ class RegisterController extends Controller
     protected function create(array $data)
     {
         return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
+            'first_name' => $data['firstname'],
+            'last_name' => $data['lastname'],
+            'email' => $data['registerEmail'],
+            'password' => bcrypt($data['registerPassword']),
+            'profile_id' => $this->generateRandomID(5),
+            'hobbies_id' =>  $this->generateRandomID(5)
         ]);
+    }
+    public  function generateRandomID($length) {
+        $characters = '0123456789';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+    public function register(Request $request){
+        $validator =$this->validator($request->all());
+
+        if($validator -> fails()){
+            return  redirect()->back()->withErrors($validator)->withInput();
+        }
+        else{
+            $user = $this->create($request->all());
+        }
     }
 }
