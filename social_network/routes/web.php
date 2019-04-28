@@ -53,3 +53,5 @@ Route::get('/home', function(){
 Route::get('/about', function(){
     return view('about');
 });
+
+// happy comment
