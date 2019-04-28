@@ -1,14 +1,11 @@
 @extends('layouts.master')
 <!-- <body> -->
-@include('partials.headers-navigations.left-panel')
-
-@include('partials.headers-navigations.left-panel-responsive')
 
 @include('partials.headers-navigations.right-panel')
 
 @include('partials.headers-navigations.right-panel-responsive')
 
-<!-- @include('partials.headers-navigations.header-BP') -->
+@include('partials.headers-navigations.header-BP')
 
 @include('partials.headers-navigations.header-BP-responsive')
 
