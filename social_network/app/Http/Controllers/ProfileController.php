@@ -32,4 +32,10 @@ class ProfileController extends Controller
         $profile_info = Profile::where('id', $id)->first();
         return view('profile', ['profile_info'=>$profile_info]);
     }
+
+    public function get_profile_save_info($id){
+        $user = Auth::user();
+        $profile = Profile::where('id', $user->id)->first();
+        return view('profile_save_info', ['user' => $user, 'profile' => $profile]);
+    }
 }
