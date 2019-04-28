@@ -64,4 +64,14 @@ Route::get('/about/{id}', [
     'uses' => 'AboutController@index'
 ]);
 
+Route::get('/profile/{id}/save_info', [
+    'as' => 'get_profile_save_info',
+    'uses' => 'ProfileController@get_profile_save_info'
+]);
+
+Route::post('/profile/{id}/save_info', [
+    'as' => 'profile_save_info',
+    'uses' => 'ProfileController@profile_save_info'
+]);
+
 // happy comment
