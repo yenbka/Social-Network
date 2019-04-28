@@ -59,4 +59,9 @@ Route::get('/profile/{id}', [
     'uses' => 'ProfileController@index'
 ]);
 
+Route::get('/about/{id}', [
+    'as' => 'about',
+    'uses' => 'AboutController@index'
+]);
+
 // happy comment

@@ -18,7 +18,8 @@
 										<a href="02-ProfilePage.html" class="active">Timeline</a>
 									</li>
 									<li>
-										<a href="05-ProfilePage-About.html">About</a>
+										<!-- <a href="05-ProfilePage-About.html">About</a> -->
+										<a href="{{route('about', ['id' => Auth::id()])}}">About</a>
 									</li>
 									<li>
 										<a href="06-ProfilePage.html">Friends</a>
