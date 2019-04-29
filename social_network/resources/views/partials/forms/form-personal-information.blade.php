@@ -146,33 +146,33 @@
 				<input class="form-control" placeholder="" type="text" value="Democrat">
 			</div> -->
 		</div>
-		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-			<div class="form-group with-icon label-floating">
-				<label class="control-label">Your Facebook Account</label>
-				<input class="form-control" type="text" value="www.facebook.com/james-spiegel95321">
-				<i class="fab fa-facebook-f c-facebook" aria-hidden="true"></i>
-			</div>
-			<div class="form-group with-icon label-floating">
-				<label class="control-label">Your Twitter Account</label>
-				<input class="form-control" type="text" value="www.twitter.com/james_spiegelOK">
-				<i class="fab fa-twitter c-twitter" aria-hidden="true"></i>
-			</div>
-			<div class="form-group with-icon label-floating is-empty">
-				<label class="control-label">Your RSS Feed Account</label>
-				<input class="form-control" type="text">
-				<i class="fa fa-rss c-rss" aria-hidden="true"></i>
-			</div>
-			<div class="form-group with-icon label-floating">
-				<label class="control-label">Your Dribbble Account</label>
-				<input class="form-control" type="text" value="www.dribbble.com/thecowboydesigner">
-				<i class="fab fa-dribbble c-dribbble" aria-hidden="true"></i>
-			</div>
-			<div class="form-group with-icon label-floating is-empty">
-				<label class="control-label">Your Spotify Account</label>
-				<input class="form-control" type="text">
-				<i class="fab fa-spotify c-spotify" aria-hidden="true"></i>
-			</div>
-		</div>
+{{--		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">--}}
+{{--			<div class="form-group with-icon label-floating">--}}
+{{--				<label class="control-label">Your Facebook Account</label>--}}
+{{--				<input class="form-control" type="text" value="www.facebook.com/james-spiegel95321">--}}
+{{--				<i class="fab fa-facebook-f c-facebook" aria-hidden="true"></i>--}}
+{{--			</div>--}}
+{{--			<div class="form-group with-icon label-floating">--}}
+{{--				<label class="control-label">Your Twitter Account</label>--}}
+{{--				<input class="form-control" type="text" value="www.twitter.com/james_spiegelOK">--}}
+{{--				<i class="fab fa-twitter c-twitter" aria-hidden="true"></i>--}}
+{{--			</div>--}}
+{{--			<div class="form-group with-icon label-floating is-empty">--}}
+{{--				<label class="control-label">Your RSS Feed Account</label>--}}
+{{--				<input class="form-control" type="text">--}}
+{{--				<i class="fa fa-rss c-rss" aria-hidden="true"></i>--}}
+{{--			</div>--}}
+{{--			<div class="form-group with-icon label-floating">--}}
+{{--				<label class="control-label">Your Dribbble Account</label>--}}
+{{--				<input class="form-control" type="text" value="www.dribbble.com/thecowboydesigner">--}}
+{{--				<i class="fab fa-dribbble c-dribbble" aria-hidden="true"></i>--}}
+{{--			</div>--}}
+{{--			<div class="form-group with-icon label-floating is-empty">--}}
+{{--				<label class="control-label">Your Spotify Account</label>--}}
+{{--				<input class="form-control" type="text">--}}
+{{--				<i class="fab fa-spotify c-spotify" aria-hidden="true"></i>--}}
+{{--			</div>--}}
+{{--		</div>--}}
 		<!-- <div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 			<button class="btn btn-secondary btn-lg full-width">Restore all Attributes</button>
 		</div> -->
