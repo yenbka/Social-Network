@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Hobbie;
 use App\User;
+use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class HobbieController extends Controller
 {
@@ -25,11 +27,52 @@ class HobbieController extends Controller
         return false;
     }
 
-    public function index($id) {
-        if (!$this->secure($id)) return redirect('/404');
-        $user = User::where('id', $id)->first();
-        $hobbies_info = Hobbie::where('id', $user->hobbies_id)->first();
-//        return view('profile', ['profile_info'=>$hobbies_info]);
-        return $hobbies_info;
+//    public function index($id) {
+//        if (!$this->secure($id)) return redirect('/404');
+//        $user = User::where('id', $id)->first();
+//        $hobbies_info = Hobbie::where('id', $user->hobbies_id)->first();
+//        return $hobbies_info;
+//    }
+
+    protected function validator(array $data) {
+        return Validator::make($data, [
+            'hobbie'=>['string', 'max:255'],
+            'movies'=>['string', 'max:255'],
+            'books'=>['string', 'max:255'],
+            'other'=>['string', 'max:255']
+        ]);
     }
+
+    protected function update(array $data, $user_id) {
+        $id = User::where('id', $user_id)->first()->hobbies_id;
+        Hobbie::where('id', $id)->first()->update([
+            'hobbie'=>$data['hobbie'],
+            'movies'=>$data['movies'],
+            'books'=>$data['books'],
+            'other'=>$data['other']
+        ]);
+    }
+
+    public function get_hobbies_update_info() {
+        $user = Auth::user();
+        $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
+        return view('hobbies_update_info', ['user' => $user, 'hobbies' => $hobbies]);
+    }
+
+    public function hobbies_update_info(Request $request, $id) {
+        $allRequest  = $request->all();
+        $validator = $this->validator($allRequest);
+        $user = Auth::user();
+        $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
+        if ($validator->fails()) {
+            return view('hobbies_update_info', ['user'=>$user, 'hobbies'=>Hobbie::find($hobbies->id)])->withErrors($validator)->withInput();
+        }
+        else {
+            $this->update($allRequest, $user->id);
+            $status = "Cập nhật thông tin cá nhân thành công!";
+            return view('hobbies_update_info', ['user'=>$user, 'hobbies'=>Hobbie::find($hobbies->id), 'status'=>$status]);
+        }
+    }
+
+
 }
