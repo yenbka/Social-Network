@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Profile;
 use App\User;
-// use App\Hobbie;
+use App\Hobbie;
 
 class AboutController extends Controller
 {
@@ -28,9 +28,9 @@ class AboutController extends Controller
     }
 
     public function index($id) {
-        $profile = Profile::where('id', $id)->first();
         $user = User::where('id', $id)->first();
-        // $hobby = Hobbie::where('id', $id)->first();
-        return view('about', ['profile'=>$profile, 'user' => $user]);
+        $profile = Profile::where('id', $user->profile_id)->first();
+        $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
+        return view('about', ['profile'=>$profile, 'user' => $user, 'hobbies'=>$hobbies]);
     }
 }
