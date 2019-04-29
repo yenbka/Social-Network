@@ -6,6 +6,7 @@ use App\Hobbie;
 use App\Profile;
 use App\User;
 use App\Http\Controllers\Controller;
+use Carbon\Carbon;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
@@ -89,7 +90,7 @@ class RegisterController extends Controller
         $gender = $data['gender']=="MA"?0:1;
         $profile = Profile::create([
             'about_me'=>null,
-            'birth_date'=>null,
+            'birth_date'=>Carbon::parse($data['datetimepicker']),
             'address'=>null,
             'gender'=>$gender,
             'phone'=>null,
