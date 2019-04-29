@@ -74,4 +74,14 @@ Route::post('/profile/{id}/save_info', [
     'uses' => 'ProfileController@profile_save_info'
 ]);
 
+Route::get('/profile/{id}/hobbies_update_info', [
+    'as' => 'get_hobbies_update_info',
+    'uses'=> 'HobbieController@get_hobbies_update_info'
+]);
+
+Route::post('/profile/{id}/hobbies_update_info', [
+    'as' => 'hobbies_update_info',
+    'uses'=> 'HobbieController@hobbies_update_info'
+]);
+
 // happy comment
