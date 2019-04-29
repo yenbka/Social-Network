@@ -30,7 +30,7 @@
 						<a href="30-YourAccount-ChangePassword.html">Change Password</a>
 					</li>
 					<li>
-						<a href="31-YourAccount-HobbiesAndInterests.html">Hobbies and Interests</a>
+						<a href="{{route('get_hobbies_update_info', ['id'=>Auth::id()])}}">Hobbies and Interests</a>
 					</li>
 					<!-- <li>
 						<a href="32-YourAccount-EducationAndEmployement.html">Education and Employement</a>
