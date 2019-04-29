@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Hobbie;
+use App\Profile;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -78,19 +80,34 @@ class RegisterController extends Controller
             'last_name' => $data['lastname'],
             'email' => $data['registerEmail'],
             'password' => bcrypt($data['registerPassword']),
-            'profile_id' => $this->generateRandomID(5),
-            'hobbies_id' =>  $this->generateRandomID(5)
+            'profile_id' => $this->generateProfileID($data),
+            'hobbies_id' =>  $this->generateHobbiesID($data)
         ]);
     }
-    public  function generateRandomID($length) {
-        $characters = '0123456789';
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
-        }
-        return $randomString;
+
+    protected function generateProfileID($data) {
+        $gender = $data['gender']=="MA"?0:1;
+        $profile = Profile::create([
+            'about_me'=>null,
+            'birth_date'=>null,
+            'address'=>null,
+            'gender'=>$gender,
+            'phone'=>null,
+            'status'=>null
+        ]);
+        return $profile->id;
     }
+
+    protected function generateHobbiesID($data) {
+        $hobbies = Hobbie::create([
+            'hobbie'=>'',
+            'movies'=>'',
+            'books'=>'',
+            'other'=>'',
+        ]);
+        return $hobbies->id;
+    }
+
     public function register(Request $request){
         $validator =$this->validator($request->all());
 
