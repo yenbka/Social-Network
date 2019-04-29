@@ -15,7 +15,8 @@
 							<div class="col col-lg-5 col-md-5 col-sm-12 col-12">
 								<ul class="profile-menu">
 									<li>
-										<a href="02-ProfilePage.html" class="active">Timeline</a>
+{{--										<a href="02-ProfilePage.html" class="active">Timeline</a>--}}
+										<a href="{{route('profile_id', ['id'=>Auth::id()])}}" class="active">Timeline</a>
 									</li>
 									<li>
 										<!-- <a href="05-ProfilePage-About.html">About</a> -->
