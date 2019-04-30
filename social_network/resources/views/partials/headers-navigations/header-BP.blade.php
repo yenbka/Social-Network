@@ -361,7 +361,6 @@
 
 							<ul class="account-settings">
 								<li>
-									<!-- <a href="29-YourAccount-AccountSettings.html"> -->
 									<a href="{{route('get_profile_update_info', ['id' => Auth::id()])}}">
 										<svg class="olymp-menu-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-menu-icon"></use></svg>
 
@@ -369,88 +368,10 @@
 									</a>
 								</li>
 								<li>
-									<a href="36-FavPage-SettingsAndCreatePopup.html">
-										<svg class="olymp-star-icon left-menu-icon"  data-toggle="tooltip" data-placement="right"   data-original-title="FAV PAGE"><use xlink:href="svg-icons/sprites/icons.svg#olymp-star-icon"></use></svg>
-
-										<span>Create Fav Page</span>
-									</a>
-								</li>
-								<li>
 									<a href="{{route('logout')}}">
 										<svg class="olymp-logout-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
 
 										<span>Log Out</span>
-									</a>
-								</li>
-							</ul>
-
-							<div class="ui-block-title ui-block-title-small">
-								<h6 class="title">Chat Settings</h6>
-							</div>
-
-							<ul class="chat-settings">
-								<li>
-									<a href="#">
-										<span class="icon-status online"></span>
-										<span>Online</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<span class="icon-status away"></span>
-										<span>Away</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<span class="icon-status disconected"></span>
-										<span>Disconnected</span>
-									</a>
-								</li>
-
-								<li>
-									<a href="#">
-										<span class="icon-status status-invisible"></span>
-										<span>Invisible</span>
-									</a>
-								</li>
-							</ul>
-
-							<div class="ui-block-title ui-block-title-small">
-								<h6 class="title">Custom Status</h6>
-							</div>
-
-							<form class="form-group with-button custom-status">
-								<input class="form-control" placeholder="" type="text" value="Space Cowboy">
-
-								<button class="bg-purple">
-									<svg class="olymp-check-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-check-icon"></use></svg>
-								</button>
-							</form>
-
-							<div class="ui-block-title ui-block-title-small">
-								<h6 class="title">About Olympus</h6>
-							</div>
-
-							<ul>
-								<li>
-									<a href="#">
-										<span>Terms and Conditions</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<span>FAQs</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<span>Careers</span>
-									</a>
-								</li>
-								<li>
-									<a href="#">
-										<span>Contact</span>
 									</a>
 								</li>
 							</ul>
