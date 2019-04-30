@@ -36,10 +36,10 @@ class HobbieController extends Controller
 
     protected function validator(array $data) {
         return Validator::make($data, [
-            'hobbie'=>['string', 'max:255'],
-            'movies'=>['string', 'max:255'],
-            'books'=>['string', 'max:255'],
-            'other'=>['string', 'max:255']
+            'hobbie'=>'max:255',
+            'movies'=>'max:255',
+            'books'=>'max:255',
+            'other'=>'max:255'
         ]);
     }
 
