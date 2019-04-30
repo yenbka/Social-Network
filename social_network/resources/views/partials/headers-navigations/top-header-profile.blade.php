@@ -35,7 +35,7 @@
 									<li>
 										<a href="09-ProfilePage-Videos.html">Videos</a>
 									</li>
-									<li>
+									<!-- <li>
 										<div class="more">
 											<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 											<ul class="more-dropdown more-with-triangle">
@@ -47,12 +47,12 @@
 												</li>
 											</ul>
 										</div>
-									</li>
+									</li> -->
 								</ul>
 							</div>
 						</div>
 
-						<div class="control-block-button">
+						<!-- <div class="control-block-button">
 							<a href="35-YourAccount-FriendsRequests.html" class="btn btn-control bg-blue">
 								<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 							</a>
@@ -76,7 +76,7 @@
 									</li>
 								</ul>
 							</div>
-						</div>
+						</div> -->
 					</div>
 					<div class="top-header-author">
 						<a href="02-ProfilePage.html" class="author-thumb">
