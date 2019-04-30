@@ -89,4 +89,9 @@ Route::get('logout', [
     'uses' => 'Auth\LoginController@logout'
 ]);
 
+Route::post('/profile/{id}/update_avatar', [
+    'as' => 'update_avatar',
+    'uses' => 'ProfileController@update_avatar'
+]);
+
 // happy comment
