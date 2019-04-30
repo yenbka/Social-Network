@@ -32,7 +32,7 @@ class ProfileController extends Controller
         if (!$this->secure($id)) return redirect('/404');
         $user = User::where('id', $id)->first();
         $profile_info = Profile::where('id', $user->profile_id)->first();
-        return view('profile', ['profile_info'=>$profile_info]);
+        return view('profile', ['profile_info'=>$profile_info, 'user'=>$user]);
     }
 
     public function get_profile_save_info($id){
@@ -50,13 +50,15 @@ class ProfileController extends Controller
     }
 
     protected function update(array $data, $id) {
-        User::where('id', $id)->update([
+        $user = User::where('id', $id)->first();
+
+        $user->update([
             'first_name' => $data['first_name'],
             'last_name' => $data['last_name'],
             'email' => $data['email'],
         ]);
 
-        Profile::where('id', $id)->update([
+        Profile::where('id', $user->profile_id)->update([
             'about_me' => $data['about_me'],
             'birth_date' => $data['birth_date'],
             'address' => $data['address'],
