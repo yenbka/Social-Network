@@ -94,7 +94,7 @@ class RegisterController extends Controller
             'address'=>null,
             'gender'=>$gender,
             'phone'=>null,
-            'status'=>null
+            'status'=>0
         ]);
         return $profile->id;
     }
