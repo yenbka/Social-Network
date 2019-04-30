@@ -58,13 +58,14 @@ class ProfileController extends Controller
             'email' => $data['email'],
         ]);
         $gender = $data['gender']=="MA"?0:1;
+        $status = $data['status']=="Married"?1:0;
         Profile::where('id', $user->profile_id)->update([
             'about_me' => $data['about_me'],
             'birth_date' => $data['birth_date'],
             'address' => $data['address'],
             'gender' => $gender,
             'phone' => $data['phone'],
-            // 'status' => $data['status'],
+             'status' => $status,
         ]);
     }
 
