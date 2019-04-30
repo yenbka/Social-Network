@@ -15,7 +15,8 @@ class Profile extends Model
         'address',
         'gender',
         'phone',
-        'status'
+        'status',
+        'avatar_path'
     ];
 
     public function user()
