@@ -80,7 +80,7 @@
 					</div>
 					<div class="top-header-author">
 						<a href="02-ProfilePage.html" class="author-thumb" data-toggle="modal" data-target="#update-header-photo">
-							<img src="img/author-main1.jpg" alt="author">
+							<img src="{{asset($profile_info->avatar_path)}}" alt="author">
 						</a>
 						<div class="author-content">
 							<a href="{{route('profile_id', ['id'=>Auth::id()])}}" class="h4 author-name">{{$user->first_name." ".$user->last_name}}</a>
