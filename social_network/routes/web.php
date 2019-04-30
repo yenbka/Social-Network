@@ -64,14 +64,14 @@ Route::get('/about/{id}', [
     'uses' => 'AboutController@index'
 ]);
 
-Route::get('/profile/{id}/save_info', [
-    'as' => 'get_profile_save_info',
-    'uses' => 'ProfileController@get_profile_save_info'
+Route::get('/profile/{id}/profile_update_info', [
+    'as' => 'get_profile_update_info',
+    'uses' => 'ProfileController@get_profile_update_info'
 ]);
 
-Route::post('/profile/{id}/save_info', [
-    'as' => 'profile_save_info',
-    'uses' => 'ProfileController@profile_save_info'
+Route::post('/profile/{id}/update_info', [
+    'as' => 'profile_update_info',
+    'uses' => 'ProfileController@profile_update_info'
 ]);
 
 Route::get('/profile/{id}/hobbies_update_info', [

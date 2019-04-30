@@ -13,7 +13,7 @@
 	</div>
 @endif
 
-<form method="POST" action="{{action('ProfileController@profile_save_info', ['id' => Auth::id()])}}">
+<form method="POST" action="{{action('ProfileController@profile_update_info', ['id' => Auth::id()])}}">
 	<input type="hidden" name="_token" value="{{ csrf_token() }}">
 	<div class="row">
 

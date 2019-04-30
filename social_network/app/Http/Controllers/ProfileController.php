@@ -35,10 +35,10 @@ class ProfileController extends Controller
         return view('profile', ['profile_info'=>$profile_info, 'user'=>$user]);
     }
 
-    public function get_profile_save_info($id){
+    public function get_profile_update_info($id){
         $user = Auth::user();
         $profile = Profile::where('id', $user->id)->first();
-        return view('profile_save_info', ['user' => $user, 'profile' => $profile]);
+        return view('profile_update_info', ['user' => $user, 'profile' => $profile]);
     }
 
     protected function validator(array $data)
@@ -57,29 +57,29 @@ class ProfileController extends Controller
             'last_name' => $data['last_name'],
             'email' => $data['email'],
         ]);
-
+        $gender = $data['gender']=="MA"?0:1;
         Profile::where('id', $user->profile_id)->update([
             'about_me' => $data['about_me'],
             'birth_date' => $data['birth_date'],
             'address' => $data['address'],
-            'gender' => $data['gender'],
+            'gender' => $gender,
             'phone' => $data['phone'],
             // 'status' => $data['status'],
         ]);
     }
 
-    public function profile_save_info(Request $request, $id){
+    public function profile_update_info(Request $request, $id){
         $allRequest  = $request->all();	
         $validator = $this->validator($allRequest);
         if ($validator->fails()) {
             // Dữ liệu vào không thỏa điều kiện sẽ thông báo lỗi
-            return view('profile_save_info', ['user' => Auth::user(), 'profile' => Profile::find($id)])->withErrors($validator)->withInput();
+            return view('profile_update_info', ['user' => Auth::user(), 'profile' => Profile::find($id)])->withErrors($validator)->withInput();
         } else {   
             // Dữ liệu vào hợp lệ sẽ thực hiện tạo người dùng dưới csdl
             $this->update($allRequest, $id);
             // Insert thành công sẽ hiển thị thông báo
             $status = "Cập nhật thông tin cá nhân thành công!";
-            return view('profile_save_info', ['user' => Auth::user(), 'profile' => Profile::find($id), 'status' => $status]);           
+            return view('profile_update_info', ['user' => Auth::user(), 'profile' => Profile::find($id), 'status' => $status]);
         }
     }
 }
