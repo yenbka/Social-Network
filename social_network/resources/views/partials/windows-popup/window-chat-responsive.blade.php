@@ -18,7 +18,7 @@
 				<ul class="notification-list chat-message chat-message-field">
 					<li>
 						<div class="author-thumb">
-							<img src="img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
+							<img src="{{asset('images/avatar14-sm.jpg')}}" alt="author" class="mCS_img_loaded">
 						</div>
 						<div class="notification-event">
 							<span class="chat-message-item">Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks</span>
@@ -28,7 +28,7 @@
 
 					<li>
 						<div class="author-thumb">
-							<img src="img/author-page.jpg" alt="author" class="mCS_img_loaded">
+							<img src="{{asset('images/author-page.jpg')}}" alt="author" class="mCS_img_loaded">
 						</div>
 						<div class="notification-event">
 							<span class="chat-message-item">Don’t worry Mathilda!</span>
@@ -39,7 +39,7 @@
 
 					<li>
 						<div class="author-thumb">
-							<img src="img/avatar14-sm.jpg" alt="author" class="mCS_img_loaded">
+							<img src="{{asset('images/avatar14-sm.jpg')}}" alt="author" class="mCS_img_loaded">
 						</div>
 						<div class="notification-event">
 							<span class="chat-message-item">Hi James! Please remember to buy the food for tomorrow! I’m gonna be handling the gifts and Jake’s gonna get the drinks</span>
@@ -65,137 +65,137 @@
 					<ul class="more-dropdown more-with-triangle triangle-bottom-right">
 						<li>
 							<a href="#">
-								<img src="img/icon-chat1.png" alt="icon">
+								<img src="{{asset('images/icon-chat1.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat2.png" alt="icon">
+								<img src="{{asset('images/icon-chat2.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat3.png" alt="icon">
+								<img src="{{asset('images/icon-chat3.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat4.png" alt="icon">
+								<img src="{{asset('images/icon-chat4.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat5.png" alt="icon">
+								<img src="{{asset('images/icon-chat5.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat6.png" alt="icon">
+								<img src="{{asset('images/icon-chat6.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat7.png" alt="icon">
+								<img src="{{asset('images/icon-chat7.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat8.png" alt="icon">
+								<img src="{{asset('images/icon-chat8.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat9.png" alt="icon">
+								<img src="{{asset('images/icon-chat9.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat10.png" alt="icon">
+								<img src="{{asset('images/icon-chat10.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat11.png" alt="icon">
+								<img src="{{asset('images/icon-chat11.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat12.png" alt="icon">
+								<img src="{{asset('images/icon-chat12.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat13.png" alt="icon">
+								<img src="{{asset('images/icon-chat13.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat14.png" alt="icon">
+								<img src="{{asset('images/icon-chat14.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat15.png" alt="icon">
+								<img src="{{asset('images/icon-chat15.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat16.png" alt="icon">
+								<img src="{{asset('images/icon-chat16.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat17.png" alt="icon">
+								<img src="{{asset('images/icon-chat17.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat18.png" alt="icon">
+								<img src="{{asset('images/icon-chat18.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat19.png" alt="icon">
+								<img src="{{asset('images/icon-chat19.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat20.png" alt="icon">
+								<img src="{{asset('images/icon-chat20.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat21.png" alt="icon">
+								<img src="{{asset('images/icon-chat21.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat22.png" alt="icon">
+								<img src="{{asset('images/icon-chat22.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat23.png" alt="icon">
+								<img src="{{asset('images/icon-chat23.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat24.png" alt="icon">
+								<img src="{{asset('images/icon-chat24.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat25.png" alt="icon">
+								<img src="{{asset('images/icon-chat25.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat26.png" alt="icon">
+								<img src="{{asset('images/icon-chat26.png')}}" alt="icon">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/icon-chat27.png" alt="icon">
+								<img src="{{asset('images/icon-chat27.png')}}" alt="icon">
 							</a>
 						</li>
 					</ul>

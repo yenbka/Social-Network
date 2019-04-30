@@ -26,10 +26,10 @@
 				@include('partials.posts.posts1-BP')
 			</div>
 			<div class="ui-block">
-				@include('partials.posts.posts2-BP')
+				@include('partials.posts.posts1-BP')
 			</div>
 			<div class="ui-block">
-				@include('partials.posts.posts3-BP')
+				@include('partials.posts.posts1-BP')
 				@include('partials.comments.comment-list1')
 				<a href="#" class="more-comments">View more comments <span>+</span></a>
 				@include('partials.forms.comment-form')

@@ -83,4 +83,33 @@ class ProfileController extends Controller
             return view('profile_update_info', ['user' => Auth::user(), 'profile' => Profile::find($id), 'status' => $status]);
         }
     }
+
+    public function update_avatar(Request $request, $id) {
+        $messages = [
+            'avatar.required' => trans('validation.required'),
+            'avatar.mimes' => trans('validation.mimes'),
+            'avatar.max.file' => trans('validation.max.file'),
+        ];
+        $validator = Validator::make(['avatar' => $request->file('avatar')], [
+            'avatar' => 'required|mimes:jpeg,jpg,png,gif|max:2048'
+        ], $messages);
+        if ($validator->fails()) {
+            return redirect()->route('profile_id', ['user' => Auth::user()])->withErrors($validator)->withInput();
+        }
+        else {
+            $image = $request->file('avatar');
+            // $img = Image::make($img)->resize(36,36);
+            $file_name = md5(uniqid() . time()) . '.' . $image->getClientOriginalExtension();
+            if ($image->storeAs('img/avatar', $file_name)) {
+                $user = User::where('id', $id)->first();
+                $profile = Profile::find($user->profile_id);
+                $profile->avatar_path = 'img/avatar/'.$file_name;
+                $profile->save();
+                return redirect()->route('profile_id', ['id' => Auth::id(), 'status' => 'Success']);
+            }
+            else {
+                return redirect()->route('profile_id', ['id' => Auth::id(), 'status' => 'Failed']);        
+            }
+        }
+    }
 }
