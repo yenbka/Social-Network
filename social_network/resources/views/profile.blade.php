@@ -61,7 +61,7 @@
 
 				@include('partials.widgets.w-personal-info')
 
-				@include('partials.widgets.w-socials')
+{{--				@include('partials.widgets.w-socials')--}}
 
 			</div>
 		</div>
