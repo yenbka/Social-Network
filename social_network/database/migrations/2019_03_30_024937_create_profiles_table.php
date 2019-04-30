@@ -22,6 +22,7 @@ class CreateProfilesTable extends Migration
             $table->integer('phone')->nullable();
             $table->integer('status')->nullable();
             $table->string('avatar_path')->nullable();
+            $table->string('header_path')->nullable();
             $table->timestamps();
         });
     }

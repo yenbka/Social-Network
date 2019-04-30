@@ -10,6 +10,7 @@ $factory->define(App\Profile::class, function (Faker $faker) {
         'gender' => '1',
         'phone' => $faker->phoneNumber,
         'status' => '1',
-        'avatar_path' => $faker->text(20)  
+        'avatar_path' => $faker->text(20),
+        'header_path' => $faker->text(20)  
     ];
 });
