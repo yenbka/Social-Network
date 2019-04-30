@@ -376,7 +376,7 @@
 									</a>
 								</li>
 								<li>
-									<a href="#">
+									<a href="{{route('logout')}}">
 										<svg class="olymp-logout-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-logout-icon"></use></svg>
 
 										<span>Log Out</span>

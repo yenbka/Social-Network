@@ -84,4 +84,9 @@ Route::post('/profile/{id}/hobbies_update_info', [
     'uses'=> 'HobbieController@hobbies_update_info'
 ]);
 
+Route::get('logout', [
+    'as' => 'logout',
+    'uses' => 'Auth\LoginController@logout'
+]);
+
 // happy comment
