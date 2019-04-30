@@ -83,8 +83,8 @@
 							<img src="img/author-main1.jpg" alt="author">
 						</a>
 						<div class="author-content">
-							<a href="02-ProfilePage.html" class="h4 author-name">James Spiegel</a>
-							<div class="country">San Francisco, CA</div>
+							<a href="{{route('profile_id', ['id'=>Auth::id()])}}" class="h4 author-name">{{$user->first_name." ".$user->last_name}}</a>
+							<div class="country">{{$profile_info->address}}</div>
 						</div>
 					</div>
 				</div>
