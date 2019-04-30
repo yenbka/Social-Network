@@ -8,7 +8,7 @@
 @endif
 
 @if(!empty($status))
-    <div class="alert alert-danger">
+    <div class="alert alert-success">
         {{$status}}
 	</div>
 @endif
