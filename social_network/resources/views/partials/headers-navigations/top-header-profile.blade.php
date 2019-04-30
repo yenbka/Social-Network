@@ -79,7 +79,7 @@
 						</div> -->
 					</div>
 					<div class="top-header-author">
-						<a href="02-ProfilePage.html" class="author-thumb">
+						<a href="02-ProfilePage.html" class="author-thumb" data-toggle="modal" data-target="#update-header-photo">
 							<img src="img/author-main1.jpg" alt="author">
 						</a>
 						<div class="author-content">
