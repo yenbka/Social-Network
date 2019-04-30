@@ -24,17 +24,11 @@
 						<a href="{{route('get_profile_update_info', ['id' => Auth::id()])}}">Personal Information</a>
 					</li>
 					<li>
-						<a href="29-YourAccount-AccountSettings.html">Account Settings</a>
+						<a href="{{route('get_hobbies_update_info', ['id'=>Auth::id()])}}">Hobbies and Interests</a>
 					</li>
 					<li>
 						<a href="30-YourAccount-ChangePassword.html">Change Password</a>
 					</li>
-					<li>
-						<a href="{{route('get_hobbies_update_info', ['id'=>Auth::id()])}}">Hobbies and Interests</a>
-					</li>
-					<!-- <li>
-						<a href="32-YourAccount-EducationAndEmployement.html">Education and Employement</a>
-					</li> -->
 				</ul>
 			</div>
 		</div>
