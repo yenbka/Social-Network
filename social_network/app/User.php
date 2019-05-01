@@ -11,7 +11,7 @@ class User extends Authenticatable
     public $timestamps = false;
     protected $fillable = ['first_name','last_name','email','password','profile_id','hobbies_id'];
     public function friends(){
-    	return $this->belongstoMany('App\friends');
+    	return $this->belongstoMany('App\Friend');
     }
 
     public function messagesFrom(){
