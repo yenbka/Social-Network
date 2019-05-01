@@ -2,11 +2,11 @@
 
 <div class="photo-album-item" data-mh="album-item">
 	<div class="photo-item">
-		<img src="img/photo-item2.jpg" alt="photo">
+		<img src="{{asset('images/photo-item2.jpg')}}" alt="photo">
 		<div class="overlay overlay-dark"></div>
-		<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+		<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
 		<a href="#" class="post-add-icon">
-			<svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
+			<svg class="olymp-heart-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-heart-icon')}}"></use></svg>
 			<span>324</span>
 		</a>
 		<a href="#" data-toggle="modal" data-target="#open-photo-popup-v2" class="  full-block"></a>
@@ -22,27 +22,27 @@
 					<ul class="friends-harmonic">
 						<li>
 							<a href="#">
-								<img src="img/friend-harmonic5.jpg" alt="friend">
+								<img src="{{asset('images/friend-harmonic5.jpg')}}" alt="friend">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/friend-harmonic10.jpg" alt="friend">
+								<img src="{{asset('images/friend-harmonic10.jpg')}}" alt="friend">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/friend-harmonic7.jpg" alt="friend">
+								<img src="{{asset('images/friend-harmonic7.jpg')}}" alt="friend">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/friend-harmonic8.jpg" alt="friend">
+								<img src="{{asset('images/friend-harmonic8.jpg')}}" alt="friend">
 							</a>
 						</li>
 						<li>
 							<a href="#">
-								<img src="img/friend-harmonic2.jpg" alt="friend">
+								<img src="{{asset('images/friend-harmonic2.jpg')}}" alt="friend">
 							</a>
 						</li>
 					</ul>

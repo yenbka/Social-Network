@@ -32,9 +32,10 @@ Route::get('/chat', function (){
     return view('chat');
 });
 
-Route::get('/photo', function(){
-    return view('photo');
-});
+Route::get('/photo/{id}', [
+    'as' => 'photo',
+    'uses' => 'PhotoController@index'
+]);
 
 Route::get('/video', function(){
     return view('video');

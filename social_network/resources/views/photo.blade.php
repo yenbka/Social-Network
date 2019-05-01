@@ -36,18 +36,18 @@
 					<ul class="nav nav-tabs photo-gallery" role="tablist">
 						<li class="nav-item">
 							<a class="nav-link" data-toggle="tab" href="#photo-page" role="tab">
-								<svg class="olymp-photos-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-photos-icon"></use></svg>
+								<svg class="olymp-photos-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-photos-icon')}}"></use></svg>
 							</a>
 						</li>
 
 						<li class="nav-item">
 							<a class="nav-link active" data-toggle="tab" href="#album-page" role="tab">
-								<svg class="olymp-albums-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-albums-icon"></use></svg>
+								<svg class="olymp-albums-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-albums-icon')}}"></use></svg>
 							</a>
 						</li>
 
 					</ul>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
 				</div>
 			</div>
 		</div>
@@ -66,23 +66,23 @@
 
                         @include('partials.photo-items.photo-item1')
 
-                        @include('partials.photo-items.photo-item2')
+                        @include('partials.photo-items.photo-item1')
 
-                        @include('partials.photo-items.photo-item3')                        
+                        @include('partials.photo-items.photo-item1')
 
-                        @include('partials.photo-items.photo-item4')
+                        @include('partials.photo-items.photo-item1')
 
-                        @include('partials.photo-items.photo-item5')
+                        @include('partials.photo-items.photo-item1')
 
-                        @include('partials.photo-items.photo-item6')
+                        @include('partials.photo-items.photo-item1')
 
-                        @include('partials.photo-items.photo-item7')
+                        @include('partials.photo-items.photo-item1')
 
-                        @include('partials.photo-items.photo-item8')
+                        @include('partials.photo-items.photo-item1')
 
-                        @include('partials.photo-items.photo-item9')
+                        @include('partials.photo-items.photo-item1')
 
-                        @include('partials.photo-items.photo-item10')
+                        @include('partials.photo-items.photo-item1')
 
 
 						<a href="#" class="btn btn-control btn-more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
@@ -104,27 +104,27 @@
 						</div>
 
 						<div class="photo-album-item-wrap col-4-width">
-                            @include('partials.photo-album-items.photo-album-item2')
+                            @include('partials.photo-album-items.photo-album-item1')
 						</div>
 
 						<div class="photo-album-item-wrap col-4-width">
-                            @include('partials.photo-album-items.photo-album-item3')
+                            @include('partials.photo-album-items.photo-album-item1')
 						</div>
 
 						<div class="photo-album-item-wrap col-4-width">
-                            @include('partials.photo-album-items.photo-album-item4')
+                            @include('partials.photo-album-items.photo-album-item1')
 						</div>
 
 						<div class="photo-album-item-wrap col-4-width">
-                            @include('partials.photo-album-items.photo-album-item5')
+                            @include('partials.photo-album-items.photo-album-item1')
 						</div>
 
 						<div class="photo-album-item-wrap col-4-width">
-                            @include('partials.photo-album-items.photo-album-item6')
+                            @include('partials.photo-album-items.photo-album-item1')
 						</div>
 
 						<div class="photo-album-item-wrap col-4-width">
-                            @include('partials.photo-album-items.photo-album-item7')
+                            @include('partials.photo-album-items.photo-album-item1')
 						</div>
 
 					</div>
