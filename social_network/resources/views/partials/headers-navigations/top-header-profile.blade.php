@@ -28,6 +28,10 @@
 											<a href="{{route('about', ['id' => Auth::id()])}}">About</a>
 										@endif
 									</li>
+								</ul>
+							</div>
+							<div class="col col-lg-5 ml-auto col-md-5 col-sm-12 col-12">
+								<ul class="profile-menu">
 									<li>
 										@if(\Request::route()->getName()=='friend')
 											<a href="{{route('friend', ['id' => Auth::id()])}}" class="active">Friends</a>
@@ -35,19 +39,12 @@
 											<a href="{{route('friend', ['id' => Auth::id()])}}">Friends</a>
 										@endif
 									</li>
-								</ul>
-							</div>
-							<div class="col col-lg-5 ml-auto col-md-5 col-sm-12 col-12">
-								<ul class="profile-menu">
 									<li>
 										@if(\Request::route()->getName()=='photo')
 											<a href="{{route('photo', ['id' => Auth::id()])}}" class="active">Photos</a>
 										@else
 											<a href="{{route('photo', ['id' => Auth::id()])}}">Photos</a>
 										@endif
-									</li>
-									<li>
-										<a href="09-ProfilePage-Videos.html">Videos</a>
 									</li>
 								</ul>
 							</div>
