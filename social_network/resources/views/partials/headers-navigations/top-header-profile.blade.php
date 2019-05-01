@@ -15,10 +15,18 @@
 							<div class="col col-lg-5 col-md-5 col-sm-12 col-12">
 								<ul class="profile-menu">
 									<li>
-										<a href="{{route('profile_id', ['id'=>Auth::id()])}}" class="active">Timeline</a>
+										@if(\Request::route()->getName()=='profile_id')
+											<a href="{{route('profile_id', ['id'=>Auth::id()])}}" class="active">Timeline</a>
+										@else
+											<a href="{{route('profile_id', ['id'=>Auth::id()])}}" >Timeline</a>
+										@endif
 									</li>
 									<li>
-										<a href="{{route('about', ['id' => Auth::id()])}}">About</a>
+										@if(\Request::route()->getName()=='about')
+											<a href="{{route('about', ['id' => Auth::id()])}}" class="active">About</a>
+										@else
+											<a href="{{route('about', ['id' => Auth::id()])}}">About</a>
+										@endif
 									</li>
 									<li>
 										<a href="06-ProfilePage.html">Friends</a>
