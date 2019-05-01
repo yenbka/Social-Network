@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Hobbie;
+use App\Profile;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
@@ -55,22 +56,24 @@ class HobbieController extends Controller
 
     public function get_hobbies_update_info() {
         $user = Auth::user();
+        $profile = Profile::where('id', $user->profile_id)->first();
         $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
-        return view('hobbies_update_info', ['user' => $user, 'hobbies' => $hobbies]);
+        return view('hobbies_update_info', ['user' => $user, 'hobbies' => $hobbies, 'profile'=>$profile]);
     }
 
     public function hobbies_update_info(Request $request, $id) {
         $allRequest  = $request->all();
         $validator = $this->validator($allRequest);
         $user = Auth::user();
+        $profile = Profile::where('id', $user->profile_id)->first();
         $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
         if ($validator->fails()) {
-            return view('hobbies_update_info', ['user'=>$user, 'hobbies'=>Hobbie::find($hobbies->id)])->withErrors($validator)->withInput();
+            return view('hobbies_update_info', ['user'=>$user, 'hobbies'=>Hobbie::find($hobbies->id), 'profile'=>$profile])->withErrors($validator)->withInput();
         }
         else {
             $this->update($allRequest, $user->id);
             $status = "Cập nhật thông tin cá nhân thành công!";
-            return view('hobbies_update_info', ['user'=>$user, 'hobbies'=>Hobbie::find($hobbies->id), 'status'=>$status]);
+            return view('hobbies_update_info', ['user'=>$user, 'hobbies'=>Hobbie::find($hobbies->id), 'profile'=>$profile, 'status'=>$status]);
         }
     }
 
