@@ -31,8 +31,8 @@ class ProfileController extends Controller
     public function index($id) {
         if (!$this->secure($id)) return redirect('/404');
         $user = User::where('id', $id)->first();
-        $profile_info = Profile::where('id', $user->profile_id)->first();
-        return view('profile', ['profile_info'=>$profile_info, 'user'=>$user]);
+        $profile = Profile::where('id', $user->profile_id)->first();
+        return view('profile', ['profile'=>$profile, 'user'=>$user]);
     }
 
     public function get_profile_update_info($id){

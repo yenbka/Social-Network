@@ -4,7 +4,7 @@
 	<li>
 		<span class="title">About Me:</span>
 		<!-- <span class="text">Hi, I’m James, I’m 36 and I work as a Digital Designer for the  “Daydreams” Agency in Pier 56.</span> -->
-		<span class="text">{{$profile_info->about_me}}</span>
+		<span class="text">{{$profile->about_me}}</span>
 
 	</li>
 	<!-- <li>
