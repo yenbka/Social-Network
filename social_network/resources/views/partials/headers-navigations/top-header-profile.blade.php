@@ -46,7 +46,7 @@
 						</div>
 					</div>
 					<div class="top-header-author">
-						<a href="02-ProfilePage.html" class="author-thumb" data-toggle="modal" data-target="#update-header-photo">
+						<a href="" class="author-thumb" data-toggle="modal" data-target="#update-header-photo">
 							<img src="{{asset($profile->avatar_path)}}" width="124" height="124" alt="author">
 						</a>
 						<div class="author-content">
