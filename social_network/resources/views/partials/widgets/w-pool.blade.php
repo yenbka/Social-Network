@@ -29,47 +29,47 @@
 			<ul class="friends-harmonic">
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic1.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic1.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic2.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic2.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic3.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic3.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic4.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic4.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic5.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic5.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic6.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic6.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic7.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic7.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic8.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic8.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic9.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic9.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
@@ -103,37 +103,37 @@
 			<ul class="friends-harmonic">
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic7.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic8.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic8.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic8.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic9.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic9.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic10.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic10.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic11.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic11.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic12.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic12.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic13.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic13.jpg')}}" alt="friend">
 					</a>
 				</li>
 			</ul>
@@ -165,12 +165,12 @@
 			<ul class="friends-harmonic">
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic14.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic14.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic15.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic15.jpg')}}" alt="friend">
 					</a>
 				</li>
 			</ul>
