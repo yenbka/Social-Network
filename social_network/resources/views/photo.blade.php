@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-	
+
 @include('partials.headers-navigations.right-panel')
 
 @include('partials.headers-navigations.right-panel-responsive')
@@ -13,9 +13,7 @@
 
 <div class="header-spacer"></div>
 @include('partials.headers-navigations.top-header-profile')
-
-
-
+s
 <div class="container">
 	<div class="row">
 		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
@@ -40,68 +38,12 @@
 		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 			<!-- Tab panes -->
 			<div class="tab-content">
-				<div class="tab-pane" id="photo-page" role="tabpanel">
-
-					<div class="photo-album-wrapper">
-                        @include('partials.photo-items.photo-item-half')
-
-                        @include('partials.photo-items.photo-item1')
-
-                        @include('partials.photo-items.photo-item1')
-
-                        @include('partials.photo-items.photo-item1')
-
-                        @include('partials.photo-items.photo-item1')
-
-                        @include('partials.photo-items.photo-item1')
-
-                        @include('partials.photo-items.photo-item1')
-
-                        @include('partials.photo-items.photo-item1')
-
-                        @include('partials.photo-items.photo-item1')
-
-                        @include('partials.photo-items.photo-item1')
-
-                        @include('partials.photo-items.photo-item1')
-
-
-						<a href="#" class="btn btn-control btn-more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
-
-					</div>
-
-				</div>
-
 				<div class="tab-pane active" id="album-page" role="tabpanel">
 
 					<div class="photo-album-wrapper">
 
 						<div class="photo-album-item-wrap col-4-width" >
                             @include('partials.photo-album-items.photo-album-item-create')
-						</div>
-
-						<div class="photo-album-item-wrap col-4-width">
-                            @include('partials.photo-album-items.photo-album-item1')
-						</div>
-
-						<div class="photo-album-item-wrap col-4-width">
-                            @include('partials.photo-album-items.photo-album-item1')
-						</div>
-
-						<div class="photo-album-item-wrap col-4-width">
-                            @include('partials.photo-album-items.photo-album-item1')
-						</div>
-
-						<div class="photo-album-item-wrap col-4-width">
-                            @include('partials.photo-album-items.photo-album-item1')
-						</div>
-
-						<div class="photo-album-item-wrap col-4-width">
-                            @include('partials.photo-album-items.photo-album-item1')
-						</div>
-
-						<div class="photo-album-item-wrap col-4-width">
-                            @include('partials.photo-album-items.photo-album-item1')
 						</div>
 
 						<div class="photo-album-item-wrap col-4-width">
