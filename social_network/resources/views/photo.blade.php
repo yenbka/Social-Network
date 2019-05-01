@@ -1,11 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-
-
-
-@include('partials.headers-navigations.left-panel-responsive')
-
+	
 @include('partials.headers-navigations.right-panel')
 
 @include('partials.headers-navigations.right-panel-responsive')
@@ -25,7 +21,7 @@
 		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 			<div class="ui-block responsive-flex">
 				<div class="ui-block-title">
-					<div class="h6 title">James’s Photo Gallery</div>
+					<div class="h6 title">{{$user->first_name."’s Photo Gallery"}}</div>
 
 					<div class="block-btn align-right">
 						<a href="#" data-toggle="modal" data-target="#create-photo-album" class="btn btn-primary btn-md-2">Create Album  +</a>
@@ -33,21 +29,6 @@
 						<a href="#" data-toggle="modal" data-target="#update-header-photo" class="btn btn-md-2 btn-border-think custom-color c-grey">Add Photos</a>
 					</div>
 
-					<ul class="nav nav-tabs photo-gallery" role="tablist">
-						<li class="nav-item">
-							<a class="nav-link" data-toggle="tab" href="#photo-page" role="tab">
-								<svg class="olymp-photos-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-photos-icon')}}"></use></svg>
-							</a>
-						</li>
-
-						<li class="nav-item">
-							<a class="nav-link active" data-toggle="tab" href="#album-page" role="tab">
-								<svg class="olymp-albums-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-albums-icon')}}"></use></svg>
-							</a>
-						</li>
-
-					</ul>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
 				</div>
 			</div>
 		</div>
@@ -85,7 +66,7 @@
                         @include('partials.photo-items.photo-item1')
 
 
-						<a href="#" class="btn btn-control btn-more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+						<a href="#" class="btn btn-control btn-more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
 
 					</div>
 
