@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Hobbie;
 use App\Profile;
 use App\User;
 use Auth;
@@ -30,6 +31,7 @@ class HomeController extends Controller
         if (!$this->secure($id)) return redirect('/404');
         $user = User::where('id', $id)->first();
         $profile = Profile::where('id', $user->profile_id)->first();
-        return view('newsfeed', ['profile'=>$profile, 'user'=>$user]);
+        $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
+        return view('newsfeed', ['profile'=>$profile, 'user'=>$user, 'hobbies'=>$hobbies]);
     }
 }

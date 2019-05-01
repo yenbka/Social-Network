@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Hobbie;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
@@ -32,7 +33,9 @@ class ProfileController extends Controller
         if (!$this->secure($id)) return redirect('/404');
         $user = User::where('id', $id)->first();
         $profile = Profile::where('id', $user->profile_id)->first();
-        return view('profile', ['profile'=>$profile, 'user'=>$user]);
+        $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
+
+        return view('profile', ['profile'=>$profile, 'user'=>$user,  'hobbies'=>$hobbies]);
     }
 
     public function get_profile_update_info($id){
