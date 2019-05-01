@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     return view('landing');
-});
+})->name('login');
 // Authenticiate Routing
 Route:: get('login','LoginController@getLogin');
 Route:: post('login','LoginController@postLogin');
