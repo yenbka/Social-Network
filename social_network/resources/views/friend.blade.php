@@ -17,15 +17,6 @@
                 <div class="ui-block responsive-flex">
                     <div class="ui-block-title">
                         <div class="h6 title">{{$user->first_name.'’s Friends ('.sizeof($friends).')'}}</div>
-                        <form class="w-search">
-                            <div class="form-group with-button">
-                                <input class="form-control" type="text" placeholder="Search Friends...">
-                                <button>
-                                    <svg class="olymp-magnifying-glass-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon')}}"></use></svg>
-                                </button>
-                            </div>
-                        </form>
-                        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
                     </div>
                 </div>
             </div>
