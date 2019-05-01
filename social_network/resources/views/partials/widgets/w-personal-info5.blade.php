@@ -10,25 +10,18 @@
 		<span class="title">Birthday</span>
 		<span class="text">{{$profile->birth_date}}</span>
 	</li>
-	<!-- <li>
-		<span class="title">Birthplace</span>
-		<span class="text">Austin, Texas, USA</span>
-	</li> -->
 	<li>
 		<span class="title">Address</span>
 		<span class="text">{{$profile->address}}</span>
 	</li>
-	<!-- <li>
-		<span class="title">Occupation</span>
-		<span class="text">UI/UX Designer</span>
-	</li>
-	<li>
-		<span class="title">Joined</span>
-		<span class="text">April 31st, 2014</span>
-	</li> -->
+
 	<li>
 		<span class="title">Gender</span>
-		<span class="text">{{$profile->gender}}</span>
+		@if($profile->gender==0)
+			<span class="text">Male</span>
+		@else
+			<span class="text">Female</span>
+		@endif
 	</li>
 	<li>
 		<span class="title">Status</span>
