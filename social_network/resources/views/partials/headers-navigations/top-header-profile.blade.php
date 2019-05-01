@@ -15,10 +15,10 @@
 							<div class="col col-lg-5 col-md-5 col-sm-12 col-12">
 								<ul class="profile-menu">
 									<li>
-										@if(\Request::route()->getName()=='profile_id')
-											<a href="{{route('profile_id', ['id'=>Auth::id()])}}" class="active">Timeline</a>
+										@if(\Request::route()->getName()=='profile')
+											<a href="{{route('profile', ['id'=>Auth::id()])}}" class="active">Timeline</a>
 										@else
-											<a href="{{route('profile_id', ['id'=>Auth::id()])}}" >Timeline</a>
+											<a href="{{route('profile', ['id'=>Auth::id()])}}" >Timeline</a>
 										@endif
 									</li>
 									<li>
@@ -50,7 +50,7 @@
 							<img src="{{asset($profile->avatar_path)}}" width="124" height="124" alt="author">
 						</a>
 						<div class="author-content">
-							<a href="{{route('profile_id', ['id'=>Auth::id()])}}" class="h4 author-name">{{$user->first_name." ".$user->last_name}}</a>
+							<a href="{{route('profile', ['id'=>Auth::id()])}}" class="h4 author-name">{{$user->first_name." ".$user->last_name}}</a>
 							<div class="country">{{$profile->address}}</div>
 						</div>
 					</div>

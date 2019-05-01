@@ -94,7 +94,7 @@ class ProfileController extends Controller
             'avatar' => 'required|mimes:jpeg,jpg,png,gif|max:2048'
         ], $messages);
         if ($validator->fails()) {
-            return redirect()->route('profile_id', ['user' => Auth::user()])->withErrors($validator)->withInput();
+            return redirect()->route('profile', ['user' => Auth::user()])->withErrors($validator)->withInput();
         }
         else {
             $image = $request->file('avatar');
@@ -105,10 +105,10 @@ class ProfileController extends Controller
                 $profile = Profile::find($user->profile_id);
                 $profile->avatar_path = 'img/avatar/'.$file_name;
                 $profile->save();
-                return redirect()->route('profile_id', ['id' => Auth::id(), 'status' => 'Success']);
+                return redirect()->route('profile', ['id' => Auth::id(), 'status' => 'Success']);
             }
             else {
-                return redirect()->route('profile_id', ['id' => Auth::id(), 'status' => 'Failed']);        
+                return redirect()->route('profile', ['id' => Auth::id(), 'status' => 'Failed']);
             }
         }
     }
