@@ -29,7 +29,11 @@
 										@endif
 									</li>
 									<li>
-										<a href="06-ProfilePage.html">Friends</a>
+										@if(\Request::route()->getName()=='friend')
+											<a href="{{route('friend', ['id' => Auth::id()])}}" class="active">Friends</a>
+										@else
+											<a href="{{route('friend', ['id' => Auth::id()])}}">Friends</a>
+										@endif
 									</li>
 								</ul>
 							</div>
