@@ -35,7 +35,7 @@
         <div class="tab-pane active" id="home-1" role="tabpanel" aria-expanded="true">
             <form>
                 <div class="author-thumb">
-                    <img src="img/author-page.jpg" alt="author">
+                    <img src="{{asset('images/author-page.jpg')}}" alt="author">
                 </div>
                 <div class="form-group with-icon label-floating is-empty">
                     <label class="control-label">Share what you are thinking here...</label>
@@ -64,7 +64,7 @@
         <div class="tab-pane" id="profile-1" role="tabpanel" aria-expanded="true">
             <form>
                 <div class="author-thumb">
-                    <img src="img/author-page.jpg" alt="author">
+                    <img src="{{asset('images/author-page.jpg')}}" alt="author">
                 </div>
                 <div class="form-group with-icon label-floating is-empty">
                     <label class="control-label">Share what you are thinking here...</label>
@@ -93,7 +93,7 @@
         <div class="tab-pane" id="blog" role="tabpanel" aria-expanded="true">
             <form>
                 <div class="author-thumb">
-                    <img src="img/author-page.jpg" alt="author">
+                    <img src="{{asset('images/author-page.jpg')}}" alt="author">
                 </div>
                 <div class="form-group with-icon label-floating is-empty">
                     <label class="control-label">Share what you are thinking here...</label>

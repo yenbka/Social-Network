@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="{{asset('Bootstrap/dist/css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('Bootstrap/dist/css/bootstrap-grid.css')}}">
 
-    <link rel="stylesheet" href="{{asset('css/main.css')}}">
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/fonts.css')}}">
 </head>
 <body>

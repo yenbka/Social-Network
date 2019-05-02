@@ -4,13 +4,16 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class friends extends Model
+class Friend extends Model
 {
-    //
     protected $table = 'friends';
+    protected $primaryKey = 'id';
     public $timestamps = false;
-
-    public function users{
+    protected $fillable = [
+        'user_id_1',
+        'user_id_2',
+    ];
+    public function users(){
     	return $this->belongstoMany('App\users');
     }
 }

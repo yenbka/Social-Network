@@ -4,7 +4,7 @@
 <div class="window-popup playlist-popup" tabindex="-1" role="dialog" aria-labelledby="playlist-popup" aria-hidden="true">
 
 	<a href="" class="icon-close js-close-popup">
-		<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+		<svg class="olymp-close-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-close-icon')}}"></use></svg>
 	</a>
 
 	<table class="playlist-popup-table">
@@ -52,12 +52,12 @@
 		<tr>
 			<td class="play">
 				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="{{asset('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big')}}"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
 				<div class="playlist-thumb">
-					<img src="img/playlist19.jpg" alt="thumb-composition">
+					<img src="{{asset('images/playlist19.jpg')}}" alt="thumb-composition">
 				</div>
 			</td>
 			<td class="song-artist">
@@ -82,7 +82,7 @@
 			</td>
 			<td class="remove">
 				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-close-icon')}}"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -90,12 +90,12 @@
 		<tr>
 			<td class="play">
 				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="{{asset('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big')}}"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
 				<div class="playlist-thumb">
-					<img src="img/playlist6.jpg" alt="thumb-composition">
+					<img src="{{asset('images/playlist6.jpg')}}" alt="thumb-composition">
 				</div>
 			</td>
 			<td class="song-artist">
@@ -120,7 +120,7 @@
 			</td>
 			<td class="remove">
 				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-close-icon')}}"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -128,12 +128,12 @@
 		<tr>
 			<td class="play">
 				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="{{asset('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big')}}"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
 				<div class="playlist-thumb">
-					<img src="img/playlist7.jpg" alt="thumb-composition">
+					<img src="{{asset('images/playlist7.jpg')}}" alt="thumb-composition">
 				</div>
 			</td>
 			<td class="song-artist">
@@ -158,7 +158,7 @@
 			</td>
 			<td class="remove">
 				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-close-icon')}}"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -166,12 +166,12 @@
 		<tr>
 			<td class="play">
 				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="{{asset('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big')}}"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
 				<div class="playlist-thumb">
-					<img src="img/playlist8.jpg" alt="thumb-composition">
+					<img src="{{asset('images/playlist8.jpg')}}" alt="thumb-composition">
 				</div>
 			</td>
 			<td class="song-artist">
@@ -196,7 +196,7 @@
 			</td>
 			<td class="remove">
 				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-close-icon')}}"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -204,12 +204,12 @@
 		<tr>
 			<td class="play">
 				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="{{asset('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big')}}"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
 				<div class="playlist-thumb">
-					<img src="img/playlist9.jpg" alt="thumb-composition">
+					<img src="{{asset('images/playlist9.jpg')}}" alt="thumb-composition">
 				</div>
 			</td>
 			<td class="song-artist">
@@ -234,7 +234,7 @@
 			</td>
 			<td class="remove">
 				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-close-icon')}}"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -242,12 +242,12 @@
 		<tr>
 			<td class="play">
 				<a href="#" class="play-icon">
-					<svg class="olymp-music-play-icon-big"><use xlink:href="svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big"></use></svg>
+					<svg class="olymp-music-play-icon-big"><use xlink:href="{{asset('svg-icons/sprites/icons-music.svg#olymp-music-play-icon-big')}}"></use></svg>
 				</a>
 			</td>
 			<td class="cover">
 				<div class="playlist-thumb">
-					<img src="img/playlist10.jpg" alt="thumb-composition">
+					<img src="{{asset('images/playlist10.jpg')}}" alt="thumb-composition">
 				</div>
 			</td>
 			<td class="song-artist">
@@ -272,7 +272,7 @@
 			</td>
 			<td class="remove">
 				<a href="#" class="remove-icon">
-					<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+					<svg class="olymp-close-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-close-icon')}}"></use></svg>
 				</a>
 			</td>
 		</tr>
@@ -280,10 +280,10 @@
 	</table>
 
 	<audio id="mediaplayer" data-showplaylist="true">
-		<source src="mp3/Twice.mp3" title="Track 1" data-poster="track1.png" type="audio/mpeg">
-		<source src="mp3/Twice.mp3" title="Track 2" data-poster="track2.png" type="audio/mpeg">
-		<source src="mp3/Twice.mp3" title="Track 3" data-poster="track3.png" type="audio/mpeg">
-		<source src="mp3/Twice.mp3" title="Track 4" data-poster="track4.png" type="audio/mpeg">
+		<source src="{{asset('mp3/Twice.mp3')}}" title="Track 1" data-poster="track1.png" type="audio/mpeg">
+		<source src="{{asset('mp3/Twice.mp3')}}" title="Track 2" data-poster="track2.png" type="audio/mpeg">
+		<source src="{{asset('mp3/Twice.mp3')}}" title="Track 3" data-poster="track3.png" type="audio/mpeg">
+		<source src="{{asset('mp3/Twice.mp3')}}" title="Track 4" data-poster="track4.png" type="audio/mpeg">
 	</audio>
 
 </div>

@@ -4,29 +4,37 @@
 	<div class="modal-dialog window-popup update-header-photo" role="document">
 		<div class="modal-content">
 			<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
-				<svg class="olymp-close-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-close-icon"></use></svg>
+				<svg class="olymp-close-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-close-icon')}}"></use></svg>
 			</a>
 
 			<div class="modal-header">
-				<h6 class="title">Update Header Photo</h6>
+				<h6 class="title">Update Photo</h6>
 			</div>
 
-			<div class="modal-body">
-				<a href="#" class="upload-photo-item">
-				<svg class="olymp-computer-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
+			<form method="POST" action="{{action('ProfileController@update_avatar', ['id' => Auth::id()])}}" enctype="multipart/form-data">
+				<input type="hidden" name="_token" value="{{ csrf_token() }}">
+				<div class="modal-body">
+					<a href="#" class="upload-photo-item">
+					<svg class="olymp-computer-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-computer-icon')}}"></use></svg>
 
-				<h6>Upload Photo</h6>
-				<span>Browse your computer.</span>
-			</a>
+					<h6>Upload Local Photo</h6>
+					<span>Browse your computer.</span>
+					<input type="file" name="avatar" accept="image/*">
+					</a>
 
-				<a href="#" class="upload-photo-item" data-toggle="modal" data-target="#choose-from-my-photo">
+					<a href="#" class="upload-photo-item" data-toggle="modal" data-target="#choose-from-my-photo">
 
-			<svg class="olymp-photos-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-photos-icon"></use></svg>
+						<svg class="olymp-photos-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-photos-icon')}}"></use></svg>
 
-			<h6>Choose from My Photos</h6>
-			<span>Choose from your uploaded photos</span>
-		</a>
-			</div>
+						<h6>Choose from My Photos</h6>
+						<span>Choose from your uploaded photos</span>
+					</a>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					<button type="submit" class="btn btn-primary">Upload Image</button> 
+				</div>
+			</form>
 		</div>
 	</div>
 </div>

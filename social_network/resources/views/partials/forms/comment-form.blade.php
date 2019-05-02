@@ -4,14 +4,14 @@
 <form class="comment-form inline-items">
 
 	<div class="post__author author vcard inline-items">
-		<img src="img/author-page.jpg" alt="author">
+		<img src="{{asset('images/author-page.jpg')}}" alt="author">
 
 		<div class="form-group with-icon-right ">
 			<textarea class="form-control" placeholder=""></textarea>
 			<div class="add-options-message">
 				<a href="#" class="options-message" data-toggle="modal" data-target="#update-header-photo">
 					<svg class="olymp-camera-icon">
-						<use xlink:href="svg-icons/sprites/icons.svg#olymp-camera-icon"></use>
+						<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-camera-icon')}}"></use>
 					</svg>
 				</a>
 			</div>
