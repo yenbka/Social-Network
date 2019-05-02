@@ -33,6 +33,17 @@
 			</div>
 		</div>
 	</div>
+	<div class="ui-block-title">
+		<a href="33-YourAccount-Notifications.html" class="h6 title">Notifications</a>
+		<a href="#" class="items-round-little bg-primary">8</a>
+	</div>
+	<div class="ui-block-title">
+		<a href="34-YourAccount-ChatMessages.html" class="h6 title">Chat / Messages</a>
+	</div>
+	<div class="ui-block-title">
+		<a href="{{route('friend_requests', ['id' => Auth::id()])}}" class="h6 title">Friend Requests</a>
+		<a href="#" class="items-round-little bg-blue">4</a>
+	</div>
 </div>
 
 <!-- ... end Your Profile  -->

@@ -80,6 +80,11 @@ Route::post('/profile/{id}/hobbies_update_info', [
     'uses'=> 'HobbieController@hobbies_update_info'
 ]);
 
+Route::get('/profile/{id}/friend_requests', [
+    'as' => 'friend_requests',
+    'uses'=> 'FriendRequestController@index'
+]);
+
 Route::get('logout', [
     'as' => 'logout',
     'uses' => 'Auth\LoginController@logout'
