@@ -4,7 +4,7 @@
 <ul class="comments-list">
 	<li class="comment-item">
 		<div class="post__author author vcard inline-items">
-			<img src="img/avatar10-sm.jpg" alt="author">
+			<img src="{{asset('images/avatar10-sm.jpg')}}" alt="author">
 
 			<div class="author-date">
 				<a class="h6 post__author-name fn" href="#">Elaine Dreyfuss</a>
@@ -17,7 +17,7 @@
 
 			<a href="#" class="more">
 				<svg class="olymp-three-dots-icon">
-					<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
+					<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use>
 				</svg>
 			</a>
 
@@ -27,7 +27,7 @@
 
 		<a href="#" class="post-add-icon inline-items">
 			<svg class="olymp-heart-icon">
-				<use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use>
+				<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-heart-icon')}}"></use>
 			</svg>
 			<span>8</span>
 		</a>
@@ -35,7 +35,7 @@
 	</li>
 	<li class="comment-item has-children">
 		<div class="post__author author vcard inline-items">
-			<img src="img/avatar5-sm.jpg" alt="author">
+			<img src="{{asset('images/avatar5-sm.jpg')}}" alt="author">
 
 			<div class="author-date">
 				<a class="h6 post__author-name fn" href="#">Green Goo Rock</a>
@@ -48,7 +48,7 @@
 
 			<a href="#" class="more">
 				<svg class="olymp-three-dots-icon">
-					<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
+					<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use>
 				</svg>
 			</a>
 
@@ -61,7 +61,7 @@
 
 		<a href="#" class="post-add-icon inline-items">
 			<svg class="olymp-heart-icon">
-				<use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use>
+				<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-heart-icon')}}"></use>
 			</svg>
 			<span>5</span>
 		</a>
@@ -70,7 +70,7 @@
 		<ul class="children">
 			<li class="comment-item">
 				<div class="post__author author vcard inline-items">
-					<img src="img/avatar8-sm.jpg" alt="author">
+					<img src="{{asset('images/avatar8-sm.jpg')}}" alt="author">
 
 					<div class="author-date">
 						<a class="h6 post__author-name fn" href="#">Diana Jameson</a>
@@ -83,7 +83,7 @@
 
 					<a href="#" class="more">
 						<svg class="olymp-three-dots-icon">
-							<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
+							<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use>
 						</svg>
 					</a>
 
@@ -93,7 +93,7 @@
 
 				<a href="#" class="post-add-icon inline-items">
 					<svg class="olymp-heart-icon">
-						<use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use>
+						<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-heart-icon')}}"></use>
 					</svg>
 					<span>2</span>
 				</a>
@@ -101,7 +101,7 @@
 			</li>
 			<li class="comment-item">
 				<div class="post__author author vcard inline-items">
-					<img src="img/avatar2-sm.jpg" alt="author">
+					<img src="{{asset('images/avatar2-sm.jpg')}}" alt="author">
 
 					<div class="author-date">
 						<a class="h6 post__author-name fn" href="#">Nicholas Grisom</a>
@@ -114,7 +114,7 @@
 
 					<a href="#" class="more">
 						<svg class="olymp-three-dots-icon">
-							<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
+							<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use>
 						</svg>
 					</a>
 
@@ -124,7 +124,7 @@
 
 				<a href="#" class="post-add-icon inline-items">
 					<svg class="olymp-heart-icon">
-						<use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use>
+						<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-heart-icon')}}"></use>
 					</svg>
 					<span>0</span>
 				</a>
@@ -137,7 +137,7 @@
 
 	<li class="comment-item">
 		<div class="post__author author vcard inline-items">
-			<img src="img/avatar4-sm.jpg" alt="author">
+			<img src="{{asset('images/avatar4-sm.jpg')}}" alt="author">
 
 			<div class="author-date">
 				<a class="h6 post__author-name fn" href="#">Chris Greyson</a>
@@ -150,7 +150,7 @@
 
 			<a href="#" class="more">
 				<svg class="olymp-three-dots-icon">
-					<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
+					<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use>
 				</svg>
 			</a>
 
@@ -160,7 +160,7 @@
 
 		<a href="#" class="post-add-icon inline-items">
 			<svg class="olymp-heart-icon">
-				<use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use>
+				<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-heart-icon')}}"></use>
 			</svg>
 			<span>7</span>
 		</a>

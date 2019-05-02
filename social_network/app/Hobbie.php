@@ -10,6 +10,12 @@ class Hobbie extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
 
+    protected $fillable = [
+        'hobbie',
+        'movies',
+        'books',
+        'other',
+    ];
 
     public function user()
     {

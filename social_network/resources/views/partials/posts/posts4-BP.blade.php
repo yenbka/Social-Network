@@ -3,7 +3,7 @@
 <article class="hentry post has-post-thumbnail shared-photo">
 
 		<div class="post__author author vcard inline-items">
-			<img src="img/author-page.jpg" alt="author">
+			<img src="{{asset('images/author-page.jpg')}}" alt="author">
 
 			<div class="author-date">
 				<a class="h6 post__author-name fn" href="02-ProfilePage.html">James Spiegel</a> shared
@@ -17,7 +17,7 @@
 
 			<div class="more">
 				<svg class="olymp-three-dots-icon">
-					<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
+					<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use>
 				</svg>
 				<ul class="more-dropdown">
 					<li>
@@ -40,13 +40,13 @@
 		<p>Hi! Everyone should check out these amazing photographs that my friend shot the past week. Here’s one of them...leave a kind comment!</p>
 
 		<div class="post-thumb">
-			<img src="img/post-photo6.jpg" alt="photo">
+			<img src="{{asset('images/post-photo6.jpg')}}" alt="photo">
 		</div>
 
 		<ul class="children single-children">
 			<li class="comment-item">
 				<div class="post__author author vcard inline-items">
-					<img src="img/avatar8-sm.jpg" alt="author">
+					<img src="{{asset('images/avatar8-sm.jpg')}}" alt="author">
 					<div class="author-date">
 						<a class="h6 post__author-name fn" href="#">Diana Jameson</a>
 						<div class="post__date">
@@ -65,7 +65,7 @@
 
 			<a href="#" class="post-add-icon inline-items">
 				<svg class="olymp-heart-icon">
-					<use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use>
+					<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-heart-icon')}}"></use>
 				</svg>
 				<span>15</span>
 			</a>
@@ -73,27 +73,27 @@
 			<ul class="friends-harmonic">
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic5.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic5.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic10.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic10.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic7.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic7.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic8.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic8.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic2.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic2.jpg')}}" alt="friend">
 					</a>
 				</li>
 			</ul>
@@ -106,14 +106,14 @@
 			<div class="comments-shared">
 				<a href="#" class="post-add-icon inline-items">
 					<svg class="olymp-speech-balloon-icon">
-						<use xlink:href="svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use>
+						<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-speech-balloon-icon')}}"></use>
 					</svg>
 					<span>0</span>
 				</a>
 
 				<a href="#" class="post-add-icon inline-items">
 					<svg class="olymp-share-icon">
-						<use xlink:href="svg-icons/sprites/icons.svg#olymp-share-icon"></use>
+						<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-share-icon')}}"></use>
 					</svg>
 					<span>16</span>
 				</a>
@@ -125,19 +125,19 @@
 
 			<a href="#" class="btn btn-control">
 				<svg class="olymp-like-post-icon">
-					<use xlink:href="svg-icons/sprites/icons.svg#olymp-like-post-icon"></use>
+					<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-like-post-icon')}}"></use>
 				</svg>
 			</a>
 
 			<a href="#" class="btn btn-control">
 				<svg class="olymp-comments-post-icon">
-					<use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use>
+					<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-comments-post-icon')}}"></use>
 				</svg>
 			</a>
 
 			<a href="#" class="btn btn-control">
 				<svg class="olymp-share-icon">
-					<use xlink:href="svg-icons/sprites/icons.svg#olymp-share-icon"></use>
+					<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-share-icon')}}"></use>
 				</svg>
 			</a>
 

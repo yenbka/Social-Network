@@ -26,10 +26,10 @@
 				@include('partials.posts.posts1-BP')
 			</div>
 			<div class="ui-block">
-				@include('partials.posts.posts2-BP')
+				@include('partials.posts.posts1-BP')
 			</div>
 			<div class="ui-block">
-				@include('partials.posts.posts3-BP')
+				@include('partials.posts.posts1-BP')
 				@include('partials.comments.comment-list1')
 				<a href="#" class="more-comments">View more comments <span>+</span></a>
 				@include('partials.forms.comment-form')
@@ -41,7 +41,7 @@
 
 		<a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html" data-container="newsfeed-items-grid">
 			<svg class="olymp-three-dots-icon">
-				<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
+				<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use>
 			</svg>
 		</a>
 	</div>
@@ -61,38 +61,7 @@
 
 				@include('partials.widgets.w-personal-info')
 
-				@include('partials.widgets.w-socials')
-
 			</div>
-		</div>
-
-		<div class="ui-block">
-			<div class="ui-block-title">
-				<h6 class="title">James’s Badges</h6>
-			</div>
-			<div class="ui-block-content">
-
-				@include('partials.widgets.w-badges')
-
-			</div>
-		</div>
-
-		<div class="ui-block">
-			<div class="ui-block-title">
-				<h6 class="title">My Spotify Playlist</h6>
-			</div>
-
-			@include('partials.widgets.w-playlist')
-
-		</div>
-
-		<div class="ui-block">
-			<div class="ui-block-title">
-				<h6 class="title">Twitter Feed</h6>
-			</div>
-
-			@include('partials.widgets.w-twitter')
-
 		</div>
 
 		<div class="ui-block">

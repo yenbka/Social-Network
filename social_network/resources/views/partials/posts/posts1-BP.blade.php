@@ -3,7 +3,7 @@
 <article class="hentry post">
 
 		<div class="post__author author vcard inline-items">
-			<img src="img/author-page.jpg" alt="author">
+			<img src="{{asset('images/author-page.jpg')}}" alt="author">
 
 			<div class="author-date">
 				<a class="h6 post__author-name fn" href="02-ProfilePage.html">James Spiegel</a>
@@ -16,7 +16,7 @@
 
 			<div class="more">
 				<svg class="olymp-three-dots-icon">
-					<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
+					<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use>
 				</svg>
 				<ul class="more-dropdown">
 					<li>
@@ -46,7 +46,7 @@
 
 			<a href="#" class="post-add-icon inline-items">
 				<svg class="olymp-heart-icon">
-					<use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use>
+					<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-heart-icon')}}"></use>
 				</svg>
 				<span>8</span>
 			</a>
@@ -54,27 +54,27 @@
 			<ul class="friends-harmonic">
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic7.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic7.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic8.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic8.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic9.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic9.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic10.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic10.jpg')}}" alt="friend">
 					</a>
 				</li>
 				<li>
 					<a href="#">
-						<img src="img/friend-harmonic11.jpg" alt="friend">
+						<img src="{{asset('images/friend-harmonic11.jpg')}}" alt="friend">
 					</a>
 				</li>
 			</ul>
@@ -88,14 +88,14 @@
 			<div class="comments-shared">
 				<a href="#" class="post-add-icon inline-items">
 					<svg class="olymp-speech-balloon-icon">
-						<use xlink:href="svg-icons/sprites/icons.svg#olymp-speech-balloon-icon"></use>
+						<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-speech-balloon-icon')}}"></use>
 					</svg>
 					<span>17</span>
 				</a>
 
 				<a href="#" class="post-add-icon inline-items">
 					<svg class="olymp-share-icon">
-						<use xlink:href="svg-icons/sprites/icons.svg#olymp-share-icon"></use>
+						<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-share-icon')}}"></use>
 					</svg>
 					<span>24</span>
 				</a>
@@ -108,25 +108,25 @@
 
 			<a href="#" class="btn btn-control featured-post">
 				<svg class="olymp-trophy-icon">
-					<use xlink:href="svg-icons/sprites/icons.svg#olymp-trophy-icon"></use>
+					<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-trophy-icon')}}"></use>
 				</svg>
 			</a>
 
 			<a href="#" class="btn btn-control">
 				<svg class="olymp-like-post-icon">
-					<use xlink:href="svg-icons/sprites/icons.svg#olymp-like-post-icon"></use>
+					<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-like-post-icon')}}"></use>
 				</svg>
 			</a>
 
 			<a href="#" class="btn btn-control">
 				<svg class="olymp-comments-post-icon">
-					<use xlink:href="svg-icons/sprites/icons.svg#olymp-comments-post-icon"></use>
+					<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-comments-post-icon')}}"></use>
 				</svg>
 			</a>
 
 			<a href="#" class="btn btn-control">
 				<svg class="olymp-share-icon">
-					<use xlink:href="svg-icons/sprites/icons.svg#olymp-share-icon"></use>
+					<use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-share-icon')}}"></use>
 				</svg>
 			</a>
 

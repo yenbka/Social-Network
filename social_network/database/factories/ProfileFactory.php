@@ -9,6 +9,8 @@ $factory->define(App\Profile::class, function (Faker $faker) {
         'address' => $faker->address,
         'gender' => '1',
         'phone' => $faker->phoneNumber,
-        'status' => '1'  
+        'status' => '1',
+        'avatar_path' => $faker->text(20),
+        'header_path' => $faker->text(20)  
     ];
 });
