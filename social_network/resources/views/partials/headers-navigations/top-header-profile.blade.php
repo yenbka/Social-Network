@@ -8,7 +8,7 @@
 			<div class="ui-block">
 				<div class="top-header">
 					<div class="top-header-thumb">
-						<img src="{{asset('images/top-header1.jpg')}}" alt="nature">
+						<img src="{{asset($profile->header_path)}}" width="1920" height="640" alt="header" >
 					</div>
 					<div class="profile-section">
 						<div class="row">
@@ -49,9 +49,20 @@
 								</ul>
 							</div>
 						</div>
+						<div class="control-block-button">
+							<div class="btn btn-control bg-primary more">
+								<svg class="olymp-settings-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-settings-icon')}}"></use></svg>
+
+								<ul class="more-dropdown more-with-triangle triangle-bottom-right">
+									<li>
+										<a href="#" data-toggle="modal" data-target="#update-header-photo">Update Profile Photo</a>
+									</li>
+								</ul>
+							</div>
+						</div>
 					</div>
 					<div class="top-header-author">
-						<a href="" class="author-thumb" data-toggle="modal" data-target="#update-header-photo">
+						<a href="" class="author-thumb" data-toggle="modal" data-target="#update-avatar-photo">
 							<img src="{{asset($profile->avatar_path)}}" width="124" height="124" alt="author">
 						</a>
 						<div class="author-content">

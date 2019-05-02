@@ -1,7 +1,7 @@
-<!-- Window-popup Update Header Photo -->
+<!-- Window-popup Update Avatar Photo -->
 
-<div class="modal fade" id="update-header-photo" tabindex="-1" role="dialog" aria-labelledby="update-header-photo" aria-hidden="true">
-	<div class="modal-dialog window-popup update-header-photo" role="document">
+<div class="modal fade" id="update-avatar-photo" tabindex="-1" role="dialog" aria-labelledby="update-avatar-photo" aria-hidden="true">
+	<div class="modal-dialog window-popup update-avatar-photo" role="document">
 		<div class="modal-content">
 			<a href="#" class="close icon-close" data-dismiss="modal" aria-label="Close">
 				<svg class="olymp-close-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-close-icon')}}"></use></svg>
@@ -11,7 +11,7 @@
 				<h6 class="title">Update Photo</h6>
 			</div>
 
-			<form method="POST" action="{{action('ProfileController@update_header', ['id' => Auth::id()])}}" enctype="multipart/form-data">
+			<form method="POST" action="{{action('ProfileController@update_avatar', ['id' => Auth::id()])}}" enctype="multipart/form-data">
 				<input type="hidden" name="_token" value="{{ csrf_token() }}">
 				<div class="modal-body">
 					<a href="#" class="upload-photo-item">
@@ -19,7 +19,7 @@
 
 					<h6>Upload Local Photo</h6>
 					<span>Browse your computer.</span>
-					<input type="file" name="header" accept="image/*">
+					<input type="file" name="avatar" accept="image/*">
 					</a>
 
 					<a href="#" class="upload-photo-item" data-toggle="modal" data-target="#choose-from-my-photo">

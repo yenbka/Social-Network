@@ -6712,7 +6712,16 @@ body.body--fixed {
 .update-header-photo {
   width: 770px;
 }
+
+.update-avatar-photo {
+  width: 770px;
+}
+
 .update-header-photo .modal-body {
+  padding: 0;
+}
+
+.update-avatar-photo .modal-body {
   padding: 0;
 }
 
