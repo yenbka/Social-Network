@@ -40,10 +40,11 @@ class HomeController extends Controller
         if (empty($search)) return redirect()->back();
 
         $user = Auth::user();
+        $profile = Profile::find($user->profile_id);
 
         $users = User::where('first_name', 'like', '%'.$search.'%')->orWhere('last_name', 'like', '%'.$search.'%')->orderBy('first_name', 'ASC')->get();
 
-        return view('search_result', ['users', 'user']);
+        return view('search_result', ['users'=>$users, 'user'=>$user, 'profile'=>$profile]);
 
     }
 }
