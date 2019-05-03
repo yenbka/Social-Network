@@ -100,4 +100,9 @@ Route::post('/profile/{id}/update_header', [
     'uses' => 'ProfileController@update_header'
 ]);
 
+Route::post('/search', [
+    'as' => 'search',
+    'uses' => 'HomeController@search'
+]);
+
 // happy comment
