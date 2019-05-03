@@ -34,4 +34,16 @@ class HomeController extends Controller
         $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
         return view('newsfeed', ['profile'=>$profile, 'user'=>$user, 'hobbies'=>$hobbies]);
     }
+
+    public function search(Request $request) {
+        $search = $request->input('search');
+        if (empty($search)) return redirect()->back();
+
+        $user = Auth::user();
+
+        $users = User::where('first_name', 'like', '%'.$search.'%')->orWhere('last_name', 'like', '%'.$search.'%')->orderBy('first_name', 'ASC')->get();
+
+        return view('search_result', ['users', 'user']);
+
+    }
 }
