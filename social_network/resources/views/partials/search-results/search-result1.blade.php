@@ -3,11 +3,11 @@
 <article class="hentry post searches-item">
 
 	<div class="post__author author vcard inline-items">
-		<img src="img/avatar7-sm.jpg" alt="author">
+		<img src="{{asset($profile_result[$i]->avatar_path)}}" width="42" height="42" alt="author">
 
 		<div class="author-date">
-			<a class="h6 post__author-name fn" href="02-ProfilePage.html">Marina Valentine</a>
-			<div class="country">Long Island, NY</div>
+			<a class="h6 post__author-name fn" href="02-ProfilePage.html">{{$user_result[$i]->first_name.' '.$user_result[$i]->last_name}}</a>
+			<div class="country">{{$profile_result[$i]->address}}</div>
 		</div>
 
 		<span class="notification-icon">
@@ -22,7 +22,7 @@
 			</a>
 		</span>
 
-		<div class="more">
+		<!-- <div class="more">
 			<svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
 			<ul class="more-dropdown">
 				<li>
@@ -38,13 +38,12 @@
 					<a href="#">Select as Featured</a>
 				</li>
 			</ul>
-		</div>
+		</div> -->
 
 	</div>
 
 	<p class="user-description">
-		<span class="title">About Me:</span> Hi!, I’m Marina and I’m a Community Manager for “Gametube”. Gamer and full-time mother.
-		<span class="title">Favourite TV Shows:</span> Breaking Good, RedDevil, People of Interest, The...
+		<span class="title">Introduction: {{$profile_result[$i]->about_me}}</span>
 	</p>
 
 	<div class="post-block-photo js-zoom-gallery">

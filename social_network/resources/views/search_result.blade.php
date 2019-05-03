@@ -21,23 +21,18 @@
 		<div class="col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12">
 			<div class="ui-block">
 				<div class="ui-block-title">
-					<div class="h6 title">Showing 12 Results for: “<span class="c-primary">Mari</span>”</div>
+					<div class="h6 title">Showing {{$user_result->count()}} results for: “<span class="c-primary">{{$search}}</span>”</div>
 				</div>
 			</div>
 
 			<div id="search-items-grid">
+                @for ($i = 0; $i < $user_result->count(); $i++)
+                    <div class="ui-block">
+                        @include('partials.search-results.search-result1')
+                    </div>
+                @endfor
 
-				<div class="ui-block">
-                    @include('partials.search-results.search-result1')
-				</div>
-
-				<div class="ui-block">
-                    @include('partials.search-results.search-result2')
-				</div>
-
-				<div class="ui-block">
-                    @include('partials.search-results.search-result3')
-				</div>
+				
 
 			</div>
 
