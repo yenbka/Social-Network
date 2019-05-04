@@ -1,14 +1,19 @@
-
+<?php use Carbon\Carbon;?>
 <article class="hentry post has-post-thumbnail">
 
     <div class="post__author author vcard inline-items">
-        <img src="img/avatar5-sm.jpg" alt="author">
+        <img src="/{{$profile->avatar_path}}" alt="author">
 
         <div class="author-date">
-            <a class="h6 post__author-name fn" href="#">Green Goo Rock</a>
+            <a class="h6 post__author-name fn" href="#">{{$post->user->last_name}} {{$post->user->first_name}}</a>
             <div class="post__date">
-                <time class="published" datetime="2004-07-24T18:18">
-                    March 8 at 6:42pm
+                <time class="published" >
+                    <?php
+                        $date_post = $post->created_at;
+                        $now = Carbon::now('Asia/Ho_Chi_Minh');
+                        $result = $date_post->diffForHumans($now);
+                        echo $result;
+                    ?>
                 </time>
             </div>
         </div>
@@ -16,10 +21,10 @@
         <div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
             <ul class="more-dropdown">
                 <li>
-                    <a href="#">Edit Post</a>
+                    <a href="{{route('get-edit-post',['pid'=>$post->id])}}">Edit Post</a>
                 </li>
                 <li>
-                    <a href="#">Delete Post</a>
+                    <a href="{{route('delete-post',['pid'=>$post->id])}}">Delete Post</a>
                 </li>
                 <li>
                     <a href="#">Turn Off Notifications</a>
@@ -32,12 +37,10 @@
 
     </div>
 
-    <p>Hey guys! We are gona be playing this Saturday of <a href="#">The Marina Bar</a> for their new Mystic Deer Party.
-        If you wanna hang out and have a really good time, come and join us. We’l be waiting for you!
-    </p>
+    <p>{{$post->content}}</p>
 
     <div class="post-thumb">
-        <img src="img/post__thumb1.jpg" alt="photo">
+        <img src="/uploads/{{$post->media->link}}" alt="photo">
     </div>
 
     <div class="post-additional-info inline-items">
@@ -50,27 +53,27 @@
         <ul class="friends-harmonic">
             <li>
                 <a href="#">
-                    <img src="img/friend-harmonic9.jpg" alt="friend">
+                    <img src="/img/friend-harmonic9.jpg" alt="friend">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="img/friend-harmonic10.jpg" alt="friend">
+                    <img src="/img/friend-harmonic10.jpg" alt="friend">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="img/friend-harmonic7.jpg" alt="friend">
+                    <img src="/img/friend-harmonic7.jpg" alt="friend">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="img/friend-harmonic8.jpg" alt="friend">
+                    <img src="/img/friend-harmonic8.jpg" alt="friend">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="img/friend-harmonic11.jpg" alt="friend">
+                    <img src="/img/friend-harmonic11.jpg" alt="friend">
                 </a>
             </li>
         </ul>

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Posts extends Model
 {
     //
-    protected $table = 'posts';
+    protected $table = "posts";
 
     public function user() {
         return $this->belongsTo('App\User', 'user_id', 'id');
@@ -18,7 +18,7 @@ class Posts extends Model
     }
 
     public function media() {
-        return $this->hasMany('App\Medias', 'post_id', 'id');
+        return $this->hasOne('App\Medias', 'post_id', 'id');
     }
 
     public function like() {
