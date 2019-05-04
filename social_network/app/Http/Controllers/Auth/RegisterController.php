@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
+use Auth;
 
 class RegisterController extends Controller
 {
@@ -55,7 +56,7 @@ class RegisterController extends Controller
         $messages = [
             'firstname.required' => 'Trường bắt buộc',
             'lastname.required' => 'Trường bắt buộc',
-            'registerEmail.required' => 'Email là trường bắt buộc',            
+            'registerEmail.required' => 'Email là trường bắt buộc',
             'registerEmail.email' => 'Email không đúng định dạng',
             'registerPassword.required' => 'Mật khẩu là trường bắt buộc',
             'registerPassword.min' => 'Mật khẩu phải chứa ít nhất 6 ký tự',
@@ -117,6 +118,9 @@ class RegisterController extends Controller
         }
         else{
             $user = $this->create($request->all());
+            if(Auth::attempt(['email'=>$request->input('registerEmail'),'password'=>$request->input('registerPassword')])){
+                return redirect()->route('home', ['id'=>Auth::id()]);
+            }
         }
     }
 }
