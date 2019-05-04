@@ -106,18 +106,6 @@ class RegisterController extends Controller
             'movies'=>'',
             'books'=>'',
             'other'=>'',
-        ]);
-        return $hobbies->id;
-    }
-
-    public function register(Request $request){
-        $validator =$this->validator($request->all());
-
-        if($validator -> fails()){
-            return  redirect()->back()->withErrors($validator)->withInput();
-        }
-        else{
-            $user = $this->create($request->all());
             if(Auth::attempt(['email'=>$request->input('registerEmail'),'password'=>$request->input('registerPassword')])){
                 return redirect()->route('home', ['id'=>Auth::id()]);
             }
