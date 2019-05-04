@@ -95,6 +95,11 @@ Route::post('/profile/{id}/update_avatar', [
     'uses' => 'ProfileController@update_avatar'
 ]);
 
+Route::post('/profile/{id}/update_header', [
+    'as' => 'update_header',
+    'uses' => 'ProfileController@update_header'
+]);
+
 // happy comment
 
 /*

@@ -115,4 +115,33 @@ class ProfileController extends Controller
             }
         }
     }
+
+    public function update_header(Request $request, $id) {
+        $messages = [
+            'header.required' => trans('validation.required'),
+            'header.mimes' => trans('validation.mimes'),
+            'header.max.file' => trans('validation.max.file'),
+        ];
+        $validator = Validator::make(['header' => $request->file('header')], [
+            'header' => 'required|mimes:jpeg,jpg,png,gif|max:2048'
+        ], $messages);
+        if ($validator->fails()) {
+            return redirect()->route('profile', ['user' => Auth::user()])->withErrors($validator)->withInput();
+        }
+        else {
+            $image = $request->file('header');
+            // $img = Image::make($img)->resize(36,36);
+            $file_name = md5(uniqid() . time()) . '.' . $image->getClientOriginalExtension();
+            if ($image->storeAs('img/header', $file_name)) {
+                $user = User::where('id', $id)->first();
+                $profile = Profile::find($user->profile_id);
+                $profile->header_path = 'img/header/'.$file_name;
+                $profile->save();
+                return redirect()->route('profile', ['id' => Auth::id(), 'status' => 'Success']);
+            }
+            else {
+                return redirect()->route('profile', ['id' => Auth::id(), 'status' => 'Failed']);
+            }
+        }
+    }
 }

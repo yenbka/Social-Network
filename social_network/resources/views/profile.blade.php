@@ -143,6 +143,7 @@
 <!-- </div> -->
 
 @include('partials.windows-popup.update-header-photo')
+@include('partials.windows-popup.update-avatar-photo')
 
 @include('partials.windows-popup.choose-from-my-photo')
 
