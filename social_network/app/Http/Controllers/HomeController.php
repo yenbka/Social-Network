@@ -6,6 +6,9 @@ use App\Hobbie;
 use App\Profile;
 use App\User;
 use Auth;
+use App\Posts;
+use App\Medias;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -29,9 +32,12 @@ class HomeController extends Controller
 
     public function index($id) {
         if (!$this->secure($id)) return redirect('/404');
+        $medias = Medias::all();
+        $posts = Posts::orderBy('id','desc')->get();
+
         $user = User::where('id', $id)->first();
         $profile = Profile::where('id', $user->profile_id)->first();
         $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
-        return view('newsfeed', ['profile'=>$profile, 'user'=>$user, 'hobbies'=>$hobbies]);
+        return view('newsfeed', ['profile'=>$profile, 'user'=>$user, 'hobbies'=>$hobbies,'posts'=> $posts,'medias'=>$medias]);
     }
 }

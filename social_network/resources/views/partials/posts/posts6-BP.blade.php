@@ -1,14 +1,19 @@
-
+<?php use Carbon\Carbon;?>
 <article class="hentry post">
 
     <div class="post__author author vcard inline-items">
-        <img src="img/avatar10-sm.jpg" alt="author">
+        <img src="/{{$profile->avatar_path}}" alt="author">
 
         <div class="author-date">
-            <a class="h6 post__author-name fn" href="#">Elaine Dreyfuss</a>
+            <a class="h6 post__author-name fn" href="#">{{$post->user->last_name}} {{$post->user->first_name}}</a>
             <div class="post__date">
-                <time class="published" datetime="2004-07-24T18:18">
-                    9 hours ago
+                <time class="published" >
+                    <?php
+                        $date_post = $post->created_at;
+                        $now = Carbon::now('Asia/Ho_Chi_Minh');
+                        $result = $date_post->diffForHumans($now);
+                        echo $result;
+                    ?>
                 </time>
             </div>
         </div>
@@ -16,10 +21,10 @@
         <div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg>
             <ul class="more-dropdown">
                 <li>
-                    <a href="#">Edit Post</a>
+                    <a href="{{route('get-edit-post',['pid'=>$post->id])}}">Edit Post</a>
                 </li>
                 <li>
-                    <a href="#">Delete Post</a>
+                    <a href="{{route('delete-post',['pid'=>$post->id])}}">Delete Post</a>
                 </li>
                 <li>
                     <a href="#">Turn Off Notifications</a>
@@ -32,9 +37,7 @@
 
     </div>
 
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo incididunt ut
-        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris consequat.
-    </p>
+    <p>{{$post->content}}</p>
 
     <div class="post-additional-info inline-items">
 
@@ -46,27 +49,27 @@
         <ul class="friends-harmonic">
             <li>
                 <a href="#">
-                    <img src="img/friend-harmonic7.jpg" alt="friend">
+                    <img src="/img/friend-harmonic7.jpg" alt="friend">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="img/friend-harmonic8.jpg" alt="friend">
+                    <img src="/img/friend-harmonic8.jpg" alt="friend">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="img/friend-harmonic9.jpg" alt="friend">
+                    <img src="/img/friend-harmonic9.jpg" alt="friend">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="img/friend-harmonic10.jpg" alt="friend">
+                    <img src="/img/friend-harmonic10.jpg" alt="friend">
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <img src="img/friend-harmonic11.jpg" alt="friend">
+                    <img src="/img/friend-harmonic11.jpg" alt="friend">
                 </a>
             </li>
         </ul>

@@ -539,7 +539,8 @@ Description: "HTML-template"
   position: relative;
 }
 .top-header-thumb img {
-  width: 100%;
+  max-width: 100%;
+  max-height: 100%;
   border-radius: 5px 5px 0 0;
   overflow: hidden;
 }
@@ -6713,6 +6714,13 @@ body.body--fixed {
   width: 770px;
 }
 .update-header-photo .modal-body {
+  padding: 0;
+}
+
+.update-avatar-photo {
+  width: 770px;
+}
+.update-avatar-photo .modal-body {
   padding: 0;
 }
 
