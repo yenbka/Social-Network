@@ -1,3 +1,4 @@
+
 @extends('layouts.master')
 
 @section('content')
@@ -19,39 +20,36 @@
 			<!-- Main Content -->
 
 			<main class="col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12">
-
 				<div class="ui-block">
 					@include('partials.forms.news-feed-form')
 				</div>
 
 				<div id="newsfeed-items-grid">
+				@foreach($posts as $post)
 
+					@if($post->has_medias===0)
 					<div class="ui-block">
-						@include('partials.posts.posts5-BP')
-					</div>
-
-					<div class="ui-block">
-
 						@include('partials.posts.posts6-BP')
-						@include('partials.comments.comment-list2')
-
-						<a href="#" class="more-comments">View more comments <span>+</span></a>
-
-						@include('partials.forms.comment-form')
-
+						
 					</div>
-
+					@elseif($post->media->type===1)
 					<div class="ui-block">
 						@include('partials.posts.posts7-BP')
 					</div>
-
+					@else
 					<div class="ui-block">
+						@include('partials.posts.posts5-BP')
+					</div>
+					@endif
+				@endforeach
+					
+					<!-- <div class="ui-block">
 						@include('partials.posts.posts8-BP')
 					</div>
 
 					<div class="ui-block">
 						@include('partials.posts.posts9-BP')
-					</div>
+					</div> -->
 
 				</div>
 
@@ -131,7 +129,7 @@
 	</div>
 
 
-	@include('partials.windows-popup.update-header-photo')
+	@include('partials.windows-popup.post-photo')
 
 	@include('partials.windows-popup.choose-from-my-photo')
 

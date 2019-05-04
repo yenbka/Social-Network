@@ -22,6 +22,7 @@
 
     <link rel="stylesheet" href="{{asset('css/app.css')}}">
     <link rel="stylesheet" href="{{asset('css/fonts.css')}}">
+     <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
     <div class="container">
@@ -62,6 +63,7 @@
     <script src="{{asset('js/jquery.gifplayer.js')}}"></script>
     <script src="{{asset('js/mediaelement-and-player.js')}}"></script>
     <script src="{{asset('js/mediaelement-playlist-plugin.min.js')}}"></script>
+    <script src="{{asset('js/uploadPreview.js')}}"></script>
 
     <script src="{{asset('js/base-init.js')}}"></script>
     <script defer src="{{asset('fonts/fontawesome-all.js')}}"></script>

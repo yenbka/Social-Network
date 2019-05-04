@@ -101,3 +101,19 @@ Route::post('/profile/{id}/update_header', [
 ]);
 
 // happy comment
+
+/*
+ * Route created by ngavuong 
+ */ 
+Route::get('/newsfeed', ['as'=>'newsfeed','uses'=>'PostController@getPost']);
+
+Route::post('/newsfeed',['as'=>'add-post','uses'=>'PostController@addPost']);
+
+Route::get('/delete-post/{pid}', ['as'=>'delete-post','uses'=>'PostController@deletePost']);
+
+Route::get('/edit-post/{pid}',['as'=>'get-edit-post','uses'=>'PostController@getEditPost']);
+
+Route::post('/edit-post/{pid}',['as'=>'edit-post','uses'=>'PostController@editPost']);
+
+
+//end
