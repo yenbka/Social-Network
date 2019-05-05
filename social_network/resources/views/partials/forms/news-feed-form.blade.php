@@ -33,17 +33,22 @@
     <!-- Tab panes -->
     <div class="tab-content">
         <div class="tab-pane active" id="home-1" role="tabpanel" aria-expanded="true">
-            <form>
-                <div class="author-thumb">
-                    <img src="{{asset('images/author-page.jpg')}}" alt="author">
+            <form action="{{route('add-post')}}" method="POST" enctype="multipart/form-data" id="post-form">
+                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                <div class="post__author author">
+                    <img src="/{{$profile->avatar_path}}" alt="author">
                 </div>
                 <div class="form-group with-icon label-floating is-empty">
                     <label class="control-label">Share what you are thinking here...</label>
-                    <textarea class="form-control" placeholder=""></textarea>
+                    <textarea class="form-control" name="text" placeholder=""></textarea>
+                </div>
+                <div class="thumbnail_container" >
+                    <img src="" id="thumbnail1" class="thumbnail">
+                    <a href="#" onclick="closeThumbnail('#imagefile','#thumbnail1')" class="close_thumbnail" >X</a>
                 </div>
                 <div class="add-options-message">
                     <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="ADD PHOTOS">
-                        <svg class="olymp-camera-icon" data-toggle="modal" data-target="#update-header-photo"><use xlink:href="svg-icons/sprites/icons.svg#olymp-camera-icon"></use></svg>
+                        <svg class="olymp-camera-icon" data-toggle="modal" data-target="#post-photo"><use xlink:href="svg-icons/sprites/icons.svg#olymp-camera-icon"></use></svg>
                     </a>
                     <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="TAG YOUR FRIENDS">
                         <svg class="olymp-computer-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
@@ -53,7 +58,7 @@
                         <svg class="olymp-small-pin-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-small-pin-icon"></use></svg>
                     </a>
 
-                    <button class="btn btn-primary btn-md-2">Post Status</button>
+                    <button type="submit" class="btn btn-primary btn-md-2">Post Status</button>
                     <button   class="btn btn-md-2 btn-border-think btn-transparent c-grey">Preview</button>
 
                 </div>
@@ -68,11 +73,11 @@
                 </div>
                 <div class="form-group with-icon label-floating is-empty">
                     <label class="control-label">Share what you are thinking here...</label>
-                    <textarea class="form-control" placeholder=""  ></textarea>
+                    <textarea class="form-control" name="text" placeholder=""  ></textarea>
                 </div>
                 <div class="add-options-message">
-                    <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="ADD PHOTOS">
-                        <svg class="olymp-camera-icon" data-toggle="modal" data-target="#update-header-photo"><use xlink:href="svg-icons/sprites/icons.svg#olymp-camera-icon"></use></svg>
+                    <a href="#post-photo" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="ADD PHOTOS" data-target="#post-photo">
+                        <svg class="olymp-camera-icon" data-toggle="modal" ><use xlink:href="svg-icons/sprites/icons.svg#olymp-camera-icon"></use></svg>
                     </a>
                     <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="TAG YOUR FRIENDS">
                         <svg class="olymp-computer-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>
@@ -97,11 +102,11 @@
                 </div>
                 <div class="form-group with-icon label-floating is-empty">
                     <label class="control-label">Share what you are thinking here...</label>
-                    <textarea class="form-control" placeholder=""  ></textarea>
+                    <textarea class="form-control" name="text" placeholder=""  ></textarea>
                 </div>
                 <div class="add-options-message">
                     <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="ADD PHOTOS">
-                        <svg class="olymp-camera-icon" data-toggle="modal" data-target="#update-header-photo"><use xlink:href="svg-icons/sprites/icons.svg#olymp-camera-icon"></use></svg>
+                        <svg class="olymp-camera-icon" data-toggle="modal" data-target="#post-photo"><use xlink:href="svg-icons/sprites/icons.svg#olymp-camera-icon"></use></svg>
                     </a>
                     <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="TAG YOUR FRIENDS">
                         <svg class="olymp-computer-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-computer-icon"></use></svg>

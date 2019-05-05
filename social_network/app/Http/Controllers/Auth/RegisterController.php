@@ -1,7 +1,5 @@
 <?php
-
 namespace App\Http\Controllers\Auth;
-
 use App\Hobbie;
 use App\Profile;
 use App\User;
@@ -11,7 +9,7 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
-
+use Auth;
 class RegisterController extends Controller
 {
     /*
@@ -24,16 +22,13 @@ class RegisterController extends Controller
     | provide this functionality without requiring any additional code.
     |
     */
-
     use RegistersUsers;
-
     /**
      * Where to redirect users after registration.
      *
      * @var string
      */
     protected $redirectTo = '/home';
-
     /**
      * Create a new controller instance.
      *
@@ -43,7 +38,6 @@ class RegisterController extends Controller
     {
         $this->middleware('guest');
     }
-
     /**
      * Get a validator for an incoming registration request.
      *
@@ -55,7 +49,7 @@ class RegisterController extends Controller
         $messages = [
             'firstname.required' => 'Trường bắt buộc',
             'lastname.required' => 'Trường bắt buộc',
-            'registerEmail.required' => 'Email là trường bắt buộc',            
+            'registerEmail.required' => 'Email là trường bắt buộc',
             'registerEmail.email' => 'Email không đúng định dạng',
             'registerPassword.required' => 'Mật khẩu là trường bắt buộc',
             'registerPassword.min' => 'Mật khẩu phải chứa ít nhất 6 ký tự',
@@ -67,7 +61,6 @@ class RegisterController extends Controller
             'registerPassword' => ['required', 'string', 'min:6'],
         ],$messages);
     }
-
     /**
      * Create a new user instance after a valid registration.
      *
@@ -85,7 +78,6 @@ class RegisterController extends Controller
             'hobbies_id' =>  $this->generateHobbiesID($data)
         ]);
     }
-
     protected function generateProfileID($data) {
         $gender = $data['gender']=="MA"?0:1;
         $profile = Profile::create([
@@ -100,7 +92,6 @@ class RegisterController extends Controller
         ]);
         return $profile->id;
     }
-
     protected function generateHobbiesID($data) {
         $hobbies = Hobbie::create([
             'hobbie'=>'',
@@ -110,15 +101,16 @@ class RegisterController extends Controller
         ]);
         return $hobbies->id;
     }
-
     public function register(Request $request){
         $validator =$this->validator($request->all());
-
         if($validator -> fails()){
             return  redirect()->back()->withErrors($validator)->withInput();
         }
         else{
             $user = $this->create($request->all());
+            if(Auth::attempt(['email'=>$request->input('registerEmail'),'password'=>$request->input('registerPassword')])){
+                return redirect()->route('home', ['id'=>Auth::id()]);
+            }
         }
     }
 }
