@@ -107,6 +107,10 @@ Route::post('/search', [
     'uses' => 'HomeController@search'
 ]);
 
+Route::post('/friend/send_request', [
+    'uses' => 'FriendController@send_request'
+]);
+
 // happy comment
 
 /*
