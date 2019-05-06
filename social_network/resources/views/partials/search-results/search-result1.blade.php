@@ -1,5 +1,5 @@
 <!-- Search Result -->
-
+<input id="signup-token" name="_token" type="hidden" value="{{csrf_token()}}">
 <article class="hentry post searches-item">
 
 	<div class="post__author author vcard inline-items">
@@ -114,18 +114,14 @@
 <script>
 function send_request(id){
 
-	var data = new FormData();
-	data.append('request_id', id);
+    var BASE_URL = "{{ url('/') }}";
+	// var data = new FormData();
+	// data.append('request_id', id);
 
 	$.ajax({
 		url: BASE_URL + '/friend/send_request',
 		type: "POST",
-		timeout: 5000,
-		data: data,
-		contentType: false,
-		cache: false,
-		processData: false,
-		headers: {'X-CSRF-TOKEN': CSRF},
+		data: {request_id:id, _token: $('#signup-token').val()},
 		success: function (response) {
 			if (response.code == 200) {
 				$("#add").addClass("d-none");

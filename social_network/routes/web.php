@@ -84,7 +84,7 @@ Route::post('/profile/{id}/hobbies_update_info', [
 
 Route::get('/profile/{id}/friend_requests', [
     'as' => 'friend_requests',
-    'uses'=> 'FriendRequestController@index'
+    'uses'=> 'FriendController@get_request'
 ]);
 
 Route::get('logout', [
@@ -105,6 +105,10 @@ Route::post('/profile/{id}/update_header', [
 Route::post('/search', [
     'as' => 'search',
     'uses' => 'HomeController@search'
+]);
+
+Route::post('/friend/send_request', [
+    'uses' => 'FriendController@send_request'
 ]);
 
 // happy comment
