@@ -9,9 +9,11 @@
 	</div>
 
 	<div class="header-content-wrapper">
-		<form class="search-bar w-search notification-list friend-requests">
+		<form method="POST" action="{{action('HomeController@search')}}" class="search-bar w-search notification-list friend-requests">
+			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<div class="form-group with-button">
-				<input class="form-control js-user-search" placeholder="Search here people or pages..." type="text">
+				<!-- <input class="form-control js-user-search" placeholder="Search here people or pages..." type="text"> -->
+				<input name="search" class="form-control" placeholder="Search here people or pages..." type="text">
 				<button>
 					<svg class="olymp-magnifying-glass-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon')}}"></use></svg>
 				</button>

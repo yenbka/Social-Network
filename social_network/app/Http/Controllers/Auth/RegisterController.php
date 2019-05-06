@@ -86,7 +86,9 @@ class RegisterController extends Controller
             'address'=>null,
             'gender'=>$gender,
             'phone'=>null,
-            'status'=>0
+            'status'=>0,
+            'avatar_path'=>'img/author-main1.jpg',
+            'header_path'=>'img/top-header3.png'
         ]);
         return $profile->id;
     }
