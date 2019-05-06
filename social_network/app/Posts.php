@@ -21,7 +21,7 @@ class Posts extends Model
         return $this->hasOne('App\Medias', 'post_id', 'id');
     }
 
-    public function like() {
+    public function likes() {
         return $this->hasMany('App\Likes', 'post_id', 'id');
     }
 }

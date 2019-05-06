@@ -5,7 +5,7 @@
 
 	<article class="hentry post has-post-thumbnail w-50">
 	    <div class="post__author author vcard inline-items">
-	        <img src="/img/avatar5-sm.jpg" alt="author">
+	        <img src="/{{$post->user->profile->avatar_path}}" alt="author">
 
 	        <div class="author-date">
 	            <a class="h6 post__author-name fn" href="#">{{$post->user->last_name}} {{$post->user->first_name}}</a>
