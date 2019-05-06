@@ -23,7 +23,7 @@ class User extends Authenticatable
     }
 
     public function profile(){
-    	return $this->hasOne('App\profiles','profile_id','id');
+    	return $this->hasOne('App\profile','id','profile_id');
     }
 
     public function hobbies(){
@@ -32,5 +32,9 @@ class User extends Authenticatable
 
     public function posts(){
     	return $this->hasMany('App\Posts','user_id','id');
+    }
+
+    public function likes(){
+        return $this->hasMany('App\likes','user_id','id');
     }
 }
