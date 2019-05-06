@@ -7,6 +7,7 @@ use App\User;
 use App\Friend;
 use Auth;
 use Illuminate\Http\Request;
+use Response;
 
 class FriendController extends Controller
 {
@@ -32,5 +33,23 @@ class FriendController extends Controller
         $profile = Profile::where('id', $user->profile_id)->first();
         $friends = Friend::where('user_id_1', $id)->orWhere('user_id_2', $id)->get();
         return view('friend', ['profile'=>$profile, 'user'=>$user, 'friends'=>$friends]);
+    }
+
+    public function send_request(Request $request){
+        $response = array();
+        $response['code'] = 400;
+
+        $user_id_2 = $request->input('request_id');
+
+        $relation = new Friend();
+        $relation->user_id_1 = Auth::id();
+        $relation->user_id_2 = $user_id_2;
+        $relation->allow = 0;
+
+        if ($relation->save()) {
+            $response['code'] = 200;
+        }
+
+    return Response::json($response);
     }
 }
