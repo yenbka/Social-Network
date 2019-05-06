@@ -7,6 +7,8 @@ use App\Profile;
 use App\User;
 use Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use DB;
 
 class HomeController extends Controller
 {
@@ -27,11 +29,13 @@ class HomeController extends Controller
         return false;
     }
 
-    public function index($id) {
-        if (!$this->secure($id)) return redirect('/404');
-        $user = User::where('id', $id)->first();
-        $profile = Profile::where('id', $user->profile_id)->first();
-        $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
-        return view('newsfeed', ['profile'=>$profile, 'user'=>$user, 'hobbies'=>$hobbies]);
+    public function index() {
+        // if (!$this->secure($id)) return redirect('/404');
+        $listUser = User::with("profile")->get();
+        $user = User::with("profile")->whereId(Auth::user()->id)->first();
+        $profile = Profile::where('id', Auth::user()->id)->first();
+        // dd($profile->toArray(), $user->profile->toArray());
+        $hobbies = Hobbie::where('id', Auth::user()->id)->first();
+        return view('newsfeed', compact('profile','user','hobbies','listUser'));
     }
 }
