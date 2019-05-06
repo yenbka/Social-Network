@@ -11,15 +11,16 @@
 		</div>
 
 		<span class="notification-icon">
-			<a href="#" class="accept-request">
+			<a href="#" class="accept-request" onclick="send_request({{$user_result[$i]->id}})">
 				<span class="icon-add without-text">
 					<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 				</span>
+				Add Friend
 			</a>
 
-			<a href="#" class="accept-request chat-message">
+			<!-- <a href="#" class="accept-request chat-message">
 				<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
-			</a>
+			</a> -->
 		</span>
 
 		<!-- <div class="more">
