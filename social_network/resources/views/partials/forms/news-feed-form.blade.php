@@ -12,14 +12,14 @@
                 <span>Status</span>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link inline-items" data-toggle="tab" href="#profile-1" role="tab" aria-expanded="false">
+{{--        <li class="nav-item">--}}
+{{--            <a class="nav-link inline-items" data-toggle="tab" href="#profile-1" role="tab" aria-expanded="false">--}}
 
-                <svg class="olymp-multimedia-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-multimedia-icon')}}"></use></svg>
+{{--                <svg class="olymp-multimedia-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-multimedia-icon')}}"></use></svg>--}}
 
-                <span>Multimedia</span>
-            </a>
-        </li>
+{{--                <span>Multimedia</span>--}}
+{{--            </a>--}}
+{{--        </li>--}}
     </ul>
 
     <!-- Tab panes -->
@@ -45,47 +45,41 @@
                     <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="TAG YOUR FRIENDS">
                         <svg class="olymp-computer-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-computer-icon')}}"></use></svg>
                     </a>
-
-                    <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="ADD LOCATION">
-                        <svg class="olymp-small-pin-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-small-pin-icon')}}"></use></svg>
-                    </a>
-
                     <button type="submit" class="btn btn-primary btn-md-2">Post Status</button>
-                    <button   class="btn btn-md-2 btn-border-think btn-transparent c-grey">Preview</button>
-
+{{--                    <button   class="btn btn-md-2 btn-border-think btn-transparent c-grey">Preview</button>--}}
                 </div>
 
             </form>
         </div>
 
-        <div class="tab-pane" id="profile-1" role="tabpanel" aria-expanded="true">
-            <form>
-                <div class="author-thumb">
-                    <img src="{{asset($profile->avatar_path)}}" alt="author" height="36px" width="36px">
-                </div>
-                <div class="form-group with-icon label-floating is-empty">
-                    <label class="control-label">Share what you are thinking here...</label>
-                    <textarea class="form-control" name="text" placeholder=""  ></textarea>
-                </div>
-                <div class="add-options-message">
-                    <a href="#post-photo" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="ADD PHOTOS" data-target="#post-photo">
-                        <svg class="olymp-camera-icon" data-toggle="modal" ><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-camera-icon')}}"></use></svg>
-                    </a>
-                    <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="TAG YOUR FRIENDS">
-                        <svg class="olymp-computer-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-computer-icon')}}"></use></svg>
-                    </a>
+{{--        <div class="tab-pane" id="profile-1" role="tabpanel" aria-expanded="true">--}}
+{{--            <form>--}}
+{{--                <div class="author-thumb">--}}
+{{--                    <img src="{{asset($profile->avatar_path)}}" alt="author" height="36px" width="36px">--}}
+{{--                </div>--}}
+{{--                <div class="form-group with-icon label-floating is-empty">--}}
+{{--                    <label class="control-label">Share what you are thinking here...</label>--}}
+{{--                    <textarea class="form-control" name="text" placeholder=""  ></textarea>--}}
+{{--                </div>--}}
+{{--                <div class="add-options-message">--}}
+{{--                    <a href="#post-photo" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="ADD PHOTOS" data-target="#post-photo">--}}
+{{--                        <svg class="olymp-camera-icon" data-toggle="modal" ><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-camera-icon')}}"></use></svg>--}}
+{{--                    </a>--}}
+{{--                    <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="TAG YOUR FRIENDS">--}}
+{{--                        <svg class="olymp-computer-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-computer-icon')}}"></use></svg>--}}
+{{--                    </a>--}}
 
-                    <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="ADD LOCATION">
-                        <svg class="olymp-small-pin-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-small-pin-icon')}}"></use></svg>
-                    </a>
+{{--                    <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="ADD LOCATION">--}}
+{{--                        <svg class="olymp-small-pin-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-small-pin-icon')}}"></use></svg>--}}
+{{--                    </a>--}}
 
-                    <button class="btn btn-primary btn-md-2">Post Status</button>
-                    <button   class="btn btn-md-2 btn-border-think btn-transparent c-grey">Preview</button>
+{{--                    <button class="btn btn-primary btn-md-2">Post Status</button>--}}
+{{--                    <button   class="btn btn-md-2 btn-border-think btn-transparent c-grey">Preview</button>--}}
 
-                </div>
+{{--                </div>--}}
 
-            </form>
-        </div>
+{{--            </form>--}}
+{{--        </div>--}}
     </div>
 </div>
 
