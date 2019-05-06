@@ -36,6 +36,7 @@ class HomeController extends Controller
         $profile = Profile::where('id', Auth::user()->id)->first();
         // dd($profile->toArray(), $user->profile->toArray());
         $hobbies = Hobbie::where('id', Auth::user()->id)->first();
+        // dd($listUser->toArray());
         return view('newsfeed', compact('profile','user','hobbies','listUser'));
     }
 }

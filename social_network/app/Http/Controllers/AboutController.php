@@ -28,9 +28,10 @@ class AboutController extends Controller
     }
 
     public function index($id) {
+        $listUser = User::with("profile")->get();
         $user = User::where('id', $id)->first();
         $profile = Profile::where('id', $user->profile_id)->first();
         $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
-        return view('about', ['profile'=>$profile, 'user' => $user, 'hobbies'=>$hobbies]);
+        return view('about', ['profile'=>$profile, 'user' => $user, 'hobbies'=>$hobbies,'listUser'=>$listUser]);
     }
 }

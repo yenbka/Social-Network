@@ -352,7 +352,11 @@
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
 					<a href="{{route('profile', ['id' => Auth::id()])}}">
-						<img alt="author" src="{{asset($profile->avatar_path)}}" width="36" height="36" class="avatar">
+						@if (($profile->avatar_path) != null)
+							<img alt="author" src="{{asset($profile->avatar_path)}}" width="36" height="36" class="avatar">
+						@else
+							<img alt="author" src="{{asset('images/avatar67-sm.jpg')}}" width="36" height="36" class="avatar">
+						@endif
 					</a>
 					<span class="icon-status online"></span>
 					<div class="more-dropdown more-with-triangle">
