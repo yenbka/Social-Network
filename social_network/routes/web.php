@@ -30,10 +30,10 @@ Route::get('/friend/{id}', [
     'uses' => 'FriendController@index'
 ]);
 
-Route::get('/chat', function (){
-    return view('chat');
-});
-Route::post('/chat',['hello']);
+Route::post('/getOldMessage',[
+    'as'=>'get-old-message',
+    'uses' => 'ChatController@getOldMessage'
+]);
 Route::get('/photo/{id}', [
     'as' => 'photo',
     'uses' => 'PhotoController@index'

@@ -240,14 +240,45 @@ var CRUMINA = {};
 	});
 
 	$(".js-chat-open").on('click', function () {
-		// $.ajax({
-		// 	url: "/Social-Network/social_network/public/chat",
-		// 	method: 'get',
-		// 	success: function (data) {
-		// 		console.log(data);
-		// 	},
-		// });
-		$('.popup-chat-responsive').toggleClass('open-chat');
+		let _token = document.querySelector('meta[name=csrfToken]').getAttribute('content');
+		let toUserId = $(this).attr('user-id');
+		$.ajax({
+			url: "/Social-Network/social_network/public/getOldMessage",
+			type: 'post',
+			data: { toUserId: toUserId, _token:_token },
+			dataType: "json",
+			success: function (data) {
+				let temp = data.friendMessages.concat(data.yourMessages);
+				let messages = temp.sort((a, b) => (a.send_date > b.send_date) ? 1 : ((b.send_date > a.send_date) ? -1 : 0));
+				$('.popup-chat-responsive .chat-message-field').html('');
+				$.each(messages, function (i, message) {
+					let element = '';
+					if (message.from == toUserId) {
+						element += '<li>';
+						// element += '	<div class="author-thumb">';
+						// element += '		<img src="{{asset(\'images/avatar14-sm.jpg\')}}" alt="author" class="mCS_img_loaded">';
+						// element += '	</div>';
+						element += '	<div class="notification-event">';
+						element += '		<span class="chat-message-item">'+message.content+'</span>';
+						// element += '		<span class="notification-date"><time class="entry-date updated" datetime="'+message.read_date+'">'+message.read_date+'</time></span>';
+						element += '	</div>';
+						element += '</li>';
+					} else {
+						element += '<li>';
+						// element += '	<div class="author-thumb">';
+						// element += '		<img src="{{asset(\'images/avatar14-sm.jpg\')}}" alt="author" class="mCS_img_loaded">';
+						// element += '	</div>';
+						element += '	<div class="notification-event-ur">';
+						element += '		<span class="chat-message-item urmess">' + message.content + '</span>';
+						// element += '		<span class="notification-date"><time class="entry-date updated" datetime="'+message.read_date+'">'+message.read_date+'</time></span>';
+						element += '	</div>';
+						element += '</li>';
+					}
+					$('.popup-chat-responsive .chat-message-field').append(element);
+				});
+				$('.popup-chat-responsive').toggleClass('open-chat');
+			},
+		});
 		return false
 	});
 	$(".js-chat-close").on('click', function () {
