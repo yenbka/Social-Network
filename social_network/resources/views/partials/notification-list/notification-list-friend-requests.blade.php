@@ -1,5 +1,6 @@
 
 <!-- Notification List Frien Requests -->
+<input id="friend-token" name="_token" type="hidden" value="{{csrf_token()}}">
 
 <ul class="notification-list friend-requests">
     @if (count($friends) > 0)
@@ -128,21 +129,24 @@ function process_request(is_accept, id){
 
     var BASE_URL = "{{ url('/') }}";
 	$.ajax({
-		url: BASE_URL + '/friend/send_request',
+		url: BASE_URL + '/friend/process_request',
 		type: "POST",
-		data: {is_accept:is_accept, request_id:id, _token: $('#signup-token').val()},
+		data: {is_accept: is_accept, request_id: id, _token: $('#friend-token').val()},
 		success: function (response) {
+            $("#accept").addClass("d-none");
+			$("#deny").addClass("d-none");
 			if (response.code == 200) {
-				$("#accept").addClass("d-none");
-				$("#deny").removeClass("d-none");
+                if (is_accept == 1) {
+                    $("#friend").removeClass("d-none");
+                }
 			} else {
-				$("#add").addClass("d-none");
-				$("#error").removeClass("d-none");
+                $("#error").removeClass("d-none");
 			}
 		},
 		error: function () {
-			$("#add").addClass("d-none");
-			$("#error").removeClass("d-none");
+			$("#accept").addClass("d-none");
+			$("#deny").addClass("d-none");
+            $("#error").removeClass("d-none");
 		}
 	});
 }
