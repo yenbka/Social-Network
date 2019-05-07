@@ -28,6 +28,7 @@
                                     </a>
 
                                     <button id="friend" type="button" class="btn btn-success d-none"><i class="fa fa-check" aria-hidden="true"></i>Friend</button>
+                                    <button id="denied" type="button" class="btn btn-success d-none">Denied</button>
 			                        <button id="error" type="button" class="btn btn-warning d-none"><i class="fa fa-time" aria-hidden="true"></i>Something went wrong!</button>
                                 </span>
 
@@ -138,6 +139,8 @@ function process_request(is_accept, id){
 			if (response.code == 200) {
                 if (is_accept == 1) {
                     $("#friend").removeClass("d-none");
+                } else {
+                    $("#denied").removeClass("d-none");
                 }
 			} else {
                 $("#error").removeClass("d-none");
