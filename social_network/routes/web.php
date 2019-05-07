@@ -109,6 +109,10 @@ Route::post('/friend/send_request', [
     'uses' => 'FriendController@send_request'
 ]);
 
+Route::post('/friend/process_request', [
+    'uses' => 'FriendController@process_request'
+]);
+
 // happy comment
 
 /*
