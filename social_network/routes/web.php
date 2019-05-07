@@ -82,7 +82,7 @@ Route::post('/profile/{id}/hobbies_update_info', [
 
 Route::get('/profile/{id}/friend_requests', [
     'as' => 'friend_requests',
-    'uses'=> 'FriendRequestController@index'
+    'uses'=> 'FriendController@get_request'
 ]);
 
 Route::get('logout', [
