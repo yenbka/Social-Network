@@ -52,4 +52,10 @@ class FriendController extends Controller
 
     return Response::json($response);
     }
+
+    public function get_request($id){
+        $user = Auth::user();
+        $profile = Profile::where('id', $user->id)->first();
+        return view('friend_requests', ['user' => $user, 'profile' => $profile]);
+    }
 }
