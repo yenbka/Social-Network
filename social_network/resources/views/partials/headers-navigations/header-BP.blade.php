@@ -141,7 +141,7 @@
 						</ul>
 					</div>
 
-					<a href="#" class="view-all bg-blue">Check all your Events</a>
+					<a href="{{route('friend_requests', ['id' => Auth::id()])}}" class="view-all bg-blue">View All Requests</a>
 				</div>
 			</div>
 

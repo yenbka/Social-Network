@@ -57,6 +57,37 @@ class FriendController extends Controller
     public function get_request($id){
         $user = Auth::user();
         $profile = Profile::where('id', $user->id)->first();
-        return view('friend_requests', ['user' => $user, 'profile' => $profile]);
+        $id_friends = Friend::where('user_id_1', $user->id)->where('allow', 0)->get();
+        $friends = array();
+        $profile_friends = array();
+        foreach($id_friends as $id_friend) {
+            $friends[] = User::find($id_friend->user_id_2);
+            $profile_friends[] = Profile::find($id_friend->user_id_2);
+        }
+        return view('friend_requests', ['user' => $user, 'profile' => $profile, 'friends' => $friends, 'profile_friends' => $profile_friends]);
+    }
+
+    public function process_request(Request $request){
+        $response = array();
+        $response['code'] = 400;
+
+        $is_accept = $request->input('is_accept');
+        $request_id = $request->input('request_id');
+
+        $request_friend = Friend::where('user_id_1', Auth::id())->where('user_id_2', $request_id)->first();
+
+        if ($request_friend){
+            if ($is_accept == 0){
+                if ($request_friend->delete()) {
+                    $response['code'] = 200;
+                }
+            } else {
+                $request_friend->allow = 1;
+                if ($request_friend->save()) {
+                    $response['code'] = 200;
+                }
+            }
+        }
+        return Response::json($response);
     }
 }
