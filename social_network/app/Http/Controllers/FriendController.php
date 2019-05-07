@@ -56,6 +56,13 @@ class FriendController extends Controller
     public function get_request($id){
         $user = Auth::user();
         $profile = Profile::where('id', $user->id)->first();
-        return view('friend_requests', ['user' => $user, 'profile' => $profile]);
+        $id_friends = Friend::where('user_id_1', $user->id)->where('allow', 0)->get();
+        $friends = array();
+        $profile_friends = array();
+        foreach($id_friends as $id_friend) {
+            $friends[] = User::find($id_friend->user_id_2);
+            $profile_friends[] = Profile::find($id_friend->user_id_2);
+        }
+        return view('friend_requests', ['user' => $user, 'profile' => $profile, 'friends' => $friends, 'profile_friends' => $profile_friends]);
     }
 }
