@@ -12,20 +12,22 @@
                     <span class="chat-message-item">{{$profile_friends[$i]->about_me}}</span>
                 </div>
                 <span class="notification-icon">
-                                    <a href="#" class="accept-request">
+                                    <a id="accept" href="#" class="accept-request" onclick="process_request(1, {{$friends[$i]->id}})">
                                         <span class="icon-add">
                                             <svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
                                         </span>
                                         Accept Friend Request
                                     </a>
 
-                                    <a href="#" class="accept-request request-del">
+                                    <a id="deny" href="#" class="accept-request request-del" onclick="process_request(0, {{$friends[$i]->id}})">
                                         <span class="icon-minus">
                                             <svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
                                         </span>
                                         Deny
                                     </a>
 
+                                    <button id="friend" type="button" class="btn btn-success d-none"><i class="fa fa-check" aria-hidden="true"></i>Friend</button>
+			                        <button id="error" type="button" class="btn btn-warning d-none"><i class="fa fa-time" aria-hidden="true"></i>Something went wrong!</button>
                                 </span>
 
                 <div class="more">
@@ -35,10 +37,10 @@
             </li>
         @endfor
     @else
-    <!-- <div class="alert alert-success">
+    <div class="alert alert-success">
         <i class="fa" aria-hidden="true"></i> 
         <strong>There is not any request!</strong>
-    </div> -->
+    </div>
     @endif
 
     <!-- <li>
@@ -121,3 +123,27 @@
 </ul>
 
 <!-- ... end Notification List Frien Requests -->
+<script>
+function process_request(is_accept, id){
+
+    var BASE_URL = "{{ url('/') }}";
+	$.ajax({
+		url: BASE_URL + '/friend/send_request',
+		type: "POST",
+		data: {is_accept:is_accept, request_id:id, _token: $('#signup-token').val()},
+		success: function (response) {
+			if (response.code == 200) {
+				$("#accept").addClass("d-none");
+				$("#deny").removeClass("d-none");
+			} else {
+				$("#add").addClass("d-none");
+				$("#error").removeClass("d-none");
+			}
+		},
+		error: function () {
+			$("#add").addClass("d-none");
+			$("#error").removeClass("d-none");
+		}
+	});
+}
+</script>
