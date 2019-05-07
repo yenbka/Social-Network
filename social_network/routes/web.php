@@ -33,7 +33,7 @@ Route::get('/friend/{id}', [
 Route::get('/chat', function (){
     return view('chat');
 });
-
+Route::post('/chat',['hello']);
 Route::get('/photo/{id}', [
     'as' => 'photo',
     'uses' => 'PhotoController@index'
@@ -114,8 +114,8 @@ Route::post('/friend/send_request', [
 // happy comment
 
 /*
- * Route created by ngavuong 
- */ 
+ * Route created by ngavuong
+ */
 Route::get('/newsfeed', ['as'=>'newsfeed','uses'=>'PostController@getPost']);
 
 Route::post('/newsfeed',['as'=>'add-post','uses'=>'PostController@addPost']);

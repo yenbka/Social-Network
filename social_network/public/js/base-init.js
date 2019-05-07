@@ -240,10 +240,18 @@ var CRUMINA = {};
 	});
 
 	$(".js-chat-open").on('click', function () {
+		// $.ajax({
+		// 	url: "/Social-Network/social_network/public/chat",
+		// 	method: 'get',
+		// 	success: function (data) {
+		// 		console.log(data);
+		// 	},
+		// });
 		$('.popup-chat-responsive').toggleClass('open-chat');
 		return false
 	});
-    $(".js-chat-close").on('click', function () {
+	$(".js-chat-close").on('click', function () {
+		console.log("close: " + $(this).attr("user-id"))
         $('.popup-chat-responsive').removeClass('open-chat');
         return false
     });
