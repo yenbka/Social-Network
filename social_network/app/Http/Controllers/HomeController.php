@@ -34,7 +34,7 @@ class HomeController extends Controller
 
     public function index() {
         // if (!$this->secure($id)) return redirect('/404');
-        $listUser = User::with("profile")->get();
+        $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
         $user = User::with("profile")->whereId(Auth::user()->id)->first();
         $profile = Profile::where('id', Auth::user()->id)->first();
         // dd($profile->toArray(), $user->profile->toArray());

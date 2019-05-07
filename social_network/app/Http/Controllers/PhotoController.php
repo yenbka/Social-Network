@@ -29,7 +29,7 @@ class PhotoController extends Controller
     }
     public function index($id) {
         if (!$this->secure($id)) return redirect('/404');
-        $listUser = User::with("profile")->get();
+        $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
         $user = User::where('id', $id)->first();
         $profile = Profile::where('id', $user->profile_id)->first();
         $photos = Medias::where('user_id', $id)->Where('type', 0)->get();

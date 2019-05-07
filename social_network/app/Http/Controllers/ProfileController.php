@@ -31,7 +31,7 @@ class ProfileController extends Controller
 
     public function index($id) {
         if (!$this->secure($id)) return redirect('/404');
-        $listUser = User::with("profile")->get();
+        $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
         $user = User::where('id', $id)->first();
         $profile = Profile::where('id', $user->profile_id)->first();
         $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
