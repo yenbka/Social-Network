@@ -2,37 +2,46 @@
 <!-- Notification List Frien Requests -->
 
 <ul class="notification-list friend-requests">
-    <li>
-        <div class="author-thumb">
-            <img src="{{asset('images/avatar15-sm.jpg')}}" alt="author">
-        </div>
-        <div class="notification-event">
-            <a href="#" class="h6 notification-friend">Tamara Romanoff</a>
-            <span class="chat-message-item">Mutual Friend: Sarah Hetfield</span>
-        </div>
-        <span class="notification-icon">
-							<a href="#" class="accept-request">
-								<span class="icon-add">
-									<svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
-								</span>
-								Accept Friend Request
-							</a>
+    @if (count($friends) > 0)
+        @for ($i = 0; $i < count($friends); $i++)    
+            <li>
+                <div class="author-thumb">
+                <img src="{{asset($profile_friends[$i]->avatar_path)}}" alt="author" width='42' height='42'>                </div>
+                <div class="notification-event">
+                    <a href="#" class="h6 notification-friend">{{$friends[$i]->first_name.' '.$friends[$i]->last_name}}</a>
+                    <span class="chat-message-item">{{$profile_friends[$i]->about_me}}</span>
+                </div>
+                <span class="notification-icon">
+                                    <a href="#" class="accept-request">
+                                        <span class="icon-add">
+                                            <svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
+                                        </span>
+                                        Accept Friend Request
+                                    </a>
 
-							<a href="#" class="accept-request request-del">
-								<span class="icon-minus">
-									<svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
-								</span>
-							</a>
+                                    <a href="#" class="accept-request request-del">
+                                        <span class="icon-minus">
+                                            <svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
+                                        </span>
+                                        Deny
+                                    </a>
 
-						</span>
+                                </span>
 
-        <div class="more">
-            <svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg>
-            <svg class="olymp-little-delete"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-little-delete')}}"></use></svg>
-        </div>
-    </li>
+                <div class="more">
+                    <svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg>
+                    <svg class="olymp-little-delete"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-little-delete')}}"></use></svg>
+                </div>
+            </li>
+        @endfor
+    @else
+    <!-- <div class="alert alert-success">
+        <i class="fa" aria-hidden="true"></i> 
+        <strong>There is not any request!</strong>
+    </div> -->
+    @endif
 
-    <li>
+    <!-- <li>
         <div class="author-thumb">
             <img src="{{asset('images/avatar16-sm.jpg')}}" alt="author">
         </div>
@@ -107,7 +116,7 @@
             <svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg>
             <svg class="olymp-little-delete"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-little-delete')}}"></use></svg>
         </div>
-    </li>
+    </li> -->
 
 </ul>
 
