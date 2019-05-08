@@ -37,7 +37,6 @@ class HomeController extends Controller
         // if (!$this->secure($id)) return redirect('/404');
         $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
         $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date','0000-00-00')->get();
-        // dd($listMess->toArray());
         $user = User::with("profile")->whereId(Auth::user()->id)->first();
         $profile = Profile::where('id', Auth::user()->id)->first();
         // dd($profile->toArray(), $user->profile->toArray());
