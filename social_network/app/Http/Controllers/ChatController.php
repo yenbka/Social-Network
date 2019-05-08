@@ -11,6 +11,8 @@ use Illuminate\Http\Request;
 class ChatController extends Controller
 {
     public function getOldMessage(Request $request){
+        $updateFriendMessages = messages::where('from', Auth::user()->id)->where('to',$request->toUserId)->update(['read_date' => Carbon::parse($request->date)]);
+        $updateYourMessages = messages::where('from', $request->toUserId)->where('to',Auth::user()->id)->update(['read_date' => Carbon::parse($request->date)]);
         $yourMessages = messages::where('from', Auth::user()->id)->where('to',$request->toUserId)->get();
         $friendMessages = messages::where('from',$request->toUserId)->where('to',Auth::user()->id)->get();
         $yourProfile = Profile::whereId(Auth::user()->id)->first();
@@ -29,7 +31,7 @@ class ChatController extends Controller
             'to' => $data['toUserId'],
             'content' => $data['messages'],
             'send_date' => Carbon::parse($data['date']),
-            'read_date' => Carbon::parse('0000-00-00')
+            // 'read_date' => '0000-00-00'
         ]);
     }
 

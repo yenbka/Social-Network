@@ -242,14 +242,16 @@ var CRUMINA = {};
 	$(".js-chat-open").on('click', function () {
 		let _token = document.querySelector('meta[name=csrfToken]').getAttribute('content');
 		let toUserId = $(this).attr('user-id');
+		let date = new Date();
+		date = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 		$.ajax({
 			url: "/Social-Network/social_network/public/getOldMessage",
 			type: 'post',
-			data: { toUserId: toUserId, _token:_token },
+			data: { toUserId: toUserId, date: date, _token:_token },
 			dataType: "json",
 			success: function (data) {
 				let temp = data.friendMessages.concat(data.yourMessages);
-				let messages = temp.sort((a, b) => (a.send_date > b.send_date) ? 1 : ((b.send_date > a.send_date) ? -1 : 0));
+				let messages = temp.sort((a, b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0));
 				$('.popup-chat-responsive .chat-message-field').html('');
 				$.each(messages, function (i, message) {
 					let element = '';
