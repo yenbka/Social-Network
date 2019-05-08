@@ -36,7 +36,7 @@
             <form action="{{route('add-post')}}" method="POST" enctype="multipart/form-data" id="post-form">
                 <input type="hidden" name="_token" value="{{csrf_token()}}">
                 <div class="post__author author">
-                    <img src="/{{$profile->avatar_path}}" alt="author">
+                    <img src="{{asset($profile->avatar_path)}}" alt="author">
                 </div>
                 <div class="form-group with-icon label-floating is-empty">
                     <label class="control-label">Share what you are thinking here...</label>

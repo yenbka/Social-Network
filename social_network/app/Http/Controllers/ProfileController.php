@@ -6,6 +6,7 @@ use App\Hobbie;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use App\messages;
 use App\Profile;
 use Illuminate\Support\Facades\Validator;
 
@@ -31,12 +32,13 @@ class ProfileController extends Controller
 
     public function index($id) {
         if (!$this->secure($id)) return redirect('/404');
-        $listUser = User::with("profile")->get();
+        $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
+        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date','0000-00-00')->get();
         $user = User::where('id', $id)->first();
         $profile = Profile::where('id', $user->profile_id)->first();
         $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
 
-        return view('profile', ['profile'=>$profile, 'user'=>$user,  'hobbies'=>$hobbies, 'listUser'=>$listUser]);
+        return view('profile', ['profile'=>$profile, 'user'=>$user,  'hobbies'=>$hobbies, 'listUser'=>$listUser,'listMess'=>$listMess]);
     }
 
     public function get_profile_update_info($id){

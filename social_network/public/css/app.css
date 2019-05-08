@@ -6550,17 +6550,15 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
 .popup-chat .chat-message-field li:last-child {
   margin-bottom: 40px;
 }
-.popup-chat .chat-message-field li:nth-child(2n) .chat-message-item {
+.popup-chat .urmess {
+  float: right;
   background-color: #7c5ac2;
   color: #fff;
 }
 .popup-chat .chat-message-field li:nth-child(2n) .author-thumb {
   float: right;
 }
-.popup-chat .chat-message-field li:nth-child(2n) .chat-message-item {
-  float: right;
-}
-.popup-chat .chat-message-field li:nth-child(2n) .notification-event {
+.popup-chat .chat-message-field .notification-event-ur {
   float: right;
   padding-left: 0;
   padding-right: 10px;

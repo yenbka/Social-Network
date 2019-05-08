@@ -30,10 +30,14 @@ Route::get('/friend/{id}', [
     'uses' => 'FriendController@index'
 ]);
 
-Route::get('/chat', function (){
-    return view('chat');
-});
-
+Route::post('/getOldMessage',[
+    'as'=>'get-old-message',
+    'uses' => 'ChatController@getOldMessage'
+]);
+Route::post('/sendMessage',[
+    'as'=>'get-old-message',
+    'uses' => 'ChatController@sendMessage'
+]);
 Route::get('/photo/{id}', [
     'as' => 'photo',
     'uses' => 'PhotoController@index'
@@ -84,7 +88,7 @@ Route::post('/profile/{id}/hobbies_update_info', [
 
 Route::get('/profile/{id}/friend_requests', [
     'as' => 'friend_requests',
-    'uses'=> 'FriendRequestController@index'
+    'uses'=> 'FriendController@get_request'
 ]);
 
 Route::get('logout', [
@@ -111,11 +115,15 @@ Route::post('/friend/send_request', [
     'uses' => 'FriendController@send_request'
 ]);
 
+Route::post('/friend/process_request', [
+    'uses' => 'FriendController@process_request'
+]);
+
 // happy comment
 
 /*
- * Route created by ngavuong 
- */ 
+ * Route created by ngavuong
+ */
 Route::get('/newsfeed', ['as'=>'newsfeed','uses'=>'PostController@getPost']);
 
 Route::post('/newsfeed',['as'=>'add-post','uses'=>'PostController@addPost']);

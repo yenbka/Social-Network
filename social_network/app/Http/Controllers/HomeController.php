@@ -6,6 +6,7 @@ use App\Hobbie;
 use App\Profile;
 use App\User;
 use Auth;
+use App\messages;
 use App\Posts;
 use App\Medias;
 use Carbon\Carbon;
@@ -34,13 +35,15 @@ class HomeController extends Controller
 
     public function index() {
         // if (!$this->secure($id)) return redirect('/404');
-        $listUser = User::with("profile")->get();
+        $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
+        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date','0000-00-00')->get();
+        // dd($listMess->toArray());
         $user = User::with("profile")->whereId(Auth::user()->id)->first();
         $profile = Profile::where('id', Auth::user()->id)->first();
         // dd($profile->toArray(), $user->profile->toArray());
         $hobbies = Hobbie::where('id', Auth::user()->id)->first();
         $posts = Posts::orderBy('id','desc')->get();
         // dd($posts);
-        return view('newsfeed', compact('profile','user','hobbies','listUser','posts'));
+        return view('newsfeed', compact('profile','user','hobbies','listUser','posts','listMess'));
     }
 }
