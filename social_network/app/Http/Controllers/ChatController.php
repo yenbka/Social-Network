@@ -29,7 +29,7 @@ class ChatController extends Controller
             'to' => $data['toUserId'],
             'content' => $data['messages'],
             'send_date' => Carbon::parse($data['date']),
-            'read_date' => Carbon::parse($data['date'])
+            'read_date' => Carbon::parse('0000-00-00')
         ]);
     }
 
