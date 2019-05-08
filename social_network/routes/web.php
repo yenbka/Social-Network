@@ -12,6 +12,9 @@
 */
 
 Route::get('/', function () {
+    if (Auth::user()) {
+        return redirect()->route('home');
+    }
     return view('landing');
 })->name('login');
 // Authenticiate Routing
@@ -21,7 +24,6 @@ Route:: post('register','Auth\RegisterController@register');
 Route::get('/profile', function(){
     return view('profile');
 });
-
 
 Route::get('/friend/{id}', [
     'as' => 'friend',
@@ -41,7 +43,7 @@ Route::get('/video', function(){
     return view('video');
 });
 
-Route::get('/home/{id}', [
+Route::get('/home', [
     'as' => 'home',
     'uses' => 'HomeController@index'
 ]);
@@ -100,6 +102,15 @@ Route::post('/profile/{id}/update_header', [
     'uses' => 'ProfileController@update_header'
 ]);
 
+Route::post('/search', [
+    'as' => 'search',
+    'uses' => 'HomeController@search'
+]);
+
+Route::post('/friend/send_request', [
+    'uses' => 'FriendController@send_request'
+]);
+
 // happy comment
 
 /*
@@ -114,6 +125,3 @@ Route::get('/delete-post/{pid}', ['as'=>'delete-post','uses'=>'PostController@de
 Route::get('/edit-post/{pid}',['as'=>'get-edit-post','uses'=>'PostController@getEditPost']);
 
 Route::post('/edit-post/{pid}',['as'=>'edit-post','uses'=>'PostController@editPost']);
-
-
-//end

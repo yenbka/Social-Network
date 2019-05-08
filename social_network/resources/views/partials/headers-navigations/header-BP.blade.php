@@ -9,9 +9,11 @@
 	</div>
 
 	<div class="header-content-wrapper">
-		<form class="search-bar w-search notification-list friend-requests">
+		<form method="POST" action="{{action('HomeController@search')}}" class="search-bar w-search notification-list friend-requests">
+			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<div class="form-group with-button">
-				<input class="form-control js-user-search" placeholder="Search here people or pages..." type="text">
+				<!-- <input class="form-control js-user-search" placeholder="Search here people or pages..." type="text"> -->
+				<input name="search" class="form-control" placeholder="Search here people or pages..." type="text">
 				<button>
 					<svg class="olymp-magnifying-glass-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon')}}"></use></svg>
 				</button>
@@ -352,7 +354,11 @@
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
 					<a href="{{route('profile', ['id' => Auth::id()])}}">
-						<img alt="author" src="{{asset($profile->avatar_path)}}" width="36" height="36" class="avatar">
+						@if (($profile->avatar_path) != null)
+							<img alt="author" src="{{asset($profile->avatar_path)}}" width="36" height="36" class="avatar">
+						@else
+							<img alt="author" src="{{asset('images/avatar67-sm.jpg')}}" width="36" height="36" class="avatar">
+						@endif
 					</a>
 					<span class="icon-status online"></span>
 					<div class="more-dropdown more-with-triangle">

@@ -17,6 +17,7 @@ class CreatFriendsTable extends Migration
             $table->increments('id');
             $table->integer('user_id_1');
             $table->integer('user_id_2');
+            $table->integer('allow');
         });
     }
 

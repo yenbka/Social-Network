@@ -30,9 +30,8 @@ class LoginController extends Controller
         else{
             $email = $request->input('email');
             $password = $request->input('password');
-
-            if(Auth::attempt(['email'=>$email,'password'=>$password])){
-                return redirect()->route('home', ['id'=>Auth::id()]);
+            if(Auth::attempt(['email'=>$email,'password'=>$password], $request->optionsCheckboxes)){
+                return redirect()->route('home');
             }else{
                 $errors = new MessageBag(['errorlogin'=>'Email hoặc mật khẩu không đúng']);
                 return redirect()->back()->withInput()->withErrors($errors);

@@ -8,7 +8,11 @@
 			<div class="ui-block">
 				<div class="top-header">
 					<div class="top-header-thumb">
-						<img src="{{asset($profile->header_path)}}" width="1920" height="640" alt="header" >
+						@if (($profile->header_path) != null)
+							<img src="{{asset($profile->header_path)}}" width="1920" height="640" alt="header" >
+						@else
+							<img src="{{asset('images/bg-group.png')}}" width="1920" height="640" alt="header" >
+						@endif
 					</div>
 					<div class="profile-section">
 						<div class="row">

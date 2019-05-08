@@ -15,19 +15,20 @@ class User extends Authenticatable
     }
 
     public function messagesFrom(){
-    	return $this->hasMany('App\messages');
+    	return $this->hasMany('App\messages','from','id');
     }
 
     public function messagesTo(){
-    	return $this->hasMany('App\messages');
+    	return $this->hasMany('App\messages','to','id');
     }
 
     public function profile(){
-    	return $this->hasOne('App\profile','id','profile_id');
+    	return $this->hasOne('App\Profile',"id","id");
+
     }
 
     public function hobbies(){
-    	return $this->hasOne('App\hobbies');
+    	return $this->hasOne('App\Hobbie','id','id');
     }
 
     public function posts(){

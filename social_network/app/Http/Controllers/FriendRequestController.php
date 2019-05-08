@@ -26,8 +26,9 @@ class FriendRequestController extends Controller
         return false;
     }
     public function index($id){
+        $listUser = User::with("profile")->get();
         $user = Auth::user();
         $profile = Profile::where('id', $user->id)->first();
-        return view('friend_requests', ['user' => $user, 'profile' => $profile]);
+        return view('friend_requests', ['user' => $user, 'profile' => $profile, 'listuser'=>$listUser]);
     }
 }

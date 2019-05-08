@@ -31,11 +31,12 @@ class ProfileController extends Controller
 
     public function index($id) {
         if (!$this->secure($id)) return redirect('/404');
+        $listUser = User::with("profile")->get();
         $user = User::where('id', $id)->first();
         $profile = Profile::where('id', $user->profile_id)->first();
         $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
 
-        return view('profile', ['profile'=>$profile, 'user'=>$user,  'hobbies'=>$hobbies]);
+        return view('profile', ['profile'=>$profile, 'user'=>$user,  'hobbies'=>$hobbies, 'listUser'=>$listUser]);
     }
 
     public function get_profile_update_info($id){
@@ -73,12 +74,12 @@ class ProfileController extends Controller
     }
 
     public function profile_update_info(Request $request, $id){
-        $allRequest  = $request->all();	
+        $allRequest  = $request->all();
         $validator = $this->validator($allRequest);
         if ($validator->fails()) {
             // Dữ liệu vào không thỏa điều kiện sẽ thông báo lỗi
             return view('profile_update_info', ['user' => Auth::user(), 'profile' => Profile::find($id)])->withErrors($validator)->withInput();
-        } else {   
+        } else {
             // Dữ liệu vào hợp lệ sẽ thực hiện tạo người dùng dưới csdl
             $this->update($allRequest, $id);
             // Insert thành công sẽ hiển thị thông báo
