@@ -2,7 +2,7 @@
 
 <div class="main-header">
 	<div class="content-bg-wrap bg-account"></div>
-	<div class="container">
+	<!-- <div class="container">
 		<div class="row">
 			<div class="col col-lg-8 m-auto col-md-8 col-sm-12 col-12">
 				<div class="main-header-content">
@@ -11,8 +11,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	<img class="img-bottom" src="{{asset('img/account-bottom.png')}}" alt="friends">
+	</div> -->
+	<!-- <img class="img-bottom" src="{{asset('img/account-bottom.png')}}" alt="friends"> -->
+	<img class="img-bottom" src="{{asset($profile->header_path)}}" alt="friends" width="1920" height="640">
 </div>
 
 <!-- ... end Main Header Account -->
