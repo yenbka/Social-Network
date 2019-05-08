@@ -31,7 +31,7 @@
 			</div>
 			<ul class="chat-users">
 				@foreach ($listUser as $user)
-					<li class="inline-items js-chat-open">
+					<li class="inline-items js-chat-open" user-id="{{$user->id}}">
 						<div class="author-thumb">
 							@if (($user->profile->avatar_path) != null)
 								<img alt="author" src="{{asset($user->profile->avatar_path)}}" class="avatar">

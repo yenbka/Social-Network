@@ -34,6 +34,10 @@ Route::post('/getOldMessage',[
     'as'=>'get-old-message',
     'uses' => 'ChatController@getOldMessage'
 ]);
+Route::post('/sendMessage',[
+    'as'=>'get-old-message',
+    'uses' => 'ChatController@sendMessage'
+]);
 Route::get('/photo/{id}', [
     'as' => 'photo',
     'uses' => 'PhotoController@index'

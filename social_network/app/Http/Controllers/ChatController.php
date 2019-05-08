@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\messages;
 use App\User;
 use App\Profile;
+use Carbon\Carbon;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -22,6 +23,22 @@ class ChatController extends Controller
         ]);
     }
 
+    protected function createNewMessages(array $data){
+        return messages::create([
+            'from' => Auth::user()->id,
+            'to' => $data['toUserId'],
+            'content' => $data['messages'],
+            'send_date' => Carbon::parse($data['date']),
+            'read_date' => Carbon::parse($data['date'])
+        ]);
+    }
+
+    public function sendMessage(Request $request){
+        $messages = $this->createNewMessages($request->all());
+        return response()->json([
+            'Success' => true
+        ]);
+    }
     public function index(){
 
     }

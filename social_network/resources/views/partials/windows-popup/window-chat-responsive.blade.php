@@ -50,10 +50,10 @@
 		</div>
 		<form class="need-validation">
 			<div class="form-group label-floating is-empty">
-				<label class="control-label">Press enter to post...</label>
-				<textarea class="form-control" placeholder=""></textarea>
+				<label class="control-label">Nhập tin nhắn...</label>
+				<textarea class="form-control" placeholder="" id="messageContent"></textarea>
 				<div class="add-options-message">
-					<a href="#" class="options-message">
+					<a href="#" class="options-message sendMessage">
 						<svg class="olymp-computer-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-computer-icon')}}"></use></svg>
 					</a>
 					<div class="options-message smile-block">

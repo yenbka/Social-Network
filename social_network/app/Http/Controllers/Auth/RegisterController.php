@@ -75,7 +75,8 @@ class RegisterController extends Controller
             'email' => $data['registerEmail'],
             'password' => bcrypt($data['registerPassword']),
             'profile_id' => $this->generateProfileID($data),
-            'hobbies_id' =>  $this->generateHobbiesID($data)
+            'hobbies_id' =>  $this->generateHobbiesID($data),
+            'remember_token' => 1
         ]);
     }
     protected function generateProfileID($data) {
@@ -109,7 +110,7 @@ class RegisterController extends Controller
         else{
             $user = $this->create($request->all());
             if(Auth::attempt(['email'=>$request->input('registerEmail'),'password'=>$request->input('registerPassword')])){
-                return redirect()->route('home', ['id'=>Auth::id()]);
+                return redirect()->route('home');
             }
         }
     }

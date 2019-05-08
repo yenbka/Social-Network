@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 class messages extends Model
 {
     //
-     protected $table = 'messages';
+    protected $table = 'messages';
+    protected $fillable = ['from','to','content','send_date','read_date'];
     public $timestamps = false;
 
     public function toUsers(){
