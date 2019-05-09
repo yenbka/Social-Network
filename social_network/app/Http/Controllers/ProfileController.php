@@ -42,9 +42,11 @@ class ProfileController extends Controller
     }
 
     public function get_profile_update_info($id){
+        $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
+        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
         $user = Auth::user();
         $profile = Profile::where('id', $user->id)->first();
-        return view('profile_update_info', ['user' => $user, 'profile' => $profile]);
+        return view('profile_update_info', ['user' => $user, 'profile' => $profile, 'listUser' => $listUser, 'listMess' => $listMess]);
     }
 
     protected function validator(array $data)
@@ -78,15 +80,17 @@ class ProfileController extends Controller
     public function profile_update_info(Request $request, $id){
         $allRequest  = $request->all();
         $validator = $this->validator($allRequest);
+        $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
+        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
         if ($validator->fails()) {
             // Dữ liệu vào không thỏa điều kiện sẽ thông báo lỗi
-            return view('profile_update_info', ['user' => Auth::user(), 'profile' => Profile::find($id)])->withErrors($validator)->withInput();
+            return view('profile_update_info', ['user' => Auth::user(), 'profile' => Profile::find($id), 'listUser' => $listUser, 'listMess' => $listMess])->withErrors($validator)->withInput();
         } else {
             // Dữ liệu vào hợp lệ sẽ thực hiện tạo người dùng dưới csdl
             $this->update($allRequest, $id);
             // Insert thành công sẽ hiển thị thông báo
             $status = "Cập nhật thông tin cá nhân thành công!";
-            return view('profile_update_info', ['user' => Auth::user(), 'profile' => Profile::find($id), 'status' => $status]);
+            return view('profile_update_info', ['user' => Auth::user(), 'profile' => Profile::find($id), 'status' => $status,'listUser' => $listUser, 'listMess' => $listMess]);
         }
     }
 
