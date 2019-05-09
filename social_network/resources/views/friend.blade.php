@@ -16,7 +16,7 @@
             <div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                 <div class="ui-block responsive-flex">
                     <div class="ui-block-title">
-                        <div class="h6 title">{{$user->first_name.'’s Friends ('.sizeof($friends).')'}}</div>
+                        <div class="h6 title">{{$user->first_name}}’s Friends (<span id="no_friends">{{count($friends)}}</span>)</div>
                     </div>
                 </div>
             </div>
@@ -24,14 +24,13 @@
     </div>
 
     <!-- Friends -->
-
     <div class="container">
+        <input id="unfriend" name="_token" type="hidden" value="{{csrf_token()}}">
         <div class="row">
-            <div class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-6">
+        @for ($i = 0; $i < count($friends); $i++)
+            <div id="friend-item" class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-6 ">
                 <div class="ui-block">
-
                     <!-- Friend Item -->
-                    @for ($i = 0; $i < count($friends); $i++)
                         <div class="friend-item">
                             <div class="friend-header-thumb">
                                 <img src="{{asset($profile_friends[$i]->header_path)}}" alt="friend" width="318" height="122">
@@ -68,14 +67,13 @@
                                     </div>
                                 </div>
                                 <div class="control-block-button" data-swiper-parallax="-100">
-                                    <a href="#" class="btn btn-control bg-blue">
+                                    <a href="javascript:;" class="btn btn-control bg-blue" onclick="unfriend({{$friends[$i]->id}})">
                                         <svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
                                     </a>
 
-                                    <a href="#" class="btn btn-control bg-purple">
+                                    <a href="javascript:;" class="btn btn-control bg-purple">
                                         <svg class="olymp-chat---messages-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-chat---messages-icon')}}"></use></svg>
                                     </a>
-
                                 </div>
                                             
                                 <!-- <div class="swiper-container" data-slide="fade">
@@ -113,12 +111,36 @@
                                 </div> -->
                             </div>
                         </div>
-                    @endfor
                     <!-- ... end Friend Item -->
                 </div>
             </div>
-        </div>
+        @endfor
+        </div>    
     </div>
 
     <!-- ... end Friends -->
 @endsection
+
+<script>
+function unfriend(id){
+
+    var BASE_URL = "{{ url('/') }}";
+	$.ajax({
+		url: BASE_URL + '/friend/unfriend',
+		type: "POST",
+		data: {id_friend: id, _token: $('#unfriend').val()},
+		success: function (response) {
+            
+			if (response.code == 200) {
+                $('#friend-item').remove();
+                $('#no_friends').text(response.no_friends);
+			} else {
+                alert("Something went wrong!");
+            }
+		},
+		error: function () {
+            alert("Something went wrong!");
+		}
+	});
+}
+</script>
