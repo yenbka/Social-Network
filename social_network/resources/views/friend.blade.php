@@ -31,85 +31,89 @@
                 <div class="ui-block">
 
                     <!-- Friend Item -->
-
-                    <div class="friend-item">
-                        <div class="friend-header-thumb">
-                            <img src="{{asset('images/friend1.jpg')}}" alt="friend">
-                        </div>
-
-                        <div class="friend-item-content">
-
-                            <div class="more">
-                                <svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg>
-                                <ul class="more-dropdown">
-                                    <li>
-                                        <a href="#">Report Profile</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Block Profile</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">Turn Off Notifications</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="friend-avatar">
-                                <div class="author-thumb">
-                                    <img src="{{asset('images/avatar1.jpg')}}" alt="author">
-                                </div>
-                                <div class="author-content">
-                                    <a href="#" class="h5 author-name">Nicholas Grissom</a>
-                                    <div class="country">San Francisco, CA</div>
-                                </div>
+                    @for ($i = 0; $i < count($friends); $i++)
+                        <div class="friend-item">
+                            <div class="friend-header-thumb">
+                                <img src="{{asset($profile_friends[$i]->header_path)}}" alt="friend" width="318" height="122">
                             </div>
 
-                            <div class="swiper-container" data-slide="fade">
-                                <div class="swiper-wrapper">
-                                    <div class="swiper-slide">
-                                        <div class="friend-count" data-swiper-parallax="-500">
-                                            <a href="#" class="friend-count-item">
-                                                <div class="h6">52</div>
-                                                <div class="title">Friends</div>
-                                            </a>
-                                            <a href="#" class="friend-count-item">
-                                                <div class="h6">240</div>
-                                                <div class="title">Photos</div>
-                                            </a>
-                                            <a href="#" class="friend-count-item">
-                                                <div class="h6">16</div>
-                                                <div class="title">Videos</div>
-                                            </a>
+                            <div class="friend-item-content">
+
+                                <!-- <div class="more">
+                                    <svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg>
+                                    <ul class="more-dropdown">
+                                        <li>
+                                            <a href="#">Report Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Block Profile</a>
+                                        </li>
+                                        <li>
+                                            <a href="#">Turn Off Notifications</a>
+                                        </li>
+                                    </ul>
+                                </div> -->
+                                <div class="friend-avatar">
+                                    <div class="author-thumb">
+                                        <img src="{{asset($profile_friends[$i]->avatar_path)}}" alt="author" width="92" height="92">
+                                    </div>
+                                    <div class="author-content">
+                                        <a href="#" class="h5 author-name">{{$friends[$i]->first_name.' '.$friends[$i]->last_name}}</a>
+                                        <div class="country">{{$profile_friends[$i]->address}}</div>
+                                    </div>
+                                </div>
+                                <div class="h6" data-swiper-parallax="-100">
+                                    <div class="friend-about" data-swiper-parallax="-500">
+                                        <span class="title">{{$profile_friends[$i]->about_me}}</span>
+                                    </div>
+                                </div>
+                                <div class="control-block-button" data-swiper-parallax="-100">
+                                    <a href="#" class="btn btn-control bg-blue">
+                                        <svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
+                                    </a>
+
+                                    <a href="#" class="btn btn-control bg-purple">
+                                        <svg class="olymp-chat---messages-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-chat---messages-icon')}}"></use></svg>
+                                    </a>
+
+                                </div>
+                                            
+                                <!-- <div class="swiper-container" data-slide="fade">
+                                    <div class="swiper-wrapper">
+                                        <div class="swiper-slide">
+                                            <div class="friend-count" data-swiper-parallax="-500">
+                                                <a href="#" class="friend-count-item">
+                                                    <div class="h6">52</div>
+                                                    <div class="title">Friends</div>
+                                                </a>
+                                                <a href="#" class="friend-count-item">
+                                                    <div class="h6">240</div>
+                                                    <div class="title">Photos</div>
+                                                </a>
+                                                <a href="#" class="friend-count-item">
+                                                    <div class="h6">16</div>
+                                                    <div class="title">Videos</div>
+                                                </a>
+                                            </div>
+                                            
                                         </div>
-                                        <div class="control-block-button" data-swiper-parallax="-100">
-                                            <a href="#" class="btn btn-control bg-blue">
-                                                <svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
-                                            </a>
 
-                                            <a href="#" class="btn btn-control bg-purple">
-                                                <svg class="olymp-chat---messages-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-chat---messages-icon')}}"></use></svg>
-                                            </a>
+                                        <div class="swiper-slide">
+                                            
 
+                                            <div class="friend-since" data-swiper-parallax="-100">
+                                                <span>Friends Since:</span>
+                                                <div class="h6">December 2014</div>
+                                            </div>
                                         </div>
                                     </div>
 
-                                    <div class="swiper-slide">
-                                        <p class="friend-about" data-swiper-parallax="-500">
-                                            Hi!, I’m Marina and I’m a Community Manager for “Gametube”. Gamer and full-time mother.
-                                        </p>
-
-                                        <div class="friend-since" data-swiper-parallax="-100">
-                                            <span>Friends Since:</span>
-                                            <div class="h6">December 2014</div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <!-- If we need pagination -->
-                                <div class="swiper-pagination"></div>
+                                    
+                                    <div class="swiper-pagination"></div>
+                                </div> -->
                             </div>
                         </div>
-                    </div>
-
+                    @endfor
                     <!-- ... end Friend Item -->
                 </div>
             </div>
