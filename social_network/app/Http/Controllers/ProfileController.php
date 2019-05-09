@@ -6,6 +6,7 @@ use App\Hobbie;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
+use App\messages;
 use App\Profile;
 use Illuminate\Support\Facades\Validator;
 
@@ -31,11 +32,13 @@ class ProfileController extends Controller
 
     public function index($id) {
         if (!$this->secure($id)) return redirect('/404');
+        $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
+        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date','0000-00-00')->get();
         $user = User::where('id', $id)->first();
         $profile = Profile::where('id', $user->profile_id)->first();
         $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
 
-        return view('profile', ['profile'=>$profile, 'user'=>$user,  'hobbies'=>$hobbies]);
+        return view('profile', ['profile'=>$profile, 'user'=>$user,  'hobbies'=>$hobbies, 'listUser'=>$listUser,'listMess'=>$listMess]);
     }
 
     public function get_profile_update_info($id){
@@ -73,12 +76,12 @@ class ProfileController extends Controller
     }
 
     public function profile_update_info(Request $request, $id){
-        $allRequest  = $request->all();	
+        $allRequest  = $request->all();
         $validator = $this->validator($allRequest);
         if ($validator->fails()) {
             // Dữ liệu vào không thỏa điều kiện sẽ thông báo lỗi
             return view('profile_update_info', ['user' => Auth::user(), 'profile' => Profile::find($id)])->withErrors($validator)->withInput();
-        } else {   
+        } else {
             // Dữ liệu vào hợp lệ sẽ thực hiện tạo người dùng dưới csdl
             $this->update($allRequest, $id);
             // Insert thành công sẽ hiển thị thông báo

@@ -15,22 +15,26 @@ class User extends Authenticatable
     }
 
     public function messagesFrom(){
-    	return $this->hasMany('App\messages');
+    	return $this->hasMany('App\messages','from','id');
     }
 
     public function messagesTo(){
-    	return $this->hasMany('App\messages');
+    	return $this->hasMany('App\messages','to','id');
     }
 
     public function profile(){
-    	return $this->hasOne('App\profiles','profile_id','id');
+    	return $this->hasOne('App\Profile',"id","id");
     }
 
     public function hobbies(){
-    	return $this->hasOne('App\hobbies');
+    	return $this->hasOne('App\Hobbie','id','id');
     }
 
     public function posts(){
     	return $this->hasMany('App\Posts','user_id','id');
+    }
+
+    public function likes(){
+        return $this->hasMany('App\likes','user_id','id');
     }
 }
