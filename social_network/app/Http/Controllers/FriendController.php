@@ -103,4 +103,25 @@ class FriendController extends Controller
         }
         return Response::json($response);
     }
+
+    public function unfriend(Request $request){
+        $response = array();
+        $response['code'] = 400;
+
+        $id_friend = $request->input('id_friend');
+        $id_user = Auth::id();
+        $relation0 = Friend::where('user_id_1', $id_user)->where('user_id_2', $id_friend);
+        $relation = Friend::where('user_id_2', $id_user)->where('user_id_1', $id_friend)->union($relation0)->first();
+
+        if ($relation){
+            if ($relation->delete()){
+                $response['code'] = 200;
+            }
+        }
+
+        $id_friends = Friend::where('user_id_1', $id_user)->orWhere('user_id_2', $id_user)->where('allow', 1)->get();
+        $response['no_friends'] = $id_friends->count();
+
+        return Response::json($response);
+    }
 }
