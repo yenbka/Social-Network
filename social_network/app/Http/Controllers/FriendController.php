@@ -31,8 +31,22 @@ class FriendController extends Controller
         if (!$this->secure($id)) return redirect('/404');
         $user = User::where('id', $id)->first();
         $profile = Profile::where('id', $user->profile_id)->first();
-        $friends = Friend::where('user_id_1', $id)->orWhere('user_id_2', $id)->get();
-        return view('friend', ['profile'=>$profile, 'user'=>$user, 'friends'=>$friends]);
+        $friends = array();
+        $profile_friends = array();
+
+        $id_friends = Friend::where('user_id_1', $id)->where('allow', 1)->get();
+        foreach($id_friends as $id_friend) {
+            $friends[] = User::find($id_friend->user_id_2);
+            $profile_friends[] = Profile::find($id_friend->user_id_2);
+        }
+
+        $id_friends = Friend::where('user_id_2', $id)->where('allow', 1)->get();
+        foreach($id_friends as $id_friend) {
+            $friends[] = User::find($id_friend->user_id_1);
+            $profile_friends[] = Profile::find($id_friend->user_id_1);
+        }
+
+        return view('friend', ['profile'=>$profile, 'user'=>$user, 'friends'=>$friends, 'profile_friends'=>$profile_friends]);
     }
 
     public function send_request(Request $request){
