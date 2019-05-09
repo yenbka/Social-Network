@@ -245,7 +245,7 @@ var CRUMINA = {};
 		let date = new Date();
 		date = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 		$.ajax({
-			url: "/Social-Network/social_network/public/getOldMessage",
+			url: "/getOldMessage",
 			type: 'post',
 			data: { toUserId: toUserId, date: date, _token:_token },
 			dataType: "json",
@@ -299,7 +299,7 @@ var CRUMINA = {};
 		date = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
 		if (messages == '') return false;
 		$.ajax({
-			url: "/Social-Network/social_network/public/sendMessage",
+			url: "/sendMessage",
 			type: 'post',
 			data: { toUserId: toUserId, _token: _token,messages: messages,date: date },
 			dataType: "json",

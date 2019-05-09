@@ -5,6 +5,7 @@ use App\messages;
 use App\User;
 use App\Profile;
 use Carbon\Carbon;
+use DateTime;
 use Auth;
 use Illuminate\Http\Request;
 
@@ -31,7 +32,7 @@ class ChatController extends Controller
             'to' => $data['toUserId'],
             'content' => $data['messages'],
             'send_date' => Carbon::parse($data['date']),
-            // 'read_date' => '0000-00-00'
+            // 'read_date' => Carbon::parse('00-00-0000 00:00')->format('Y-m-d')
         ]);
     }
 
