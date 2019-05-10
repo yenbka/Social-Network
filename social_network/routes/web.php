@@ -138,6 +138,5 @@ Route::post('/like/{pid}',['as'=>'like', 'uses'=>'LikeController@likePost']);
 
 Route::post('/comment/{pid}',['as'=>'comment', 'uses'=>'CommentController@addComment']);
 
-Route::post('/edit-post/{pid}',['as'=>'edit-post','uses'=>'PostController@editPost']);
 //end
 
