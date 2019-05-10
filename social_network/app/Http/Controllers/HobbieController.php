@@ -58,7 +58,9 @@ class HobbieController extends Controller
         $user = Auth::user();
         $profile = Profile::where('id', $user->profile_id)->first();
         $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
-        return view('hobbies_update_info', ['user' => $user, 'hobbies' => $hobbies, 'profile'=>$profile]);
+        $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
+        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
+        return view('hobbies_update_info', ['user' => $user, 'hobbies' => $hobbies, 'profile'=>$profile, 'listUser' => $listUser, 'listMess' => $listMess]);
     }
 
     public function hobbies_update_info(Request $request, $id) {
@@ -67,13 +69,15 @@ class HobbieController extends Controller
         $user = Auth::user();
         $profile = Profile::where('id', $user->profile_id)->first();
         $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
+        $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
+        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
         if ($validator->fails()) {
-            return view('hobbies_update_info', ['user'=>$user, 'hobbies'=>Hobbie::find($hobbies->id), 'profile'=>$profile])->withErrors($validator)->withInput();
+            return view('hobbies_update_info', ['user'=>$user, 'hobbies'=>Hobbie::find($hobbies->id), 'profile'=>$profile,'listUser' =>$listUser, 'listMess' => $listMess])->withErrors($validator)->withInput();
         }
         else {
             $this->update($allRequest, $user->id);
             $status = "Cập nhật thông tin cá nhân thành công!";
-            return view('hobbies_update_info', ['user'=>$user, 'hobbies'=>Hobbie::find($hobbies->id), 'profile'=>$profile, 'status'=>$status]);
+            return view('hobbies_update_info', ['user'=>$user, 'hobbies'=>Hobbie::find($hobbies->id), 'profile'=>$profile, 'status'=>$status,'listUser' => $listUser, 'listMess' => $listMess]);
         }
     }
 
