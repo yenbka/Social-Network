@@ -4,11 +4,10 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-<<<<<<< HEAD
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
-=======
     <meta name="csrfToken" content="{{ csrf_token() }}" >
->>>>>>> 666bcb7f9dd3da3250c335e0d738c2537169d5f0
+
 
     <title>{{config('app.name', 'Social Network')}}</title>
 

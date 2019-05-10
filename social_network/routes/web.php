@@ -132,13 +132,12 @@ Route::get('/delete-post/{pid}', ['as'=>'delete-post','uses'=>'PostController@de
 
 Route::get('/edit-post/{pid}',['as'=>'get-edit-post','uses'=>'PostController@getEditPost']);
 
-<<<<<<< HEAD
 Route::post('/edit-post/{pid}',['as'=>'edit-post','uses'=>'PostController@editPost']);
 
 Route::post('/like/{pid}',['as'=>'like', 'uses'=>'LikeController@likePost']);
 
 Route::post('/comment/{pid}',['as'=>'comment', 'uses'=>'CommentController@addComment']);
-//end
-=======
+
 Route::post('/edit-post/{pid}',['as'=>'edit-post','uses'=>'PostController@editPost']);
->>>>>>> 666bcb7f9dd3da3250c335e0d738c2537169d5f0
+//end
+
