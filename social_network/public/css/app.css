@@ -6550,17 +6550,15 @@ fieldset[disabled] .checkbox, fieldset[disabled] .checkbox input[type=checkbox],
 .popup-chat .chat-message-field li:last-child {
   margin-bottom: 40px;
 }
-.popup-chat .chat-message-field li:nth-child(2n) .chat-message-item {
+.popup-chat .urmess {
+  float: right;
   background-color: #7c5ac2;
   color: #fff;
 }
 .popup-chat .chat-message-field li:nth-child(2n) .author-thumb {
   float: right;
 }
-.popup-chat .chat-message-field li:nth-child(2n) .chat-message-item {
-  float: right;
-}
-.popup-chat .chat-message-field li:nth-child(2n) .notification-event {
+.popup-chat .chat-message-field .notification-event-ur {
   float: right;
   padding-left: 0;
   padding-right: 10px;
@@ -12824,6 +12822,10 @@ ol ol li {
   overflow: hidden;
   max-width: unset;
 }
+.avatar{
+  width: 34px;
+  height: 34px;
+}
 .author-thumb .icon-status {
   position: absolute;
   margin-right: 0;
@@ -16742,15 +16744,15 @@ input[type=checkbox] {
 /**
  * Swiper 3.3.1
  * Most modern mobile touch slider and framework with hardware accelerated transitions
- * 
+ *
  * http://www.idangero.us/swiper/
- * 
+ *
  * Copyright 2016, Vladimir Kharlampidi
  * The iDangero.us
  * http://www.idangero.us/
- * 
+ *
  * Licensed under MIT
- * 
+ *
  * Released on: February 7, 2016
  */
 .swiper-container {

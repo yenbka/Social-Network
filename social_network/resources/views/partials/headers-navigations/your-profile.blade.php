@@ -42,7 +42,7 @@
 	</div>
 	<div class="ui-block-title">
 		<a href="{{route('friend_requests', ['id' => Auth::id()])}}" class="h6 title">Friend Requests</a>
-		<a href="#" class="items-round-little bg-blue">4</a>
+		<a href="#" class="items-round-little bg-blue">{{count($friends)}}</a>
 	</div>
 </div>
 

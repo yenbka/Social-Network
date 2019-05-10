@@ -18,7 +18,7 @@ class CreateMessagesTable extends Migration
             $table->integer('from');
             $table->integer('to');
             $table->date('send_date');
-            $table->date('read_date');
+            $table->date('read_date')->nullable();
             $table->text('content');
         });
     }
