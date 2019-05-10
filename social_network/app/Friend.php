@@ -12,6 +12,7 @@ class Friend extends Model
     protected $fillable = [
         'user_id_1',
         'user_id_2',
+        'allow'
     ];
     public function users(){
     	return $this->belongstoMany('App\users');

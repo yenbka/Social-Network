@@ -54,3 +54,11 @@ if (token) {
 //     cluster: process.env.MIX_PUSHER_APP_CLUSTER,
 //     encrypted: true
 // });
+import Echo from 'laravel-echo'
+
+window.Pusher = require('pusher-js')
+
+window.Echo = new Echo({
+    broadcaster: 'pusher',
+    key: 'f1a2a8a6-f9f0-42f1-95fc-d2fd6cd6c4b3:5CrtsDzki79C1QGdE5fJCOATM9yCxJYupXEgQ3+cH4U='
+})

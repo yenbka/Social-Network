@@ -66,11 +66,11 @@
 
 		<div class="ui-block">
 			<div class="ui-block-title">
-				<h6 class="title">Last Videos</h6>
+				<h6 class="title">Last Photos</h6>
 			</div>
 			<div class="ui-block-content">
 
-				@include('partials.widgets.w-last-video')
+				@include('partials.widgets.w-last-photo')
 
 			</div>
 		</div>
@@ -82,60 +82,28 @@
 
 	<!-- Right Sidebar -->
 
-	<div class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
-
+	<aside class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
 		<div class="ui-block">
 			<div class="ui-block-title">
-				<h6 class="title">Last Photos</h6>
-			</div>
-			<div class="ui-block-content">
-
-				@include('partials.widgets.w-last-photo')
-
+				<h6 class="title">Friend Suggestions</h6>
+				<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
 			</div>
 		</div>
 
 		<div class="ui-block">
+
 			<div class="ui-block-title">
-				<h6 class="title">Blog Posts</h6>
+				<h6 class="title">Activity Feed</h6>
+				<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
 			</div>
-			@include('partials.widgets.w-blog-posts')
 
 		</div>
+
 
 		<div class="ui-block">
-			<div class="ui-block-title">
-				<h6 class="title">Friends (86)</h6>
-			</div>
-			<div class="ui-block-content">
-
-				@include('partials.widgets.w-faved-pages')
-
-			</div>
 		</div>
 
-		<div class="ui-block">
-			<div class="ui-block-title">
-				<h6 class="title">Favourite Pages</h6>
-			</div>
-
-			@include('partials.widgets.w-friend-pages-added')
-
-		</div>
-
-		<div class="ui-block">
-			<div class="ui-block-title">
-				<h6 class="title">James's Poll</h6>
-			</div>
-			<div class="ui-block-content">
-
-				@include('partials.widgets.w-pool')
-
-				<a href="#" class="btn btn-md-2 btn-border-think custom-color c-grey full-width">Vote Now!</a>
-			</div>
-		</div>
-
-	</div>
+	</aside>
 
 	<!-- ... end Right Sidebar -->
 

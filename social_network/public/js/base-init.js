@@ -240,10 +240,43 @@ var CRUMINA = {};
 	});
 
 	$(".js-chat-open").on('click', function () {
-		$('.popup-chat-responsive').toggleClass('open-chat');
+		let _token = document.querySelector('meta[name=csrfToken]').getAttribute('content');
+		let toUserId = $(this).attr('user-id');
+		let date = new Date();
+		date = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+		$.ajax({
+			url: "/getOldMessage",
+			type: 'post',
+			data: { toUserId: toUserId, date: date, _token:_token },
+			dataType: "json",
+			success: function (data) {
+				let temp = data.friendMessages.concat(data.yourMessages);
+				let messages = temp.sort((a, b) => (a.id > b.id) ? 1 : ((b.id > a.id) ? -1 : 0));
+				$('.popup-chat-responsive .chat-message-field').html('');
+				$.each(messages, function (i, message) {
+					let element = '';
+					if (message.from == toUserId) {
+						element += '<li>';
+						element += '	<div class="notification-event">';
+						element += '		<span class="chat-message-item">'+message.content+'</span>';
+						element += '	</div>';
+						element += '</li>';
+					} else {
+						element += '<li>';
+						element += '	<div class="notification-event-ur">';
+						element += '		<span class="chat-message-item urmess">' + message.content + '</span>';
+						element += '	</div>';
+						element += '</li>';
+					}
+					$('.popup-chat-responsive .chat-message-field').append(element);
+				});
+				$('.popup-chat-responsive').attr('user_id', toUserId);
+				$('.popup-chat-responsive').toggleClass('open-chat');
+			},
+		});
 		return false
 	});
-    $(".js-chat-close").on('click', function () {
+	$(".js-chat-close").on('click', function () {
         $('.popup-chat-responsive').removeClass('open-chat');
         return false
     });
@@ -258,7 +291,33 @@ var CRUMINA = {};
 		return false
 	});
 
-
+	$(".sendMessage").on('click', function () {
+		let _token = document.querySelector('meta[name=csrfToken]').getAttribute('content');
+		let toUserId = $('.popup-chat-responsive').attr("user_id");
+		let messages = $('#messageContent').val();
+		let date = new Date();
+		date = date.getFullYear() + '-' + (date.getMonth() + 1) + '-' + date.getDate();
+		if (messages == '') return false;
+		$.ajax({
+			url: "/sendMessage",
+			type: 'post',
+			data: { toUserId: toUserId, _token: _token,messages: messages,date: date },
+			dataType: "json",
+			success: function (data) {
+				if (data.Success) {
+					$('#messageContent').val('');
+					let element = '';
+					element += '<li>';
+					element += '	<div class="notification-event-ur">';
+					element += '		<span class="chat-message-item urmess">' + messages + '</span>';
+					element += '	</div>';
+					element += '</li>';
+					$('.popup-chat-responsive .chat-message-field').append(element);
+				}
+			}
+		});
+		return false;
+	});
 	/* -----------------------------
 		 * Scrollmagic scenes animation
 	* ---------------------------*/

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFriendRequestsTable extends Migration
+class AddRememberToken extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,8 @@ class CreateFriendRequestsTable extends Migration
      */
     public function up()
     {
-        Schema::create('friend_requests', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('sender');
-            $table->integer('receiver');
+        Schema::table('users', function (Blueprint $table) {
+            $table->string('remember_token', 100);
         });
     }
 
@@ -27,6 +25,8 @@ class CreateFriendRequestsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('friend_requests');
+        Schema::table('users', function (Blueprint $table) {
+            $table->dropColumn('remember_token');
+        });
     }
 }

@@ -2,7 +2,7 @@
 <article class="hentry post">
 
     <div class="post__author author vcard inline-items">
-        <img src="/{{$profile->avatar_path}}" alt="author">
+        <img src="{{asset($profile->avatar_path)}}" alt="author">
 
         <div class="author-date">
             <a class="h6 post__author-name fn" href="#">{{$post->user->last_name}} {{$post->user->first_name}}</a>
