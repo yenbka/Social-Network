@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{config('app.name', 'Social Network')}}</title>
 
@@ -64,6 +65,7 @@
     <script src="{{asset('js/mediaelement-and-player.js')}}"></script>
     <script src="{{asset('js/mediaelement-playlist-plugin.min.js')}}"></script>
     <script src="{{asset('js/uploadPreview.js')}}"></script>
+    <script src="{{asset('js/like.js')}}"></script>
 
     <script src="{{asset('js/base-init.js')}}"></script>
     <script defer src="{{asset('fonts/fontawesome-all.js')}}"></script>

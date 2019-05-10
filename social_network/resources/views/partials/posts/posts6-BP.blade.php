@@ -81,7 +81,7 @@
 
 
         <div class="comments-shared">
-            <a href="#" class="post-add-icon inline-items">
+            <a href="#" class="post-add-icon inline-items" >
                 <svg class="olymp-speech-balloon-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-speech-balloon-icon')}}"></use></svg>
                 <span>17</span>
             </a>
@@ -97,7 +97,19 @@
 
     <div class="control-block-button post-control-button">
 
-        <a href="#" class="btn btn-control">
+
+        <a href="#" class="btn btn-control like" id="{{$post->id}}" data-postid="{{$post->id}}"style="
+            @if(!empty($post->likes))
+                @foreach($post->likes as $like)
+                    @if($like->user_id == $user->id)
+                        background-color:#ff5e3e;
+                           
+                    @endif
+                @endforeach
+            @else
+               background-color:#9a9fbf;
+            @endif
+        ">
             <svg class="olymp-like-post-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-like-post-icon')}}"></use></svg>
         </a>
 

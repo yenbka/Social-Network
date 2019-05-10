@@ -115,5 +115,7 @@ Route::get('/edit-post/{pid}',['as'=>'get-edit-post','uses'=>'PostController@get
 
 Route::post('/edit-post/{pid}',['as'=>'edit-post','uses'=>'PostController@editPost']);
 
+Route::post('/like/{pid}',['as'=>'like', 'uses'=>'LikeController@likePost']);
 
+Route::post('/comment/{pid}',['as'=>'comment', 'uses'=>'CommentController@addComment']);
 //end

@@ -32,7 +32,7 @@
 				@include('partials.posts.posts1-BP')
 				@include('partials.comments.comment-list1')
 				<a href="#" class="more-comments">View more comments <span>+</span></a>
-				@include('partials.forms.comment-form')
+				<!-- @include('partials.forms.comment-form') -->
 			</div>
 			<div class="ui-block">
 				@include('partials.posts.posts4-BP')
