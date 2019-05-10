@@ -28,7 +28,7 @@ class FriendRequestController extends Controller
     }
     public function index($id){
         $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
-        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date','0000-00-00')->get();
+        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
         $user = Auth::user();
         $profile = Profile::where('id', $user->id)->first();
         return view('friend_requests', ['user' => $user, 'profile' => $profile, 'listuser'=>$listUser,'listMess'=>$listMess]);

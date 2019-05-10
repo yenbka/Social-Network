@@ -30,10 +30,10 @@ class AboutController extends Controller
 
     public function index($id) {
         $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
-        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date','0000-00-00')->get();
+        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
         $user = User::where('id', $id)->first();
         $profile = Profile::where('id', $user->profile_id)->first();
         $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
-        return view('about', ['profile'=>$profile, 'user' => $user, 'hobbies'=>$hobbies,'listUser'=>$listUser,'listMess'->$listMess]);
+        return view('about', ['profile'=>$profile, 'user' => $user, 'hobbies'=>$hobbies,'listUser'=>$listUser,'listMess'=>$listMess]);
     }
 }

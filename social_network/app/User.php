@@ -9,7 +9,7 @@ class User extends Authenticatable
     //
     protected $table = 'users';
     public $timestamps = false;
-    protected $fillable = ['first_name','last_name','email','password','profile_id','hobbies_id'];
+    protected $fillable = ['first_name','last_name','email','password','profile_id','hobbies_id', 'remember_token'];
     public function friends(){
     	return $this->belongstoMany('App\Friend');
     }

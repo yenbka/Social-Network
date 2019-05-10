@@ -31,7 +31,7 @@ class FriendController extends Controller
     public function index($id) {
         if (!$this->secure($id)) return redirect('/404');
         $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
-        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date','0000-00-00')->get();
+        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
         $user = User::where('id', $id)->first();
         $profile = Profile::where('id', $user->profile_id)->first();
         $friends = Friend::where('user_id_1', $id)->orWhere('user_id_2', $id)->get();
