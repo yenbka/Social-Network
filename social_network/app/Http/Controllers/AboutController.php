@@ -34,6 +34,6 @@ class AboutController extends Controller
         $user = User::where('id', $id)->first();
         $profile = Profile::where('id', $user->profile_id)->first();
         $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
-        return view('about', ['profile'=>$profile, 'user' => $user, 'hobbies'=>$hobbies,'listUser'=>$listUser,'listMess'->$listMess]);
+        return view('about', ['profile'=>$profile, 'user' => $user, 'hobbies'=>$hobbies,'listUser'=>$listUser,'listMess'=>$listMess]);
     }
 }
