@@ -61,7 +61,7 @@ class HomeController extends Controller
         foreach ($user_result as $user_temp)
             $profile_result[] = Profile::find($user_temp->profile_id);
 
-        return view('search_result', ['user'=>$user, 'user_result'=>$user_result, 'profile'=>$profile, 'profile_result'=>$profile_result, 'search'=>$search, 'listUser'=>$listUser, 'listMess'=>$listUser]);
+        return view('search_result', ['user'=>$user, 'user_result'=>$user_result, 'profile'=>$profile, 'profile_result'=>$profile_result, 'search'=>$search, 'listUser'=>$listUser, 'listMess'=>$listMess]);
 
     }
 }
