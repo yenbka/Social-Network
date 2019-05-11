@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Response;
 use Auth;
+use App\User;
 use App\Posts;
 use App\Likes;
 
@@ -17,7 +18,7 @@ class LikeController extends Controller
             $user_id = Auth::id();
             $index = 0;
             $likes = Likes::where('post_id', $pid)->get();
-
+            $avatar = "";
             foreach($likes as $like){
                 if($like->user_id==$user_id){
                     $index = 1; 
@@ -32,9 +33,13 @@ class LikeController extends Controller
                 
                 $like->user_id = $user_id;
                 $like->save();
+                $avatar = Auth::user()->profile->avatar_path;
             }
 
-            return response()->json($index);
+            $numb = Posts::find($pid)->likes->count();
+            $data =['numb'=>$numb, 'index'=>$index, 'avatar'=>$avatar, 'uid'=>$user_id];
+
+            return response()->json($data);
             
      }
 }
