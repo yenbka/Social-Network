@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Comments;
 use Auth;
+use App\Posts;
 use Carbon\Carbon;
 class CommentController extends Controller
 {
@@ -29,7 +30,10 @@ class CommentController extends Controller
         $user = Auth::user();
         $avatar = $user->profile->avatar_path;
         $name = $user->last_name . " " . $user->first_name;
-        $data =['content'=>$comment->content,'avatar'=>$avatar,'time'=>$result,'name'=>$name];
+
+        $numb = Posts::find($pid)->comment->count();
+
+        $data =['content'=>$comment->content,'avatar'=>$avatar,'time'=>$result,'name'=>$name, 'numb'=>$numb];
         
         return $data;
     }

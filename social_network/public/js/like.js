@@ -13,13 +13,29 @@ $('.like').on('click', function(event) {
         url: '/like/'+ postId,
         data: { _token : token },
         dataType: "json",
-        success : function (index){
-            if(index=="0"){
+        success : function (data){
+            var like_item = '<li id="item'+data['uid']+'">';
+                like_item += '<a href="#">';
+                like_item += '<img src="/';
+                like_item += data['avatar'];
+                like_item +='"'
+                like_item += 'alt="friend">';
+                like_item += '</a>';
+                like_item += '</li>';
+
+
+            if(data['index']==0){
                 $("#"+postId).css('background-color',"#ff5e3a");
+                $("#like-item-"+postId).append(like_item);            
             }
             else{
                 $("#"+postId).css('background-color',"#9a9fbf");
+                var x =data['uid'].toString();
+                $("#item"+x).remove();
+               
             }
+            $("#like_numb"+postId).html(data['numb']);
+
         }
     })
     .done(function(){
@@ -73,6 +89,7 @@ $('.comment').on('click', function(event) {
             comment_item += '</li>';
             $("#comment-content"+postId).val("");
             $("#comment-"+postId).append(comment_item);
+            $("#comment_numb"+postId).html(data['numb']);
 
         }
     })
