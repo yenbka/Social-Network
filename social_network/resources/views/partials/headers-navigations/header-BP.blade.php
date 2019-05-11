@@ -160,8 +160,8 @@
 										<img src="{{asset($mess->profile->avatar_path)}}" alt="author" class="avatar">
 									</div>
 									<div class="notification-event">
-										<a href="#" class="h6 notification-friend">{{$mess->user->first_name.' '.$mess->user->last_name}}</a>
-										<span class="chat-message-item">{{$mess->content}}</span>
+									{{--<a href="#" class="h6 notification-friend">{{$mess->user->first_name.' '.$mess->user->last_name}}</a>
+									<span class="chat-message-item">{{$mess->content}}</span>--}}
 									</div>
 									<span class="notification-icon">
 										<svg class="olymp-chat---messages-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-chat---messages')}}-icon"></use></svg>

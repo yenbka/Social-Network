@@ -119,6 +119,10 @@ Route::post('/friend/process_request', [
     'uses' => 'FriendController@process_request'
 ]);
 
+Route::post('/friend/unfriend', [
+    'uses' => 'FriendController@unfriend'
+]);
+
 // happy comment
 
 /*
