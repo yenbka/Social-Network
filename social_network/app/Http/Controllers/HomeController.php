@@ -45,4 +45,23 @@ class HomeController extends Controller
         // dd($posts);
         return view('newsfeed', compact('profile','user','hobbies','listUser','posts','listMess'));
     }
+	
+	public function search(Request $request) {
+		$listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
+        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
+
+        $search = $request->input('search');
+        if (empty($search)) return redirect()->back();
+
+        $user = Auth::user();
+        $profile = Profile::find($user->profile_id);
+
+        $user_result = User::where('first_name', 'like', '%'.$search.'%')->orWhere('last_name', 'like', '%'.$search.'%')->orderBy('first_name', 'ASC')->get();
+        $profile_result = array();
+        foreach ($user_result as $user_temp)
+            $profile_result[] = Profile::find($user_temp->profile_id);
+
+        return view('search_result', ['user'=>$user, 'user_result'=>$user_result, 'profile'=>$profile, 'profile_result'=>$profile_result, 'search'=>$search, 'listUser'=>$listUser, 'listMess'=>$listUser]);
+
+    }
 }
