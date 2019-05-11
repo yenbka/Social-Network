@@ -75,12 +75,24 @@ class PostController extends Controller
 
      public function deletePost($pid){
         $post = Posts::find($pid);
+
+        if(!empty($post->likes)){
+            foreach ($post->likes as $like) {
+                $like->delete();
+            }
+        }
+        if(!empty($post->comment)){
+            foreach ($post->comment as $comment) {
+                $comment->delete();
+            }
+        }
         if($post->has_medias){
             $post->media->delete();
             $post->delete();
         } 
         else
             $post->delete();
+
 
         return redirect()->back();
         
