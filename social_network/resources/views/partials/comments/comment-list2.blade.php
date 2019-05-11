@@ -27,11 +27,6 @@
 
 		<p>{{$comment->content}}</p>
 
-		<!-- <a href="#" class="post-add-icon inline-items">
-			<svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
-			<span>3</span>
-		</a> -->
-		<!-- <a href="#" class="reply">Reply</a> -->
 	</li>
 	@endforeach
 </ul>
