@@ -111,14 +111,9 @@
             <svg class="olymp-like-post-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-like-post-icon')}}"></use></svg>
         </a>
 
-        <a href="#" class="btn btn-control">
-            <svg class="olymp-comments-post-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-comments-post-icon')}}"></use></svg>
-        </a>
-
-        <a href="#" class="btn btn-control">
-            <svg class="olymp-share-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-share-icon')}}"></use></svg>
-        </a>
-
+{{--        <a href="#" class="btn btn-control">--}}
+{{--            <svg class="olymp-comments-post-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-comments-post-icon')}}"></use></svg>--}}
+{{--        </a>--}}
     </div>
 
 </article>
