@@ -47,52 +47,46 @@
 
         <a href="#" class="post-add-icon inline-items">
             <svg class="olymp-heart-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-heart-icon')}}"></use></svg>
-            <span>49</span>
+            <span id="like_numb{{$post->id}}">
+                <?php
+                    $numb = 0;
+                    foreach ($post->likes as $like) {
+                        $numb ++;
+                    }
+                    echo $numb;
+                ?>
+            </span>
         </a>
 
-        <ul class="friends-harmonic">
-            <li>
-                <a href="#">
-                    <img src="/img/friend-harmonic9.jpg" alt="friend">
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/img/friend-harmonic10.jpg" alt="friend">
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/img/friend-harmonic7.jpg" alt="friend">
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/img/friend-harmonic8.jpg" alt="friend">
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <img src="/img/friend-harmonic11.jpg" alt="friend">
-                </a>
-            </li>
+        <ul class="friends-harmonic" id="like-item-{{$post->id}}">
+            @foreach($post->likes as $like)
+                <li id="item{{$like->user_id}}">
+                    <a href="#">
+                        <img src="/{{$like->user->profile->avatar_path}}" alt="friend">
+                    </a>
+                </li>
+            @endforeach
+            
         </ul>
 
-        <div class="names-people-likes">
-            <a href="#">Jimmy</a>, <a href="#">Andrea</a> and
-            <br>47 more liked this
-        </div>
-
-
+        
         <div class="comments-shared">
             <a href="#" class="post-add-icon inline-items">
                 <svg class="olymp-speech-balloon-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-speech-balloon-icon')}}"></use></svg>
-                <span>264</span>
+                <span id="comment_numb{{$post->id}}">
+                    <?php
+                        $numb = 0;
+                        foreach ($post->comment as $comment) {
+                            $numb ++;
+                        }
+                        echo $numb;
+                    ?>
+                </span>
             </a>
 
             <a href="#" class="post-add-icon inline-items">
                 <svg class="olymp-share-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-share-icon')}}"></use></svg>
-                <span>37</span>
+                <span>0</span>
             </a>
         </div>
 
@@ -101,18 +95,25 @@
 
     <div class="control-block-button post-control-button">
 
-        <a href="#" class="btn btn-control">
+
+        <a href="#" class="btn btn-control like" id="{{$post->id}}" data-postid="{{$post->id}}"style="
+            @if(!empty($post->likes))
+                @foreach($post->likes as $like)
+                    @if($like->user_id == $user->id)
+                        background-color:#ff5e3e;
+                           
+                    @endif
+                @endforeach
+            @else
+               background-color:#9a9fbf;
+            @endif
+        ">
             <svg class="olymp-like-post-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-like-post-icon')}}"></use></svg>
         </a>
 
-        <a href="#" class="btn btn-control">
-            <svg class="olymp-comments-post-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-comments-post-icon')}}"></use></svg>
-        </a>
-
-        <a href="#" class="btn btn-control">
-            <svg class="olymp-share-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-share-icon')}}"></use></svg>
-        </a>
-
+{{--        <a href="#" class="btn btn-control">--}}
+{{--            <svg class="olymp-comments-post-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-comments-post-icon')}}"></use></svg>--}}
+{{--        </a>--}}
     </div>
 
 </article>

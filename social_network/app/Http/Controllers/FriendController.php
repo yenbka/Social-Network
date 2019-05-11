@@ -34,8 +34,22 @@ class FriendController extends Controller
         $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
         $user = User::where('id', $id)->first();
         $profile = Profile::where('id', $user->profile_id)->first();
-        $friends = Friend::where('user_id_1', $id)->orWhere('user_id_2', $id)->get();
-        return view('friend', ['profile'=>$profile, 'user'=>$user, 'friends'=>$friends, 'listUser'=>$listUser,'listMess'=>$listMess]);
+		$friends = array();
+        $profile_friends = array();
+
+        $id_friends = Friend::where('user_id_1', $id)->where('allow', 1)->get();
+        foreach($id_friends as $id_friend) {
+            $friends[] = User::find($id_friend->user_id_2);
+            $profile_friends[] = Profile::find($id_friend->user_id_2);
+        }
+
+        $id_friends = Friend::where('user_id_2', $id)->where('allow', 1)->get();
+        foreach($id_friends as $id_friend) {
+            $friends[] = User::find($id_friend->user_id_1);
+            $profile_friends[] = Profile::find($id_friend->user_id_1);
+        }
+
+        return view('friend', ['profile'=>$profile, 'user'=>$user, 'friends'=>$friends, 'profile_friends'=>$profile_friends]);
     }
 
     public function send_request(Request $request){
@@ -62,11 +76,13 @@ class FriendController extends Controller
         $id_friends = Friend::where('user_id_1', $user->id)->where('allow', 0)->get();
         $friends = array();
         $profile_friends = array();
+        $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
+        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
         foreach($id_friends as $id_friend) {
             $friends[] = User::find($id_friend->user_id_2);
             $profile_friends[] = Profile::find($id_friend->user_id_2);
         }
-        return view('friend_requests', ['user' => $user, 'profile' => $profile, 'friends' => $friends, 'profile_friends' => $profile_friends]);
+        return view('friend_requests', ['user' => $user, 'profile' => $profile, 'friends' => $friends, 'profile_friends' => $profile_friends,'listUser' => $listUser, 'listMess' => $listMess]);
     }
 
     public function process_request(Request $request){
@@ -92,4 +108,24 @@ class FriendController extends Controller
         }
         return Response::json($response);
     }
+    public function unfriend(Request $request){
+        $response = array();
+        $response['code'] = 400;
+
+        $id_friend = $request->input('id_friend');
+        $id_user = Auth::id();
+        $relation0 = Friend::where('user_id_1', $id_user)->where('user_id_2', $id_friend);
+        $relation = Friend::where('user_id_2', $id_user)->where('user_id_1', $id_friend)->union($relation0)->first();
+
+        if ($relation){
+            if ($relation->delete()){
+                $response['code'] = 200;
+            }
+        }
+
+        $id_friends = Friend::where('user_id_1', $id_user)->orWhere('user_id_2', $id_user)->where('allow', 1)->get();
+        $response['no_friends'] = $id_friends->count();
+
+        return Response::json($response);
+    }										   	 
 }

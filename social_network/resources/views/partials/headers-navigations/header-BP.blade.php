@@ -3,9 +3,17 @@
 <!-- Header-BP -->
 
 <header class="header" id="site-header">
-
+	<div class="fixed-sidebar">
+		<div class="fixed-sidebar-left sidebar--small" id="sidebar-left">
+			<a href="{{route('home', ['id' => Auth::id()])}}" class="logo">
+				<div class="img-wrap">
+					<img src="{{asset('images/logo.png')}}" alt="Olympus">
+				</div>
+			</a>
+		</div>
+	</div>
 	<div class="page-title">
-		<h6>Profile</h6>
+		<h6><a href="{{route('home', ['id' => Auth::id()])}}" class="logo">Home</a></h6>
 	</div>
 
 	<div class="header-content-wrapper">
@@ -160,8 +168,8 @@
 										<img src="{{asset($mess->profile->avatar_path)}}" alt="author" class="avatar">
 									</div>
 									<div class="notification-event">
-										<a href="#" class="h6 notification-friend">{{$mess->user->first_name.' '.$mess->user->last_name}}</a>
-										<span class="chat-message-item">{{$mess->content}}</span>
+									{{--<a href="#" class="h6 notification-friend">{{$mess->user->first_name.' '.$mess->user->last_name}}</a>
+									<span class="chat-message-item">{{$mess->content}}</span>--}}
 									</div>
 									<span class="notification-icon">
 										<svg class="olymp-chat---messages-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-chat---messages')}}-icon"></use></svg>

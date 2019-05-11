@@ -30,11 +30,17 @@
 					@if($post->has_medias===0)
 					<div class="ui-block">
 						@include('partials.posts.posts6-BP')
+						@include('partials.comments.comment-list2',['comments' => $post->comment, 'post_id' => $post->id])
+						<!-- <a href="#" class="more-comments">View more comments <span>+</span></a> -->
+						@include('partials.forms.comment-form')
 						
 					</div>
 					@elseif($post->media->type===1)
 					<div class="ui-block">
 						@include('partials.posts.posts7-BP')
+						@include('partials.comments.comment-list2',['comments' => $post->comment, 'post_id' => $post->id])
+						<!-- <a href="#" class="more-comments">View more comments <span>+</span></a> -->
+						@include('partials.forms.comment-form')
 					</div>
 					@else
 					<div class="ui-block">
@@ -68,11 +74,11 @@
 
 				<div class="ui-block">
 					<div class="ui-block-title">
-						<h6 class="title">Last Videos</h6>
+						<h6 class="title">Last Photos</h6>
 					</div>
 					<div class="ui-block-content">
 
-						@include('partials.widgets.w-last-video')
+						@include('partials.widgets.w-last-photo')
 
 					</div>
 				</div>

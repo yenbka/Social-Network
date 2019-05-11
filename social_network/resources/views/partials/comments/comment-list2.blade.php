@@ -1,59 +1,35 @@
-
+<?php use Carbon\Carbon;?>
 <!-- Comments -->
-
-<ul class="comments-list">
+@if(!empty($comments))
+<ul class="comments-list" id="comment-{{$post_id}}">
+	@foreach($comments as $comment)
 	<li class="comment-item">
 		<div class="post__author author vcard inline-items">
-			<img src="img/author-page.jpg" alt="author">
+			<img src="/{{$comment->user->profile->avatar_path}}" alt="author">
 
 			<div class="author-date">
-				<a class="h6 post__author-name fn" href="02-ProfilePage.html">James Spiegel</a>
+				<a class="h6 post__author-name fn" href="02-ProfilePage.html">{{$comment->user->last_name}} {{$comment->user->first_name}}</a>
 				<div class="post__date">
-					<time class="published" datetime="2004-07-24T18:18">
-						38 mins ago
+					<time class="published" >
+						<?php
+	                        $date_comment = $comment->created_at;
+	                        $now = Carbon::now('Asia/Ho_Chi_Minh');
+	                        $result = $date_comment->diffForHumans($now);
+	                        echo $result;
+	                    ?>
 					</time>
 				</div>
 			</div>
 
-			<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
+{{--			<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>--}}
 
 		</div>
 
-		<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium der doloremque laudantium.</p>
+		<p>{{$comment->content}}</p>
 
-		<a href="#" class="post-add-icon inline-items">
-			<svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
-			<span>3</span>
-		</a>
-		<a href="#" class="reply">Reply</a>
 	</li>
-	<li class="comment-item">
-		<div class="post__author author vcard inline-items">
-			<img src="img/avatar1-sm.jpg" alt="author">
-
-			<div class="author-date">
-				<a class="h6 post__author-name fn" href="#">Mathilda Brinker</a>
-				<div class="post__date">
-					<time class="published" datetime="2004-07-24T18:18">
-						1 hour ago
-					</time>
-				</div>
-			</div>
-
-			<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
-
-		</div>
-
-		<p>Ratione voluptatem sequi en lod nesciunt. Neque porro quisquam est, quinder dolorem ipsum
-			quia dolor sit amet, consectetur adipisci velit en lorem ipsum duis aute irure dolor in reprehenderit in voluptate velit esse cillum.
-		</p>
-
-		<a href="#" class="post-add-icon inline-items">
-			<svg class="olymp-heart-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-heart-icon"></use></svg>
-			<span>8</span>
-		</a>
-		<a href="#" class="reply">Reply</a>
-	</li>
+	@endforeach
 </ul>
+@endif
 
 <!-- ... end Comments -->
