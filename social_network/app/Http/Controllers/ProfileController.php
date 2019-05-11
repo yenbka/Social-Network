@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Hobbie;
+use App\Posts;
 use Illuminate\Http\Request;
 use App\User;
 use Auth;
@@ -37,8 +38,8 @@ class ProfileController extends Controller
         $user = User::where('id', $id)->first();
         $profile = Profile::where('id', $user->profile_id)->first();
         $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
-
-        return view('profile', ['profile'=>$profile, 'user'=>$user,  'hobbies'=>$hobbies, 'listUser'=>$listUser,'listMess'=>$listMess]);
+        $posts = Posts::orderBy('id','desc')->get();
+        return view('profile', ['profile'=>$profile, 'user'=>$user,  'hobbies'=>$hobbies, 'listUser'=>$listUser,'listMess'=>$listMess, 'posts'=>$posts]);
     }
 
     public function get_profile_update_info($id){
