@@ -68,11 +68,11 @@
 
 				<div class="ui-block">
 					<div class="ui-block-title">
-						<h6 class="title">Last Videos</h6>
+						<h6 class="title">Last Photos</h6>
 					</div>
 					<div class="ui-block-content">
 
-						@include('partials.widgets.w-last-video')
+						@include('partials.widgets.w-last-photo')
 
 					</div>
 				</div>
