@@ -50,6 +50,16 @@
 
 		<div class="col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-12 col-12">
 			<div class="ui-block">
+				<div class="ui-block-title">
+						<h6 class="title">Profile Intro</h6>
+					</div>
+				<div class="ui-block-content">
+
+					@include('partials.widgets.w-personal-info')
+
+				</div>
+			</div>
+			<div class="ui-block">
 					<div class="ui-block-title">
 						<h6 class="title">Last Photos</h6>
 					</div>
