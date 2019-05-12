@@ -11,7 +11,7 @@
 		</a>
 	</div>
 	<div class="page-title">
-		<h6><a href="{{route('home', ['id' => Auth::id()])}}" class="logo">Home</a></h6>
+		<h6><a href="{{route('home', ['id' => Auth::id()])}}" class="logo">Trang chủ</a></h6>
 	</div>
 
 	<div class="header-content-wrapper">
@@ -19,14 +19,14 @@
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<div class="form-group with-button">
 				<!-- <input class="form-control js-user-search" placeholder="Search here people or pages..." type="text"> -->
-				<input name="search" class="form-control" placeholder="Search here people or pages..." type="text">
+				<input name="search" class="form-control" placeholder="Tìm bạn bè..." type="text">
 				<button>
 					<svg class="olymp-magnifying-glass-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon')}}"></use></svg>
 				</button>
 			</div>
 		</form>
 
-		<a href="#" class="link-find-friend">Find Friends</a>
+		<a href="#" class="link-find-friend">Tìm kiếm</a>
 
 		<div class="control-block">
 
@@ -36,9 +36,9 @@
 
 				<div class="more-dropdown more-with-triangle triangle-top-center">
 					<div class="ui-block-title ui-block-title-small">
-						<h6 class="title">FRIEND REQUESTS</h6>
-						<a href="#">Find Friends</a>
-						<a href="#">Settings</a>
+						<h6 class="title">Lời mời kết bạn</h6>
+						<a href="#">Tìm bạn</a>
+						<a href="#">Cài đặt</a>
 					</div>
 
 					<div class="mCustomScrollbar" data-mcs-theme="dark">
@@ -147,7 +147,7 @@
 						</ul>
 					</div>
 
-					<a href="{{route('friend_requests', ['id' => Auth::id()])}}" class="view-all bg-blue">View All Requests</a>
+					<a href="{{route('friend_requests', ['id' => Auth::id()])}}" class="view-all bg-blue">Xem tất cả</a>
 				</div>
 			</div>
 
@@ -187,9 +187,9 @@
 
 				<div class="more-dropdown more-with-triangle triangle-top-center">
 					<div class="ui-block-title ui-block-title-small">
-						<h6 class="title">Notifications</h6>
-						<a href="#">Mark all as read</a>
-						<a href="#">Settings</a>
+						<h6 class="title">Thông báo</h6>
+						<a href="#">Đánh dấu đã đọc</a>
+						<a href="#">Cài đặt</a>
 					</div>
 
 					<div class="mCustomScrollbar" data-mcs-theme="dark">
@@ -291,7 +291,7 @@
 						</ul>
 					</div>
 
-					<a href="#" class="view-all bg-primary">View All Notifications</a>
+					<a href="#" class="view-all bg-primary">Xem tất cả</a>
 				</div>
 			</div>
 
@@ -304,11 +304,10 @@
 							<img alt="author" src="{{asset('images/avatar67-sm.jpg')}}" width="36" height="36" class="avatar">
 						@endif
 					</a>
-					<span class="icon-status online"></span>
 					<div class="more-dropdown more-with-triangle">
 						<div class="mCustomScrollbar" data-mcs-theme="dark">
 							<div class="ui-block-title ui-block-title-small">
-								<h6 class="title">Your Account</h6>
+								<h6 class="title">Tài khoản</h6>
 							</div>
 
 							<ul class="account-settings">
@@ -316,14 +315,14 @@
 									<a href="{{route('get_profile_update_info', ['id' => Auth::id()])}}">
 										<svg class="olymp-menu-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-menu-icon')}}"></use></svg>
 
-										<span>Profile Settings</span>
+										<span>Thông tin cá nhân</span>
 									</a>
 								</li>
 								<li>
 									<a href="{{route('logout')}}">
 										<svg class="olymp-logout-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-logout-icon')}}"></use></svg>
 
-										<span>Log Out</span>
+										<span>Đăng xuất</span>
 									</a>
 								</li>
 							</ul>

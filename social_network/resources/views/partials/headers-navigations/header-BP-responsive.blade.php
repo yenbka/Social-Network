@@ -49,9 +49,9 @@
 
 			<div class="mCustomScrollbar" data-mcs-theme="dark">
 				<div class="ui-block-title ui-block-title-small">
-					<h6 class="title">FRIEND REQUESTS</h6>
-					<a href="#">Find Friends</a>
-					<a href="#">Settings</a>
+					<h6 class="title">Lời mời kết bạn</h6>
+					<a href="#">Tìm bạn</a>
+					<a href="#">Cài đặt</a>
 				</div>
 				<ul class="notification-list friend-requests">
 					<li>
@@ -152,7 +152,7 @@
 						</div>
 					</li>
 				</ul>
-				<a href="#" class="view-all bg-blue">Check all your Events</a>
+				<a href="#" class="view-all bg-blue">Xem tất cả</a>
 			</div>
 
 		</div>
@@ -161,9 +161,9 @@
 
 			<div class="mCustomScrollbar" data-mcs-theme="dark">
 				<div class="ui-block-title ui-block-title-small">
-					<h6 class="title">Chat / Messages</h6>
-					<a href="#">Mark all as read</a>
-					<a href="#">Settings</a>
+					<h6 class="title">Tin nhắn</h6>
+					<a href="#">Đánh dấu đã đọc</a>
+					<a href="#">Cài đặt</a>
 				</div>
 
 				<ul class="notification-list chat-message">
@@ -240,7 +240,7 @@
 					</li>
 				</ul>
 
-				<a href="#" class="view-all bg-purple">View All Messages</a>
+				<a href="#" class="view-all bg-purple">Xem tất cả</a>
 			</div>
 
 		</div>
@@ -249,9 +249,9 @@
 
 			<div class="mCustomScrollbar" data-mcs-theme="dark">
 				<div class="ui-block-title ui-block-title-small">
-					<h6 class="title">Notifications</h6>
-					<a href="#">Mark all as read</a>
-					<a href="#">Settings</a>
+					<h6 class="title">Thông báo</h6>
+					<a href="#">Đánh dấu đã đọc</a>
+					<a href="#">Cài đặt</a>
 				</div>
 
 				<ul class="notification-list">
@@ -351,7 +351,7 @@
 					</li>
 				</ul>
 
-				<a href="#" class="view-all bg-primary">View All Notifications</a>
+				<a href="#" class="view-all bg-primary">Xem tất cả</a>
 			</div>
 
 		</div>

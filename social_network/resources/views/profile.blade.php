@@ -64,7 +64,7 @@
 
 				<div class="ui-block">
 					<div class="ui-block-title">
-						<h6 class="title">Profile Intro</h6>
+						<h6 class="title">Thông tin</h6>
 					</div>
 					<div class="ui-block-content">
 
@@ -94,7 +94,7 @@
 			<aside class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
 				<div class="ui-block">
 					<div class="ui-block-title">
-						<h6 class="title">Friend Suggestions</h6>
+						<h6 class="title">Gợi ý kết bạn</h6>
 						<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
 					</div>
 				</div>
@@ -102,7 +102,7 @@
 				<div class="ui-block">
 
 					<div class="ui-block-title">
-						<h6 class="title">Activity Feed</h6>
+						<h6 class="title">Hoạt động</h6>
 						<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
 					</div>
 

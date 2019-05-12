@@ -12,7 +12,7 @@
 		</div>
 	</div>
 
-	<button class="btn btn-md-2 btn-primary comment" id="comment-btn{{$post->id}}" data-postid="{{$post->id}}" type="submit">Post Comment</button>
+	<button class="btn btn-md-2 btn-primary comment" id="comment-btn{{$post->id}}" data-postid="{{$post->id}}" type="submit">Đăng</button>
 </form>
 
 <!-- ... end Comment Form  -->

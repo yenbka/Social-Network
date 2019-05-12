@@ -19,7 +19,7 @@
 			<div class="col col-xl-8 order-xl-2 col-lg-8 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
 				<div class="ui-block">
 					<div class="ui-block-title">
-						<h6 class="title">Hobbies and Interests</h6>
+						<h6 class="title">Sở thích</h6>
 						<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 					</div>
 					<div class="ui-block-content">
@@ -42,7 +42,7 @@
 			<div class="col col-xl-4 order-xl-1 col-lg-4 order-lg-1 col-md-12 order-md-2 col-sm-12 col-12">
 				<div class="ui-block">
 					<div class="ui-block-title">
-						<h6 class="title">Personal Info</h6>
+						<h6 class="title">Thông tin</h6>
 						<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 					</div>
 					<div class="ui-block-content">
