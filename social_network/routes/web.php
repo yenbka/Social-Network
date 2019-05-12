@@ -144,3 +144,8 @@ Route::post('/comment/{pid}',['as'=>'comment', 'uses'=>'CommentController@addCom
 
 //end
 
+Route::get('/change-password',[
+    'as'=>'get_change_password',
+    'uses' => 'ChangePasswordController@index'
+]);
+
