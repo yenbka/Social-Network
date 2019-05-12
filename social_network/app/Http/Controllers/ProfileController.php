@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Hobbie;
+use App\Medias;
 use App\Posts;
 use Illuminate\Http\Request;
 use App\User;
@@ -49,7 +50,8 @@ class ProfileController extends Controller
             // $profile_friends[] = Profile::find($id_friend->user_id_2);
         } 
         // end son bong add
-        return view('profile', ['profile'=>$profile, 'user'=>$user,  'hobbies'=>$hobbies, 'listUser'=>$listUser,'listMess'=>$listMess, 'posts'=>$posts, 'friends'=>$friends]);
+        $photos = Medias::where('user_id', $id)->Where('type', 1)->get();
+        return view('profile', ['profile'=>$profile, 'user'=>$user,  'hobbies'=>$hobbies, 'listUser'=>$listUser,'listMess'=>$listMess, 'posts'=>$posts, 'friends'=>$friends, 'photos'=>$photos]);
     }
 
     public function get_profile_update_info($id){
