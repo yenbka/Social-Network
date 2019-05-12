@@ -2,7 +2,7 @@
 <article class="hentry post has-post-thumbnail">
 
     <div class="post__author author vcard inline-items">
-        <img src="/{{$profile->avatar_path}}" alt="author">
+        <img src="/{{$post->user->profile->avatar_path}}" alt="author">
 
         <div class="author-date">
             <a class="h6 post__author-name fn" href="#">{{$post->user->last_name}} {{$post->user->first_name}}</a>
@@ -39,9 +39,12 @@
 
     <p>{{$post->content}}</p>
 
+    @foreach($post->media as $media)
     <div class="post-thumb">
-        <img src="/uploads/{{$post->media->link}}" alt="photo">
+        <img src="/uploads/{{$media->link}}" alt="photo">
     </div>
+    
+    @endforeach
 
     <div class="post-additional-info inline-items">
 

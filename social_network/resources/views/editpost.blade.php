@@ -28,21 +28,13 @@
 		    <textarea class="form-control" id="editContent" name="editContent" placeholder="">{{$post->content}}
 			</textarea>
 
-			@if($post->has_medias==1)
-		    <div class="thumbnail_container" style="display: block;">
-                <img src="/uploads/{{$post->media->link}}" id="thumbnail"class="thumbnail" alt="photo">
-                <a href="#" onclick="closeThumbnail('#thumbnail')" class="close_thumbnail"  style="display: block;">X</a>
+            <div class="thumb_div">
+                
             </div>
-            @else
-            <div class="thumbnail_container">
-                <img src="" id="thumbnail"class="thumbnail" alt="photo">
-                <a href="#" onclick="closeThumbnail('#editImage','#thumbnail')" class="close_thumbnail">X</a>
-            </div>
-            @endif
 
 		    <h5 id="choosefile">Chèn ảnh.</h5>
 		    <div></div>
-		    <input type="file" name="editImage" id="editImage" class="inputfile" onchange="previewFile('#editImage','#thumbnail')" />
+		    <input type="file" name="editImage[]" id="editImage" class="inputfile" onchange="previewFile('#editImage','#thumbnail')" multiple />
 		    <h2><label for="editImage"><i class="fas fa-image" ></i></label></h2>
 		    <br/>
 
