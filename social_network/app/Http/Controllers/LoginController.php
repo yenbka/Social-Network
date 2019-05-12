@@ -9,7 +9,7 @@ use Illuminate\Support\MessageBag;
 class LoginController extends Controller
 {
     public function getLogin(){
-        return "Hello";
+        return view('landing');
     }
     public function postLogin(Request $request){
         $rules = [
