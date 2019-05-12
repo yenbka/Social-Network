@@ -8,6 +8,8 @@ use App\User;
 use Auth;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use App\messages;
+
 
 class HobbieController extends Controller
 {
