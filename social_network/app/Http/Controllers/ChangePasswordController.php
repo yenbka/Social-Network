@@ -12,6 +12,22 @@ use Illuminate\Support\Facades\Validator;
 
 class ChangePasswordController extends Controller
 {
+    protected function validator(array $data)
+    {
+        $messages = [
+            'oldPass.required' => 'Trường bắt buộc',
+            'newPass.required' => 'Trường bắt buộc',
+            'newPass1.required' => 'Trường bắt buộc',
+            'oldPass.min' => 'Mật khẩu phải chứa ít nhất 6 ký tự',
+            'newPass.min' => 'Mật khẩu phải chứa ít nhất 6 ký tự',
+            'newPass1.min' => 'Mật khẩu phải chứa ít nhất 6 ký tự',
+        ];
+        return Validator::make($data, [
+            'oldPass' => ['required', 'string', 'min:6'],
+            'newPass' => ['required', 'string', 'min:6'],
+            'newPass1' => ['required', 'string', 'min:6'],
+        ],$messages);
+    }
     public function index(){
         $user = Auth::user();
         $profile = Profile::where('id', $user->profile_id)->first();
@@ -30,6 +46,11 @@ class ChangePasswordController extends Controller
         return view('change-password', ['user' => $user, 'hobbies' => $hobbies, 'profile'=>$profile, 'listUser' => $listUser, 'listMess' => $listMess, 'friends'=>$friends]);
     }
     public function changePassword(Request $request){
-        dd($request->all());
+        $validator =$this->validator($request->all());
+        if($validator -> fails()){
+            return  redirect()->back()->withErrors($validator)->withInput();
+        }else{
+            return redirect()->back();
+        }
     }
 }
