@@ -59,8 +59,8 @@ class FriendController extends Controller
         $user_id_2 = $request->input('request_id');
 
         $relation = new Friend();
-        $relation->user_id_1 = Auth::id();
-        $relation->user_id_2 = $user_id_2;
+        $relation->user_id_1 = $user_id_2;
+        $relation->user_id_2 = Auth::id();
         $relation->allow = 0;
 
         if ($relation->save()) {
