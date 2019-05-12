@@ -19,13 +19,13 @@
     <!-- Tab panes -->
     <div class="tab-content">
         <div class="tab-pane" id="home" role="tabpanel" data-mh="log-tab">
-            <div class="title h6">Register</div>
+            <div class="title h6">Đăng</div>
             <form class="content" action="{{url('register')}}" method="post">
             {{ csrf_field() }}
                 <div class="row">
                     <div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                         <div class="form-group label-floating is-empty">
-                            <label class="control-label">First Name</label>
+                            <label class="control-label">Họ</label>
                             <input class="form-control" placeholder="" type="text" name="firstname">
                             @if ($errors->has('firstname'))
                                 <p>{{$errors->first('firstname')}}</p>
@@ -34,7 +34,7 @@
                     </div>
                     <div class="col col-12 col-xl-6 col-lg-6 col-md-6 col-sm-12">
                         <div class="form-group label-floating is-empty">
-                            <label class="control-label">Last Name</label>
+                            <label class="control-label">Tên</label>
                             <input class="form-control" placeholder="" type="text" name="lastname">
                             @if ($errors->has('lastname'))
                                 <p>{{$errors->first('lastname')}}</p>
@@ -43,14 +43,14 @@
                     </div>
                     <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
                         <div class="form-group label-floating is-empty">
-                            <label class="control-label">Your Email</label>
+                            <label class="control-label">Địa chỉ email</label>
                             <input class="form-control" placeholder="" type="email" name="registerEmail">
                             @if ($errors->has('registerEmail'))
                                 <p>{{$errors->first('registerEmail')}}</p>
                             @endif
                         </div>
                         <div class="form-group label-floating is-empty">
-                            <label class="control-label">Your Password</label>
+                            <label class="control-label">Mật khẩu</label>
                             <input class="form-control" placeholder="" type="password" name="registerPassword">
                             @if ($errors->has('registerPassword'))
                                 <p>{{$errors->first('registerPassword')}}</p>
@@ -58,7 +58,7 @@
                         </div>
 
                         <div class="form-group date-time-picker label-floating">
-                            <label class="control-label">Your Birthday</label>
+                            <label class="control-label">Ngày sinh</label>
                             <input name="datetimepicker" value="10/24/1984" />
                             <span class="input-group-addon">
                                 <svg class="olymp-calendar-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-calendar-icon"></use></svg>
@@ -66,10 +66,10 @@
                         </div>
 
                         <div class="form-group label-floating is-select">
-                            <label class="control-label">Your Gender</label>
+                            <label class="control-label">Giới tính</label>
                             <select class="selectpicker form-control" name="gender">
-                                <option value="MA">Male</option>
-                                <option value="FE">Female</option>
+                                <option value="MA">Nam</option>
+                                <option value="FE">Nữ</option>
                             </select>
                         </div>
 
@@ -88,7 +88,7 @@
         </div>
 
         <div class="tab-pane active" id="profile" role="tabpanel" data-mh="log-tab">
-            <div class="title h6">Login to your Account</div>
+            <div class="title h6">Đăng nhập bằng tài khoản</div>
             @if($errors->has('errorlogin'))
             <div class="alert alert-danger" role="alert">
                 {{$errors->first('errorlogin')}}
@@ -99,14 +99,14 @@
                 <div class="row">
                     <div class="col col-12 col-xl-12 col-lg-12 col-md-12 col-sm-12">
                         <div class="form-group label-floating is-empty">
-                            <label class="control-label">Your Email</label>
+                            <label class="control-label">Địa chỉ email</label>
                             <input class="form-control" placeholder="" type="email" name="email" value="{{old('email')}}">
                             @if ($errors->has('email'))
                                 <p>{{$errors->first('email')}}</p>
                             @endif
                         </div>
                         <div class="form-group label-floating is-empty">
-                            <label class="control-label">Your Password</label>
+                            <label class="control-label">Mật khẩu</label>
                             <input class="form-control" placeholder="" type="password" name="password">
                             @if ($errors->has('password'))
                                 <p>{{$errors->first('password')}}</p>
@@ -118,13 +118,13 @@
                             <div class="checkbox">
                                 <label>
                                     <input name="optionsCheckboxes" type="checkbox" checked>
-                                    Remember Me
+                                    Nhớ đăng nhập
                                 </label>
                             </div>
-                            <a href="#" class="forgot">Forgot my Password</a>
+                            <a href="#" class="forgot">Quên mật khẩu</a>
                         </div>
                         <input type="submit" value="Login" class="btn btn-lg btn-primary full-width">
-                        <p>Don’t you have an account? <a href="#">Register Now!</a> it’s really simple and you can start enjoing all the benefits!</p>
+                        <p>Bạn chưa có tài khoản? <a href="#">Đăng ký ngay!</a></p>
                     </div>
                 </div>
             </form>

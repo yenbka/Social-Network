@@ -46,7 +46,7 @@
 			</ul>
 		</div>
 		<a href="#" class="olympus-chat inline-items js-sidebar-open">
-			<h6 class="olympus-chat-title">Let's chat</h6>
+			<h6 class="olympus-chat-title">Nhắn tin</h6>
 			<svg class="olymp-close-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-close-icon')}}"></use></svg>
 		</a>
 	</div>
