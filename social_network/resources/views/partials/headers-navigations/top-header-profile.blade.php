@@ -45,9 +45,9 @@
 									</li>
 									<li>
 										@if(\Request::route()->getName()=='photo')
-											<a href="{{route('photo', ['id' => Auth::id()])}}" class="active">Photos</a>
+											<a href="{{route('photo', ['id' => Auth::id()])}}" class="active">Ảnh</a>
 										@else
-											<a href="{{route('photo', ['id' => Auth::id()])}}">Photos</a>
+											<a href="{{route('photo', ['id' => Auth::id()])}}">Ảnh</a>
 										@endif
 									</li>
 								</ul>

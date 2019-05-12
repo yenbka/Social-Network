@@ -42,8 +42,9 @@ class HomeController extends Controller
         // dd($profile->toArray(), $user->profile->toArray());
         $hobbies = Hobbie::where('id', Auth::user()->id)->first();
         $posts = Posts::orderBy('id','desc')->get();
+        $photos = Medias::where('user_id', Auth::user()->id)->Where('type', 1)->get();
         // dd($posts);
-        return view('newsfeed', compact('profile','user','hobbies','listUser','posts','listMess'));
+        return view('newsfeed', compact('profile','user','hobbies','listUser','posts','listMess','photos'));
     }
 	
 	public function search(Request $request) {
@@ -61,8 +62,9 @@ class HomeController extends Controller
         $profile_result = array();
         foreach ($user_result as $user_temp)
             $profile_result[] = Profile::find($user_temp->profile_id);
+        $photos = Medias::where('user_id', Auth::user()->id)->Where('type', 1)->get();
 
-        return view('search_result', ['user'=>$user, 'user_result'=>$user_result, 'profile'=>$profile, 'profile_result'=>$profile_result, 'search'=>$search, 'listUser'=>$listUser, 'listMess'=>$listMess, 'hobbies'=>$hobbie]);
+        return view('search_result', ['user'=>$user, 'user_result'=>$user_result, 'profile'=>$profile, 'profile_result'=>$profile_result, 'search'=>$search, 'listUser'=>$listUser, 'listMess'=>$listMess, 'hobbies'=>$hobbie, 'photos'=>$photos]);
 
     }
 }

@@ -18,7 +18,7 @@
 		<div class="col col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
 			<div class="ui-block responsive-flex">
 				<div class="ui-block-title">
-					<div class="h6 title">{{$user->first_name."’s Photo Gallery"}}</div>
+					<div class="h6 title">{{"Ảnh của ".$user->first_name}}</div>
 				</div>
 			</div>
 		</div>
@@ -31,12 +31,12 @@
 			<!-- Tab panes -->
 			<div class="tab-content">
 				<div class="tab-pane active" id="album-page" role="tabpanel">
-
 					<div class="photo-album-wrapper">
-						<div class="photo-album-item-wrap col-4-width">
-                            @include('partials.photo-album-items.photo-album-item1')
-						</div>
-
+						@foreach($photos as $photo)
+							<div class="photo-album-item-wrap col-4-width">
+								@include('partials.photo-album-items.photo-album-item1')
+							</div>
+						@endforeach
 					</div>
 
 				</div>

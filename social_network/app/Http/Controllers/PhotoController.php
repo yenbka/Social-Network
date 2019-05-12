@@ -34,7 +34,7 @@ class PhotoController extends Controller
         $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
         $user = User::where('id', $id)->first();
         $profile = Profile::where('id', $user->profile_id)->first();
-        $photos = Medias::where('user_id', $id)->Where('type', 0)->get();
+        $photos = Medias::where('user_id', $id)->Where('type', 1)->get();
         return view('photo', ['profile'=>$profile, 'user'=>$user, 'photos'=>$photos,'listUser'=>$listUser,'listMess'=>$listMess]);
     }
 }
