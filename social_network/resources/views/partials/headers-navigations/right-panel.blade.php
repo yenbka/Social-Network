@@ -26,7 +26,7 @@
 	<div class="fixed-sidebar-right sidebar--large" id="sidebar-right-1">
 		<div class="mCustomScrollbar" data-mcs-theme="dark">
 			<div class="ui-block-title ui-block-title-small">
-				<p class="title">Danh sách bạn bè</p>
+				<p class="title">Danh sách người dùng</p>
 			</div>
 			<ul class="chat-users">
 				@foreach ($listUser as $user)
