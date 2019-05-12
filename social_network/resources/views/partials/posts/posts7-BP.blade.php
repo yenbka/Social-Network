@@ -84,10 +84,10 @@
                 </span>
             </a>
 
-            <a href="#" class="post-add-icon inline-items">
-                <svg class="olymp-share-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-share-icon')}}"></use></svg>
-                <span>0</span>
-            </a>
+{{--            <a href="#" class="post-add-icon inline-items">--}}
+{{--                <svg class="olymp-share-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-share-icon')}}"></use></svg>--}}
+{{--                <span>0</span>--}}
+{{--            </a>/--}}
         </div>
 
 
