@@ -29,4 +29,7 @@ class ChangePasswordController extends Controller
         // end son bong add
         return view('change-password', ['user' => $user, 'hobbies' => $hobbies, 'profile'=>$profile, 'listUser' => $listUser, 'listMess' => $listMess, 'friends'=>$friends]);
     }
+    public function changePassword(Request $request){
+        dd($request->all());
+    }
 }

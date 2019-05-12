@@ -148,4 +148,4 @@ Route::get('/change-password',[
     'as'=>'get_change_password',
     'uses' => 'ChangePasswordController@index'
 ]);
-
+Route::post('change-password','ChangePasswordController@changepassword');
