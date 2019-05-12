@@ -55,13 +55,14 @@ class HomeController extends Controller
 
         $user = Auth::user();
         $profile = Profile::find($user->profile_id);
+        $hobbie = Hobbie::find($user->profile_id);
 
         $user_result = User::where('first_name', 'like', '%'.$search.'%')->orWhere('last_name', 'like', '%'.$search.'%')->orderBy('first_name', 'ASC')->get();
         $profile_result = array();
         foreach ($user_result as $user_temp)
             $profile_result[] = Profile::find($user_temp->profile_id);
 
-        return view('search_result', ['user'=>$user, 'user_result'=>$user_result, 'profile'=>$profile, 'profile_result'=>$profile_result, 'search'=>$search, 'listUser'=>$listUser, 'listMess'=>$listMess]);
+        return view('search_result', ['user'=>$user, 'user_result'=>$user_result, 'profile'=>$profile, 'profile_result'=>$profile_result, 'search'=>$search, 'listUser'=>$listUser, 'listMess'=>$listMess, 'hobbies'=>$hobbie]);
 
     }
 }

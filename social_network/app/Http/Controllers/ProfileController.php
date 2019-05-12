@@ -9,6 +9,7 @@ use App\User;
 use Auth;
 use App\messages;
 use App\Profile;
+use App\Friend;
 use Illuminate\Support\Facades\Validator;
 
 class ProfileController extends Controller
@@ -39,7 +40,16 @@ class ProfileController extends Controller
         $profile = Profile::where('id', $user->profile_id)->first();
         $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
         $posts = Posts::orderBy('id','desc')->get();
-        return view('profile', ['profile'=>$profile, 'user'=>$user,  'hobbies'=>$hobbies, 'listUser'=>$listUser,'listMess'=>$listMess, 'posts'=>$posts]);
+        // son bong add
+        $id_friends = Friend::where('user_id_1', Auth::id())->where('allow', 0)->get();
+        $friends = array();
+        // $profile_friends = array();
+        foreach($id_friends as $id_friend) {
+            $friends[] = User::find($id_friend->user_id_2);
+            // $profile_friends[] = Profile::find($id_friend->user_id_2);
+        } 
+        // end son bong add
+        return view('profile', ['profile'=>$profile, 'user'=>$user,  'hobbies'=>$hobbies, 'listUser'=>$listUser,'listMess'=>$listMess, 'posts'=>$posts, 'friends'=>$friends]);
     }
 
     public function get_profile_update_info($id){
@@ -47,7 +57,17 @@ class ProfileController extends Controller
         $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
         $user = Auth::user();
         $profile = Profile::where('id', $user->id)->first();
-        return view('profile_update_info', ['user' => $user, 'profile' => $profile, 'listUser' => $listUser, 'listMess' => $listMess]);
+
+        // son bong add
+        $id_friends = Friend::where('user_id_1', Auth::id())->where('allow', 0)->get();
+        $friends = array();
+        // $profile_friends = array();
+        foreach($id_friends as $id_friend) {
+            $friends[] = User::find($id_friend->user_id_2);
+            // $profile_friends[] = Profile::find($id_friend->user_id_2);
+        } 
+        // end son bong add
+        return view('profile_update_info', ['user' => $user, 'profile' => $profile, 'listUser' => $listUser, 'listMess' => $listMess, 'friends'=>$friends]);
     }
 
     protected function validator(array $data)
@@ -83,15 +103,24 @@ class ProfileController extends Controller
         $validator = $this->validator($allRequest);
         $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
         $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
+        // son bong add
+        $id_friends = Friend::where('user_id_1', Auth::id())->where('allow', 0)->get();
+        $friends = array();
+        // $profile_friends = array();
+        foreach($id_friends as $id_friend) {
+            $friends[] = User::find($id_friend->user_id_2);
+            // $profile_friends[] = Profile::find($id_friend->user_id_2);
+        } 
+        // end son bong add
         if ($validator->fails()) {
             // Dữ liệu vào không thỏa điều kiện sẽ thông báo lỗi
-            return view('profile_update_info', ['user' => Auth::user(), 'profile' => Profile::find($id), 'listUser' => $listUser, 'listMess' => $listMess])->withErrors($validator)->withInput();
+            return view('profile_update_info', ['user' => Auth::user(), 'profile' => Profile::find(Auth::user()->profile_id), 'listUser' => $listUser, 'listMess' => $listMess])->withErrors($validator)->withInput();
         } else {
             // Dữ liệu vào hợp lệ sẽ thực hiện tạo người dùng dưới csdl
             $this->update($allRequest, $id);
             // Insert thành công sẽ hiển thị thông báo
             $status = "Cập nhật thông tin cá nhân thành công!";
-            return view('profile_update_info', ['user' => Auth::user(), 'profile' => Profile::find($id), 'status' => $status,'listUser' => $listUser, 'listMess' => $listMess]);
+            return view('profile_update_info', ['user' => Auth::user(), 'profile' => Profile::find(Auth::user()->profile_id), 'status' => $status,'listUser' => $listUser, 'listMess' => $listMess, 'friends'=>$friends]);
         }
     }
 

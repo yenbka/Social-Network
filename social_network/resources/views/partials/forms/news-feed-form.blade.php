@@ -9,7 +9,7 @@
 
                 <svg class="olymp-status-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-status-icon')}}"></use></svg>
 
-                <span>Status</span>
+                <span>Trạng thái</span>
             </a>
         </li>
     </ul>
@@ -23,7 +23,7 @@
                     <img src="{{asset($profile->avatar_path)}}" alt="author" height="36px" width="36px">
                 </div>
                 <div class="form-group with-icon label-floating is-empty">
-                    <label class="control-label">Share what you are thinking here...</label>
+                    <label class="control-label">Hôm nay bạn như thế nào...</label>
                     <textarea class="form-control" name="text" placeholder=""></textarea>
                 </div>
                 <div class="thumbnail_container" >
@@ -34,7 +34,7 @@
                     <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="ADD PHOTOS">
                         <svg class="olymp-camera-icon" data-toggle="modal" data-target="#post-photo"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-camera-icon')}}"></use></svg>
                     </a>
-                    <button type="submit" class="btn btn-primary btn-md-2">Post Status</button>
+                    <button type="submit" class="btn btn-primary btn-md-2">Đăng</button>
                 </div>
             </form>
         </div>

@@ -59,8 +59,8 @@ class FriendController extends Controller
         $user_id_2 = $request->input('request_id');
 
         $relation = new Friend();
-        $relation->user_id_1 = Auth::id();
-        $relation->user_id_2 = $user_id_2;
+        $relation->user_id_1 = $user_id_2;
+        $relation->user_id_2 = Auth::id();
         $relation->allow = 0;
 
         if ($relation->save()) {
@@ -82,7 +82,7 @@ class FriendController extends Controller
             $friends[] = User::find($id_friend->user_id_2);
             $profile_friends[] = Profile::find($id_friend->user_id_2);
         }
-        return view('friend_requests', ['user' => $user, 'profile' => $profile, 'friends' => $friends, 'profile_friends' => $profile_friends,'listUser' => $listUser, 'listMess' => $listMess]);
+        return view('friend_requests', ['user' => $user, 'profile' => $profile, 'friends' => $friends, 'profile_friends' => $profile_friends,'listUser' => $listUser, 'listMess' => $listMess]);    
     }
 
     public function process_request(Request $request){

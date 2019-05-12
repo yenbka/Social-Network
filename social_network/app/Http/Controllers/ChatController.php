@@ -17,12 +17,13 @@ class ChatController extends Controller
         $yourMessages = messages::where('from', Auth::user()->id)->where('to',$request->toUserId)->get();
         $friendMessages = messages::where('from',$request->toUserId)->where('to',Auth::user()->id)->get();
         $yourProfile = Profile::whereId(Auth::user()->id)->first();
-        $friendProfile = Profile::whereId($request->toUserId)->first();
+        $friendProfile = User::whereId($request->toUserId)->first();
+
         return response()->json([
             'yourMessages' => $yourMessages,
             'friendMessages' => $friendMessages,
             'yourProfile' => $yourProfile,
-            'friendProfile' => $friendProfile
+            'friendName' => $friendProfile->first_name." ".$friendProfile->last_name
         ]);
     }
 

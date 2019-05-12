@@ -9,8 +9,8 @@
 			<svg class="olymp-plus-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-plus-icon')}}"></use></svg>
 		</a>
 
-		<a href="#" class="title h5" data-toggle="modal" data-target="#create-photo-album">Create an Album</a>
-		<span class="sub-title">It only takes a few minutes!</span>
+		<a href="#" class="title h5" data-toggle="modal" data-target="#create-photo-album">Tạo bộ sưu tập</a>
+		<span class="sub-title">Chờ trong vài phút!</span>
 
 	</div>
 

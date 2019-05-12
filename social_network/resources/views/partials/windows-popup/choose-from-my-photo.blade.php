@@ -9,7 +9,7 @@
 				<svg class="olymp-close-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-close-icon')}}"></use></svg>
 			</a>
 			<div class="modal-header">
-				<h6 class="title">Choose from My Photos</h6>
+				<h6 class="title">Tải ảnh lên</h6>
 
 				<!-- Nav tabs -->
 				<ul class="nav nav-tabs" role="tablist">

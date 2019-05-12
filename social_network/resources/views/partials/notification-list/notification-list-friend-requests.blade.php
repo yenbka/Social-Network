@@ -4,7 +4,7 @@
 
 <ul class="notification-list friend-requests">
     @if (count($friends) > 0)
-        @for ($i = 0; $i < count($friends); $i++)    
+        @for ($i = 0; $i < count($friends); $i++)
             <li>
                 <div class="author-thumb">
                 <img src="{{asset($profile_friends[$i]->avatar_path)}}" alt="author" width='42' height='42'>                </div>
@@ -17,19 +17,19 @@
                                         <span class="icon-add">
                                             <svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
                                         </span>
-                                        Accept Friend Request
+                                        Chấp nhận
                                     </a>
 
                                     <a id="deny" href="#" class="accept-request request-del" onclick="process_request(0, {{$friends[$i]->id}})">
                                         <span class="icon-minus">
                                             <svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
                                         </span>
-                                        Deny
+                                        Từ chối
                                     </a>
 
-                                    <button id="friend" type="button" class="btn btn-success d-none"><i class="fa fa-check" aria-hidden="true"></i>Friend</button>
-                                    <button id="denied" type="button" class="btn btn-success d-none">Denied</button>
-			                        <button id="error" type="button" class="btn btn-warning d-none"><i class="fa fa-time" aria-hidden="true"></i>Something went wrong!</button>
+                                    <button id="friend" type="button" class="btn btn-success d-none"><i class="fa fa-check" aria-hidden="true"></i>Bạn bè</button>
+                                    <button id="denied" type="button" class="btn btn-success d-none">Từ chối</button>
+			                        <button id="error" type="button" class="btn btn-warning d-none"><i class="fa fa-time" aria-hidden="true"></i>Đã có lỗi xảy ra!</button>
                                 </span>
 
                 <div class="more">
@@ -40,8 +40,8 @@
         @endfor
     @else
     <div class="alert alert-success">
-        <i class="fa" aria-hidden="true"></i> 
-        <strong>There is not any request!</strong>
+        <i class="fa" aria-hidden="true"></i>
+        <strong>Không có lời mời nào!</strong>
     </div>
     @endif
 
