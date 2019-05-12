@@ -19,7 +19,7 @@
 		</div>
 		<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 			<div class="form-group label-floating is-empty">
-				<label class="control-label">Xác thực</label>
+				<label class="control-label">Nhập lại mật khẩu mới</label>
 				<input class="form-control" placeholder="" type="password">
 			</div>
 		</div>
@@ -29,7 +29,7 @@
 
 				<div class="checkbox">
 					<label>
-						<input name="optionsCheckboxes" type="checkbox">
+						<input name="optionsCheckboxes" type="checkbox" checked>
 						Nhớ đăng nhập
 					</label>
 				</div>
