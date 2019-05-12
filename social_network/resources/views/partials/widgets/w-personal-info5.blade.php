@@ -3,32 +3,32 @@
 
 <ul class="widget w-personal-info">
 	<li>
-		<span class="title">Name</span>
+		<span class="title">Tên</span>
 		<span class="text">{{$user->first_name.' '.$user->last_name}}</span>
 	</li>
 	<li>
-		<span class="title">Birthday</span>
+		<span class="title">Ngày sinh</span>
 		<span class="text">{{$profile->birth_date}}</span>
 	</li>
 	<li>
-		<span class="title">Address</span>
+		<span class="title">Địa chỉ</span>
 		<span class="text">{{$profile->address}}</span>
 	</li>
 
 	<li>
-		<span class="title">Gender</span>
+		<span class="title">Giới tính</span>
 		@if($profile->gender==0)
-			<span class="text">Male</span>
+			<span class="text">Nam</span>
 		@else
-			<span class="text">Female</span>
+			<span class="text">Nữ</span>
 		@endif
 	</li>
 	<li>
-		<span class="title">Status</span>
-		<span class="text">Married</span>
+		<span class="title">Tình trạng</span>
+		<span class="text">Độc thân</span>
 	</li>
 	<li>
-		<span class="title">Email</span>
+		<span class="title">Địa chỉ email</span>
 		<span class="text">{{$user->email}}</span>
 	</li>
 	<!-- <li>
@@ -36,11 +36,11 @@
 		<a href="#" class="text">daydreamsagency.com</a>
 	</li> -->
 	<li>
-		<span class="title">Phone</span>
+		<span class="title">Số điện thoại</span>
 		<span class="text">{{$profile->phone}}</span>
 	</li>
 	<li>
-		<span class="title">About Me</span>
+		<span class="title">Về tôi</span>
 		<span class="text">{{$profile->about_me}}</span>
 	</li>
 	<!-- <li>

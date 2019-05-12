@@ -8,7 +8,7 @@
 			</a>
 
 			<div class="modal-header">
-				<h6 class="title">Update Photo</h6>
+				<h6 class="title">Tải ảnh lên</h6>
 			</div>
 
 			<form method="POST" action="{{action('ProfileController@update_avatar', ['id' => Auth::id()])}}" enctype="multipart/form-data">
@@ -17,8 +17,8 @@
 					<a href="#" class="upload-photo-item">
 					<svg class="olymp-computer-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-computer-icon')}}"></use></svg>
 
-					<h6>Upload Local Photo</h6>
-					<span>Browse your computer.</span>
+					<h6>Tải ảnh lên</h6>
+					<span>Từ máy tính của bạn.</span>
 					<input type="file" name="avatar" accept="image/*">
 					</a>
 
@@ -26,13 +26,13 @@
 
 						<svg class="olymp-photos-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-photos-icon')}}"></use></svg>
 
-						<h6>Choose from My Photos</h6>
-						<span>Choose from your uploaded photos</span>
+						<h6>Tải ảnh lên</h6>
+						<span>Từ bộ sưu tập</span>
 					</a>
 				</div>
 				<div class="modal-footer">
-					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					<button type="submit" class="btn btn-primary">Upload Image</button> 
+					<button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+					<button type="submit" class="btn btn-primary">Tải lên</button>
 				</div>
 			</form>
 		</div>
