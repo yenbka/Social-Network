@@ -4,13 +4,11 @@
 
 <header class="header" id="site-header">
 	<div class="fixed-sidebar">
-		<div class="fixed-sidebar-left sidebar--small" id="sidebar-left">
-			<a href="{{route('home', ['id' => Auth::id()])}}" class="logo">
-				<div class="img-wrap">
-					<img src="{{asset('images/logo.png')}}" alt="Olympus">
-				</div>
-			</a>
-		</div>
+		<a href="{{route('home', ['id' => Auth::id()])}}" class="logo">
+			<div class="img-wrap">
+				<img src="{{asset('images/logo.png')}}" alt="Olympus">
+			</div>
+		</a>
 	</div>
 	<div class="page-title">
 		<h6><a href="{{route('home', ['id' => Auth::id()])}}" class="logo">Home</a></h6>

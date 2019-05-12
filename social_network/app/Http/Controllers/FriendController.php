@@ -49,7 +49,7 @@ class FriendController extends Controller
             $profile_friends[] = Profile::find($id_friend->user_id_1);
         }
 
-        return view('friend', ['profile'=>$profile, 'user'=>$user, 'friends'=>$friends, 'profile_friends'=>$profile_friends]);
+        return view('friend', ['profile'=>$profile, 'user'=>$user, 'friends'=>$friends, 'profile_friends'=>$profile_friends, 'listUser'=>$listUser,'listMess'=>$listMess]);
     }
 
     public function send_request(Request $request){
