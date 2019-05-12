@@ -304,7 +304,6 @@
 							<img alt="author" src="{{asset('images/avatar67-sm.jpg')}}" width="36" height="36" class="avatar">
 						@endif
 					</a>
-					<span class="icon-status online"></span>
 					<div class="more-dropdown more-with-triangle">
 						<div class="mCustomScrollbar" data-mcs-theme="dark">
 							<div class="ui-block-title ui-block-title-small">
