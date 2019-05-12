@@ -22,14 +22,14 @@
 										@if(\Request::route()->getName()=='profile')
 											<a href="{{route('profile', ['id'=>Auth::id()])}}" class="active">Timeline</a>
 										@else
-											<a href="{{route('profile', ['id'=>Auth::id()])}}" >Timeline</a>
+											<a href="{{route('profile', ['id'=>Auth::id()])}}" >Dòng thời gian</a>
 										@endif
 									</li>
 									<li>
 										@if(\Request::route()->getName()=='about')
-											<a href="{{route('about', ['id' => Auth::id()])}}" class="active">About</a>
+											<a href="{{route('about', ['id' => Auth::id()])}}" class="active">Về bạn</a>
 										@else
-											<a href="{{route('about', ['id' => Auth::id()])}}">About</a>
+											<a href="{{route('about', ['id' => Auth::id()])}}">Về bạn</a>
 										@endif
 									</li>
 								</ul>
@@ -38,9 +38,9 @@
 								<ul class="profile-menu">
 									<li>
 										@if(\Request::route()->getName()=='friend')
-											<a href="{{route('friend', ['id' => Auth::id()])}}" class="active">Friends</a>
+											<a href="{{route('friend', ['id' => Auth::id()])}}" class="active">Bạn bè</a>
 										@else
-											<a href="{{route('friend', ['id' => Auth::id()])}}">Friends</a>
+											<a href="{{route('friend', ['id' => Auth::id()])}}">Bạn bè</a>
 										@endif
 									</li>
 									<li>
@@ -59,7 +59,7 @@
 
 								<ul class="more-dropdown more-with-triangle triangle-bottom-right">
 									<li>
-										<a href="#" data-toggle="modal" data-target="#update-header-photo">Update Header Photo</a>
+										<a href="#" data-toggle="modal" data-target="#update-header-photo">Cập nhật ảnh bìa</a>
 									</li>
 								</ul>
 							</div>

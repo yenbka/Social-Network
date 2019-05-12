@@ -8,7 +8,7 @@
 			</a>
 
 			<div class="modal-header">
-				<h6 class="title">Update Header Photo</h6>
+				<h6 class="title">Chỉnh sửa ảnh bìa</h6>
 			</div>
 
 			<div class="modal-body">
@@ -18,16 +18,16 @@
 
 					<input type="file" id="imagefile" name="imagefile" class="inputfile" form="post-form" onchange="previewFile('#imagefile','#thumbnail1')" multiple/>
 					<h2><label for="imagefile"><i class="fas fa-image" ></i></label></h2>
-	
-					<h6>Upload Photo</h6>
-					<span>Browse your computer.</span>
+
+					<h6>Tải ảnh lên</h6>
+					<span>Từ máy tính của bạn.</span>
 				</div>
 
 				<a href="#" class="upload-photo-item" data-toggle="modal" data-target="#choose-from-my-photo">
 					<svg class="olymp-photos-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-photos-icon"></use></svg>
 
-					<h6>Choose from My Photos</h6>
-					<span>Choose from your uploaded photos</span>
+					<h6>Tải ảnh lên</h6>
+					<span>Ảnh trong bộ sưu tập</span>
 				</a>
 			</div>
 		</div>

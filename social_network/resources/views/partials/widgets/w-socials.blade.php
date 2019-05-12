@@ -1,7 +1,7 @@
 <!-- W-Socials -->
 
 <div class="widget w-socials">
-	<h6 class="title">Other Social Networks:</h6>
+	<h6 class="title">Mạng xã hội:</h6>
 	<a href="#" class="social-item bg-facebook">
 		<i class="fab fa-facebook-f" aria-hidden="true"></i>
 		Facebook

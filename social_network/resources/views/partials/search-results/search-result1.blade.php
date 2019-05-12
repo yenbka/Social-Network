@@ -15,14 +15,14 @@
 				<span class="icon-add without-text">
 					<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 				</span>
-				Add Friend
+				Thêm bạn
 			</a>
 
 			<!-- <a href="#" class="accept-request chat-message">
 				<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 			</a> -->
-			<button id="sent" type="button" class="btn btn-success d-none">Friend Request Sent</button>
-			<button id="error" type="button" class="btn btn-warning d-none">Something went wrong!</button>
+			<button id="sent" type="button" class="btn btn-success d-none">Đã gửi lời mời</button>
+			<button id="error" type="button" class="btn btn-warning d-none">Đã có lỗi xảy ra!</button>
 		</span>
 
 		<!-- <div class="more">
@@ -46,7 +46,7 @@
 	</div>
 
 	<p class="user-description">
-		<span class="title">Introduction: {{$profile_result[$i]->about_me}}</span>
+		<span class="title">Giới thiệu: {{$profile_result[$i]->about_me}}</span>
 	</p>
 
 	<div class="post-block-photo js-zoom-gallery">

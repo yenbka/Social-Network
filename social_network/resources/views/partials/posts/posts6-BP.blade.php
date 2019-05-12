@@ -21,16 +21,16 @@
         <div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg>
             <ul class="more-dropdown">
                 <li>
-                    <a href="{{route('get-edit-post',['pid'=>$post->id])}}">Edit Post</a>
+                    <a href="{{route('get-edit-post',['pid'=>$post->id])}}">Chỉnh sửa</a>
                 </li>
                 <li>
-                    <a href="{{route('delete-post',['pid'=>$post->id])}}">Delete Post</a>
+                    <a href="{{route('delete-post',['pid'=>$post->id])}}">Xóa</a>
                 </li>
                 <li>
-                    <a href="#">Turn Off Notifications</a>
+                    <a href="#">Tắt thông báo</a>
                 </li>
                 <li>
-                    <a href="#">Select as Featured</a>
+                    <a href="#">Tính năng khác</a>
                 </li>
             </ul>
         </div>
@@ -64,7 +64,7 @@
             @endforeach
         </ul>
 
-        
+
         <div class="comments-shared">
             <a href="#" class="post-add-icon inline-items" >
                 <svg class="olymp-speech-balloon-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-speech-balloon-icon')}}"></use></svg>
@@ -96,7 +96,7 @@
                 @foreach($post->likes as $like)
                     @if($like->user_id == $user->id)
                         background-color:#ff5e3e;
-                           
+
                     @endif
                 @endforeach
             @else

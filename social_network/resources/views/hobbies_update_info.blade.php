@@ -24,26 +24,21 @@
             <div class="col col-xl-9 order-xl-2 col-lg-9 order-lg-2 col-md-12 order-md-1 col-sm-12 col-12">
                 <div class="ui-block">
                     <div class="ui-block-title">
-                        <h6 class="title">Hobbies and Interests</h6>
+                        <h6 class="title">Sở thích</h6>
                     </div>
                     <div class="ui-block-content">
-
                         @include('partials.forms.hobbies-and-interests-form')
-
                     </div>
                 </div>
             </div>
 
             <div class="col col-xl-3 order-xl-1 col-lg-3 order-lg-1 col-md-12 order-md-2 col-sm-12  responsive-display-none">
                 <div class="ui-block">
-
                     @include('partials.headers-navigations.your-profile')
-
                 </div>
             </div>
         </div>
     </div>
-
     <!-- ... end Your Account Personal Information -->
     @include('partials.windows-popup.window-chat-responsive')
 

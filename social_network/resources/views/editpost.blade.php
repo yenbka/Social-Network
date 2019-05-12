@@ -23,7 +23,7 @@
 
 	    </div>
 	    <form action="{{route('edit-post',['pid'=>$post->id])}}" method="POST" id="a" enctype="multipart/form-data">
-	    	<input type="hidden" name="_token" value="{{csrf_token()}}">   
+	    	<input type="hidden" name="_token" value="{{csrf_token()}}">
 
 		    <textarea class="form-control" id="editContent" name="editContent" placeholder="">{{$post->content}}
 			</textarea>
@@ -40,12 +40,12 @@
             </div>
             @endif
 
-		    <h5 id="choosefile">Choose Image..</h5>	
-		    <div></div>	               	
+		    <h5 id="choosefile">Chèn ảnh.</h5>
+		    <div></div>
 		    <input type="file" name="editImage" id="editImage" class="inputfile" onchange="previewFile('#editImage','#thumbnail')" />
 		    <h2><label for="editImage"><i class="fas fa-image" ></i></label></h2>
 		    <br/>
-	
+
 		    <input type="submit" value="Save change" class="btn btn-primary " />
 		</form>
 
