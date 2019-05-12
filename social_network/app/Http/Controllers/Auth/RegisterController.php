@@ -76,7 +76,6 @@ class RegisterController extends Controller
             'password' => bcrypt($data['registerPassword']),
             'profile_id' => $this->generateProfileID($data),
             'hobbies_id' =>  $this->generateHobbiesID($data),
-            'remember_token' => 1
         ]);
     }
     protected function generateProfileID($data) {
