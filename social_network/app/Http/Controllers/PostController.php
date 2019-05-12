@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Posts;
 use App\Medias;
+use App\User;
+use App\messages;
 use Carbon\Carbon;
 
 class PostController extends Controller
@@ -99,12 +101,16 @@ class PostController extends Controller
      }
 
       public function getEditPost($pid){
+        $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
+        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
         $post = Posts::find($pid);
-        return view('editpost',['post'=>$post]);
+        return view('editpost',compact('post','listUser','listMess'));
         
      }
 
      public function editPost(Request $request,$pid){
+        $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
+        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
         $post = Posts::find($pid);
         $uid = Auth::id();
 
