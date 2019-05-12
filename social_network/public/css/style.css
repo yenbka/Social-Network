@@ -7,14 +7,17 @@
   z-index: -1;
 }
 img.thumbnail{
-  width:150px;
+  width:100px;
+  height: 100px;
   border-radius: 5px;
 }
 
 .thumbnail_container{
-	display: none;
+	display: inline-block;
 	position: relative;
-	width: 150px;
+	width: 100px;
+	height: 100px;
+	margin-right: 5px;
 }
 
 .close_thumbnail{

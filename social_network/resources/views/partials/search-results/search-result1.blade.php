@@ -11,7 +11,7 @@
 		</div>
 
 		<span class="notification-icon">
-			<a id="add" href="#" class="accept-request" onclick="send_request({{$user_result[$i]->id}})">
+			<a id="add{{$i}}" href="#" class="accept-request" onclick="send_request({{$user_result[$i]->id}}, {{$i}})">
 				<span class="icon-add without-text">
 					<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
 				</span>
@@ -21,8 +21,8 @@
 			<!-- <a href="#" class="accept-request chat-message">
 				<svg class="olymp-chat---messages-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-chat---messages-icon"></use></svg>
 			</a> -->
-			<button id="sent" type="button" class="btn btn-success d-none">Đã gửi lời mời</button>
-			<button id="error" type="button" class="btn btn-warning d-none">Đã có lỗi xảy ra!</button>
+			<button id="sent{{$i}}" type="button" class="btn btn-success d-none">Đã gửi lời mời</button>
+			<button id="error{{$i}}" type="button" class="btn btn-warning d-none">Đã có lỗi xảy ra!</button>
 		</span>
 
 		<!-- <div class="more">
@@ -112,7 +112,7 @@
 </article>
 <!-- ... end Search Result -->
 <script>
-function send_request(id){
+function send_request(id, idx){
 
     var BASE_URL = "{{ url('/') }}";
 	// var data = new FormData();
@@ -124,16 +124,16 @@ function send_request(id){
 		data: {request_id:id, _token: $('#signup-token').val()},
 		success: function (response) {
 			if (response.code == 200) {
-				$("#add").addClass("d-none");
-				$("#sent").removeClass("d-none");
+				$("#add"+idx).addClass("d-none");
+				$("#sent"+idx).removeClass("d-none");
 			} else {
-				$("#add").addClass("d-none");
-				$("#error").removeClass("d-none");
+				$("#add"+idx).addClass("d-none");
+				$("#error"+idx).removeClass("d-none");
 			}
 		},
 		error: function () {
-			$("#add").addClass("d-none");
-			$("#error").removeClass("d-none");
+			$("#add"+idx).addClass("d-none");
+			$("#error"+idx).removeClass("d-none");
 		}
 	});
 }
