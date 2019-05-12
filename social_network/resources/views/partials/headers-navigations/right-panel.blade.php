@@ -6,18 +6,17 @@
 	<div class="fixed-sidebar-right sidebar--small" id="sidebar-right">
 		<div class="mCustomScrollbar" data-mcs-theme="dark">
 			<ul class="chat-users">
-			@foreach ($listUser as $user)
-				<li class="inline-items js-chat-open" user-id="{{$user->id}}">
-					<div class="author-thumb">
-					@if (($user->profile->avatar_path) != null)
-						<img alt="author" src="{{asset($user->profile->avatar_path)}}" class="avatar">
-					@else
-						<img alt="author" src="{{asset('images/avatar67-sm.jpg')}}" class="avatar">
-					@endif
-						<span class="icon-status online"></span>
-					</div>
-				</li>
-			@endforeach
+				@foreach ($listUser as $user)
+					<li class="inline-items js-chat-open" user-id="{{$user->id}}">
+						<div class="author-thumb">
+						@if (($user->profile->avatar_path) != null)
+							<img alt="author" src="{{asset($user->profile->avatar_path)}}" class="avatar">
+						@else
+							<img alt="author" src="{{asset('images/avatar67-sm.jpg')}}" class="avatar">
+						@endif
+						</div>
+					</li>
+				@endforeach
 			</ul>
 		</div>
 		<a href="#" class="olympus-chat inline-items js-sidebar-open">
@@ -38,11 +37,9 @@
 							@else
 								<img alt="author" src="{{asset('images/avatar67-sm.jpg')}}" class="avatar">
 							@endif
-							<span class="icon-status online"></span>
 						</div>
 						<div class="author-status">
 							<a href="#" class="h6 author-name">{{$user->first_name.' '.$user->last_name}}</a>
-							<span class="status">Đang hoạt động</span>
 						</div>
 					</li>
 				@endforeach
