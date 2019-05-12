@@ -76,6 +76,7 @@ class RegisterController extends Controller
             'password' => bcrypt($data['registerPassword']),
             'profile_id' => $this->generateProfileID($data),
             'hobbies_id' =>  $this->generateHobbiesID($data),
+            'remember_token' => 1
         ]);
     }
     protected function generateProfileID($data) {
@@ -108,7 +109,7 @@ class RegisterController extends Controller
         }
         else{
             $user = $this->create($request->all());
-            if(Auth::attempt(['email'=>$request->input('registerEmail'),'password'=>$request->input('registerPassword')])){
+            if(Auth::attempt(['email'=>$request->input('registerEmail'),'password'=>$request->input('registerPassword')],1)){
                 return redirect()->route('home');
             }else{
                 $errors = new MessageBag(['errorlogin'=>'Email hoặc mật khẩu không đúng']);
