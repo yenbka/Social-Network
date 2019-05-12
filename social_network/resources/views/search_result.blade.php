@@ -50,17 +50,22 @@
 
 		<div class="col col-xl-3 order-xl-1 col-lg-6 order-lg-2 col-md-6 col-sm-12 col-12">
 			<div class="ui-block">
-                @include('partials.widgets.w-build-fav')		
-			</div>
+					<div class="ui-block-title">
+						<h6 class="title">Last Photos</h6>
+					</div>
+					<div class="ui-block-content">
 
-			<div class="ui-block">
-				<div class="ui-block-title">
-					<h6 class="title">Pages You May Like</h6>
+						@include('partials.widgets.w-last-photo')
+
+					</div>
 				</div>
 
-                @include('partials.widgets.w-friend-pages-added')		
-
-			</div>
+			<div class="ui-block">
+					<div class="ui-block-title">
+						<h6 class="title">Friend Suggestions</h6>
+						<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
+					</div>
+				</div>
 
 
 		</div>
@@ -71,20 +76,23 @@
 		<!-- Right Sidebar -->
 
 		<div class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-12 col-12">
-
-			<div class="ui-block">
-
-                @include('partials.widgets.w-action')		
-
-			</div>
+<!--
+			<div class="ui-block-title">
+						<h6 class="title">Activity Feed</h6>
+						<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
+					</div>
+-->
 			<div class="ui-block">
 				<div class="ui-block-title">
 					<h6 class="title">Friend Suggestions</h6>
 					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 				</div>
-                
-                @include('partials.widgets.w-friend-pages-added-suggestions')
-
+                <!--
+                <div class="ui-block-title">
+						<h6 class="title">Activity Feed</h6>
+						<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
+					</div>
+-->
 			</div>
 		</div>
 
