@@ -109,7 +109,7 @@ class RegisterController extends Controller
         }
         else{
             $user = $this->create($request->all());
-            if(Auth::attempt(['email'=>$request->input('registerEmail'),'password'=>$request->input('registerPassword')])){
+            if(Auth::attempt(['email'=>$request->input('registerEmail'),'password'=>$request->input('registerPassword')], 1)){
                 return redirect()->route('login');
             }else{
                 $errors = new MessageBag(['errorlogin'=>'Email hoặc mật khẩu không đúng']);
