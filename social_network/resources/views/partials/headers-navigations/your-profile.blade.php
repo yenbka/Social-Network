@@ -27,7 +27,7 @@
 						<a href="{{route('get_hobbies_update_info', ['id'=>Auth::id()])}}">Sở thích</a>
 					</li>
 					<li>
-						<a href="30-YourAccount-ChangePassword.html">Đổi mật khẩu</a>
+						<a href="{{route('get_change_password')}}">Đổi mật khẩu</a>
 					</li>
 				</ul>
 			</div>
