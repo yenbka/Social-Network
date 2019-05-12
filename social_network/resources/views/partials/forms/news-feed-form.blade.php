@@ -26,9 +26,8 @@
                     <label class="control-label">Hôm nay bạn như thế nào...</label>
                     <textarea class="form-control" name="text" placeholder=""></textarea>
                 </div>
-                <div class="thumbnail_container" >
-                    <img src="" id="thumbnail1" class="thumbnail">
-                    <a href="#" onclick="closeThumbnail('#imagefile','#thumbnail1')" class="close_thumbnail" >X</a>
+                <div class="thumb_div" >
+                    
                 </div>
                 <div class="add-options-message">
                     <a href="#" class="options-message" data-toggle="tooltip" data-placement="top"   data-original-title="ADD PHOTOS">

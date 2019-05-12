@@ -28,18 +28,15 @@
 						<!-- <a href="#" class="more-comments">View more comments <span>+</span></a> -->
 						@include('partials.forms.comment-form')
 					</div>
-					@elseif($post->media->type===1)
+					@else
 					<div class="ui-block">
 						@include('partials.posts.posts7-BP')
 						@include('partials.comments.comment-list2',['comments' => $post->comment, 'post_id' => $post->id])
 						<!-- <a href="#" class="more-comments">View more comments <span>+</span></a> -->
 						@include('partials.forms.comment-form')
 					</div>
-					@else
-					<div class="ui-block">
-						@include('partials.posts.posts5-BP')
-					</div>
 					@endif
+					
 				@endforeach
 				</div>
 				<a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html" data-container="newsfeed-items-grid"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
