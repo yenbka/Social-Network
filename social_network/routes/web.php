@@ -18,7 +18,7 @@ Route::get('/', function () {
     return view('landing');
 })->name('login');
 // Authenticiate Routing
-Route:: get('login','LoginController@getLogin');
+Route:: get('login','LoginController@getLogin')->name('login');
 Route:: post('login','LoginController@postLogin');
 Route:: post('register','Auth\RegisterController@register');
 Route::get('/profile', function(){
