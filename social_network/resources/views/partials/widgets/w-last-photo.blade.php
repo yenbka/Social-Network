@@ -1,11 +1,17 @@
 <!-- W-Latest-Photo -->
 
-<ul class="widget w-last-photo js-zoom-gallery">
-	<li>
-		<a href="{{asset('images/last-photo10-large.jpg')}}">
-			<img src="{{asset('images/last-photo10-large.jpg')}}" alt="photo">
-		</a>
-	</li>
+@php
+	$currentID = Route::getCurrentRoute()->parameters()['id'];
+	$currentPhotos = \App\Http\Controllers\PhotoController::getPhotos($currentID);
+@endphp
+<ul class="widget w-last-photo">
+	@foreach($currentPhotos as $photo)
+		<li>
+			<a href="/uploads/{{$photo->link}}">
+				<img src="/uploads/{{$photo->link}}"  alt="photo" width="87px" height="87px">
+			</a>
+		</li>
+	@endforeach
 </ul>
 
 <!-- .. end W-Latest-Photo -->

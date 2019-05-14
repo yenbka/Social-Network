@@ -7,29 +7,29 @@
         @for ($i = 0; $i < count($friends); $i++)
             <li>
                 <div class="author-thumb">
-                <img src="{{asset($profile_friends[$i]->avatar_path)}}" alt="author" width='42' height='42'>                </div>
+                    <img src="{{asset($profile_friends[$i]->avatar_path)}}" alt="author" width='42' height='42'>                </div>
                 <div class="notification-event">
                     <a href="#" class="h6 notification-friend">{{$friends[$i]->first_name.' '.$friends[$i]->last_name}}</a>
                     <span class="chat-message-item">{{$profile_friends[$i]->about_me}}</span>
                 </div>
                 <span class="notification-icon">
-                                    <a id="accept" href="#" class="accept-request" onclick="process_request(1, {{$friends[$i]->id}})">
+                                    <a id="accept{{$i}}" href="#" class="accept-request" onclick="process_request(1, {{$friends[$i]->id}}, {{$i}})">
                                         <span class="icon-add">
                                             <svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
                                         </span>
                                         Chấp nhận
                                     </a>
 
-                                    <a id="deny" href="#" class="accept-request request-del" onclick="process_request(0, {{$friends[$i]->id}})">
+                                    <a id="deny{{$i}}" href="#" class="accept-request request-del" onclick="process_request(0, {{$friends[$i]->id}}, {{$i}})">
                                         <span class="icon-minus">
                                             <svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
                                         </span>
                                         Từ chối
                                     </a>
 
-                                    <button id="friend" type="button" class="btn btn-success d-none"><i class="fa fa-check" aria-hidden="true"></i>Bạn bè</button>
-                                    <button id="denied" type="button" class="btn btn-success d-none">Từ chối</button>
-			                        <button id="error" type="button" class="btn btn-warning d-none"><i class="fa fa-time" aria-hidden="true"></i>Đã có lỗi xảy ra!</button>
+                                    <button id="friend{{$i}}" type="button" class="btn btn-success d-none"><i class="fa fa-check" aria-hidden="true"></i>Bạn bè</button>
+                                    <button id="denied{{$i}}" type="button" class="btn btn-success d-none">Đã từ chối</button>
+			                        <button id="error{{$i}}" type="button" class="btn btn-warning d-none"><i class="fa fa-time" aria-hidden="true"></i>Đã có lỗi xảy ra!</button>
                                 </span>
 
                 <div class="more">
@@ -39,13 +39,13 @@
             </li>
         @endfor
     @else
-    <div class="alert alert-success">
-        <i class="fa" aria-hidden="true"></i>
-        <strong>Không có lời mời nào!</strong>
-    </div>
-    @endif
+        <div class="alert alert-success">
+            <i class="fa" aria-hidden="true"></i>
+            <strong>Không có lời mời nào!</strong>
+        </div>
+@endif
 
-    <!-- <li>
+<!-- <li>
         <div class="author-thumb">
             <img src="{{asset('images/avatar16-sm.jpg')}}" alt="author">
         </div>
@@ -126,31 +126,31 @@
 
 <!-- ... end Notification List Frien Requests -->
 <script>
-function process_request(is_accept, id){
+    function process_request(is_accept, id, idx){
 
-    var BASE_URL = "{{ url('/') }}";
-	$.ajax({
-		url: BASE_URL + '/friend/process_request',
-		type: "POST",
-		data: {is_accept: is_accept, request_id: id, _token: $('#friend-token').val()},
-		success: function (response) {
-            $("#accept").addClass("d-none");
-			$("#deny").addClass("d-none");
-			if (response.code == 200) {
-                if (is_accept == 1) {
-                    $("#friend").removeClass("d-none");
+        var BASE_URL = "{{ url('/') }}";
+        $.ajax({
+            url: BASE_URL + '/friend/process_request',
+            type: "POST",
+            data: {is_accept: is_accept, request_id: id, _token: $('#friend-token').val()},
+            success: function (response) {
+                $("#accept" + idx).addClass("d-none");
+                $("#deny" + idx).addClass("d-none");
+                if (response.code == 200) {
+                    if (is_accept == 1) {
+                        $("#friend" + idx).removeClass("d-none");
+                    } else {
+                        $("#denied" + idx).removeClass("d-none");
+                    }
                 } else {
-                    $("#denied").removeClass("d-none");
+                    $("#error" + idx).removeClass("d-none");
                 }
-			} else {
-                $("#error").removeClass("d-none");
-			}
-		},
-		error: function () {
-			$("#accept").addClass("d-none");
-			$("#deny").addClass("d-none");
-            $("#error").removeClass("d-none");
-		}
-	});
-}
+            },
+            error: function () {
+                $("#accept" + idx).addClass("d-none");
+                $("#deny" + idx).addClass("d-none");
+                $("#error" + idx).removeClass("d-none");
+            }
+        });
+    }
 </script>

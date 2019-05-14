@@ -2,13 +2,14 @@
 <article class="hentry post has-post-thumbnail">
 
     <div class="post__author author vcard inline-items">
-        <img src="/{{$profile->avatar_path}}" alt="author">
+        <img src="/{{$post->user->profile->avatar_path}}" alt="author">
 
         <div class="author-date">
-            <a class="h6 post__author-name fn" href="#">{{$post->user->last_name}} {{$post->user->first_name}}</a>
+            <a class="h6 post__author-name fn" href="{{route('profile', ['id' => $post->user->id])}}">{{$post->user->last_name}} {{$post->user->first_name}}</a>
             <div class="post__date">
                 <time class="published" >
                     <?php
+                        Carbon::setLocale('vi');
                         $date_post = $post->created_at;
                         $now = Carbon::now('Asia/Ho_Chi_Minh');
                         $result = $date_post->diffForHumans($now);
@@ -17,31 +18,29 @@
                 </time>
             </div>
         </div>
-
-        <div class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg>
-            <ul class="more-dropdown">
-                <li>
-                    <a href="{{route('get-edit-post',['pid'=>$post->id])}}">Chỉnh sửa</a>
-                </li>
-                <li>
-                    <a href="{{route('delete-post',['pid'=>$post->id])}}">Xóa</a>
-                </li>
-                <li>
-                    <a href="#">Tắt thông báo</a>
-                </li>
-                <li>
-                    <a href="#">Tính năng khác</a>
-                </li>
-            </ul>
-        </div>
-
+        @if($post->user->id==Auth::user()->id)
+            <div class="more">
+                <svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg>
+                <ul class="more-dropdown">
+                    <li>
+                        <a href="{{route('get-edit-post',['pid'=>$post->id])}}">Chỉnh sửa</a>
+                    </li>
+                    <li>
+                        <a href="{{route('delete-post',['pid'=>$post->id])}}">Xóa</a>
+                    </li>
+                </ul>
+            </div>
+        @endif
     </div>
 
     <p>{{$post->content}}</p>
 
+    @foreach($post->media as $media)
     <div class="post-thumb">
-        <img src="/uploads/{{$post->media->link}}" alt="photo">
+        <img src="/uploads/{{$media->link}}" alt="photo">
     </div>
+    
+    @endforeach
 
     <div class="post-additional-info inline-items">
 
@@ -61,7 +60,7 @@
         <ul class="friends-harmonic" id="like-item-{{$post->id}}">
             @foreach($post->likes as $like)
                 <li id="item{{$like->user_id}}">
-                    <a href="#">
+                    <a>
                         <img src="/{{$like->user->profile->avatar_path}}" alt="friend">
                     </a>
                 </li>
@@ -83,25 +82,16 @@
                     ?>
                 </span>
             </a>
-
-{{--            <a href="#" class="post-add-icon inline-items">--}}
-{{--                <svg class="olymp-share-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-share-icon')}}"></use></svg>--}}
-{{--                <span>0</span>--}}
-{{--            </a>/--}}
         </div>
-
 
     </div>
 
     <div class="control-block-button post-control-button">
-
-
         <a href="#" class="btn btn-control like" id="{{$post->id}}" data-postid="{{$post->id}}"style="
             @if(!empty($post->likes))
                 @foreach($post->likes as $like)
-                    @if($like->user_id == $user->id)
+                    @if($like->user_id == Auth::id())
                         background-color:#ff5e3e;
-
                     @endif
                 @endforeach
             @else
@@ -110,10 +100,6 @@
         ">
             <svg class="olymp-like-post-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-like-post-icon')}}"></use></svg>
         </a>
-
-{{--        <a href="#" class="btn btn-control">--}}
-{{--            <svg class="olymp-comments-post-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-comments-post-icon')}}"></use></svg>--}}
-{{--        </a>--}}
     </div>
 
 </article>

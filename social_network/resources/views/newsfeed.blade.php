@@ -2,7 +2,10 @@
 @extends('layouts.master')
 
 @section('content')
-
+	@php
+		$currentID = Auth::id();
+		$posts = \App\Http\Controllers\PostController::getPostList(null);
+	@endphp
 	@include('partials.headers-navigations.right-panel')
 
 	@include('partials.headers-navigations.right-panel-responsive')
@@ -16,33 +19,28 @@
 		<div class="row">
 			<!-- Main Content -->
 			<main class="col col-xl-6 order-xl-2 col-lg-12 order-lg-1 col-md-12 col-sm-12 col-12">
-				<div class="ui-block">
-					@include('partials.forms.news-feed-form')
-				</div>
+				@if($currentID==Auth::id())
+					<div class="ui-block">
+						@include('partials.forms.news-feed-form')
+					</div>
+				@endif
 				<div id="newsfeed-items-grid">
-				@foreach($posts as $post)
-					@if($post->has_medias===0)
-					<div class="ui-block">
-						@include('partials.posts.posts6-BP')
-						@include('partials.comments.comment-list2',['comments' => $post->comment, 'post_id' => $post->id])
-						<!-- <a href="#" class="more-comments">View more comments <span>+</span></a> -->
-						@include('partials.forms.comment-form')
-					</div>
-					@elseif($post->media->type===1)
-					<div class="ui-block">
-						@include('partials.posts.posts7-BP')
-						@include('partials.comments.comment-list2',['comments' => $post->comment, 'post_id' => $post->id])
-						<!-- <a href="#" class="more-comments">View more comments <span>+</span></a> -->
-						@include('partials.forms.comment-form')
-					</div>
-					@else
-					<div class="ui-block">
-						@include('partials.posts.posts5-BP')
-					</div>
-					@endif
-				@endforeach
+					@foreach($posts as $post)
+						@if($post->has_medias===0)
+							<div class="ui-block">
+								@include('partials.posts.posts6-BP')
+								@include('partials.comments.comment-list2',['comments' => $post->comment, 'post_id' => $post->id])
+								@include('partials.forms.comment-form')
+							</div>
+						@else
+							<div class="ui-block">
+								@include('partials.posts.posts7-BP')
+								@include('partials.comments.comment-list2',['comments' => $post->comment, 'post_id' => $post->id])
+								@include('partials.forms.comment-form')
+							</div>
+						@endif
+					@endforeach
 				</div>
-				<a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="items-to-load.html" data-container="newsfeed-items-grid"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
 			</main>
 
 			<!-- ... end Main Content -->
@@ -84,7 +82,6 @@
 				<div class="ui-block">
 					<div class="ui-block-title">
 						<h6 class="title">Gợi ý kết bạn</h6>
-						<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
 					</div>
 				</div>
 

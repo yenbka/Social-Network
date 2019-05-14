@@ -13,7 +13,7 @@
 
 Route::get('/', function () {
     if (Auth::user()) {
-        return redirect()->route('home');
+        return redirect()->route('home', ['id' => Auth::id()]);
     }
     return view('landing');
 })->name('login');
@@ -21,9 +21,6 @@ Route::get('/', function () {
 Route:: get('login','LoginController@getLogin');
 Route:: post('login','LoginController@postLogin');
 Route:: post('register','Auth\RegisterController@register');
-Route::get('/profile', function(){
-    return view('profile');
-});
 
 Route::get('/friend/{id}', [
     'as' => 'friend',
@@ -47,7 +44,7 @@ Route::get('/video', function(){
     return view('video');
 });
 
-Route::get('/home', [
+Route::get('/home/{id}', [
     'as' => 'home',
     'uses' => 'HomeController@index'
 ]);
@@ -106,7 +103,7 @@ Route::post('/profile/{id}/update_header', [
     'uses' => 'ProfileController@update_header'
 ]);
 
-Route::post('/search', [
+Route::post('/search/{id}', [
     'as' => 'search',
     'uses' => 'HomeController@search'
 ]);

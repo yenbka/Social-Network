@@ -16,7 +16,7 @@
 
 					<input type="hidden" name="_token" value="{{csrf_token()}}">
 
-					<input type="file" id="imagefile" name="imagefile" class="inputfile" form="post-form" onchange="previewFile('#imagefile','#thumbnail1')" multiple/>
+					<input type="file" id="imagefile" name="imagefile[]" class="inputfile" form="post-form" onchange="previewFile('#imagefile','#thumbnail1')" multiple/>
 					<h2><label for="imagefile"><i class="fas fa-image" ></i></label></h2>
 
 					<h6>Tải ảnh lên</h6>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Hobbie;
+use App\Medias;
 use App\Posts;
 use Illuminate\Http\Request;
 use App\User;
@@ -33,23 +34,7 @@ class ProfileController extends Controller
     }
 
     public function index($id) {
-        if (!$this->secure($id)) return redirect('/404');
-        $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
-        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
-        $user = User::where('id', $id)->first();
-        $profile = Profile::where('id', $user->profile_id)->first();
-        $hobbies = Hobbie::where('id', $user->hobbies_id)->first();
-        $posts = Posts::orderBy('id','desc')->get();
-        // son bong add
-        $id_friends = Friend::where('user_id_1', Auth::id())->where('allow', 0)->get();
-        $friends = array();
-        // $profile_friends = array();
-        foreach($id_friends as $id_friend) {
-            $friends[] = User::find($id_friend->user_id_2);
-            // $profile_friends[] = Profile::find($id_friend->user_id_2);
-        } 
-        // end son bong add
-        return view('profile', ['profile'=>$profile, 'user'=>$user,  'hobbies'=>$hobbies, 'listUser'=>$listUser,'listMess'=>$listMess, 'posts'=>$posts, 'friends'=>$friends]);
+        return view('profile', []);
     }
 
     public function get_profile_update_info($id){
@@ -67,7 +52,7 @@ class ProfileController extends Controller
             // $profile_friends[] = Profile::find($id_friend->user_id_2);
         } 
         // end son bong add
-        return view('profile_update_info', ['user' => $user, 'profile' => $profile, 'listUser' => $listUser, 'listMess' => $listMess, 'friends'=>$friends]);
+        return view('profile_update_info', []);
     }
 
     protected function validator(array $data)
@@ -180,5 +165,11 @@ class ProfileController extends Controller
                 return redirect()->route('profile', ['id' => Auth::id(), 'status' => 'Failed']);
             }
         }
+    }
+
+    public static function getProfile($id) {
+        $user = User::find($id);
+        $profile = Profile::find($user->profile_id);
+        return $profile;
     }
 }

@@ -18,25 +18,11 @@ class HobbieController extends Controller
         $this->middleware('auth');
     }
 
-    public function secure($id){
-        $user = User::where('id', $id)->first();
-
-        if ($user){
-            $is_my_profile = (Auth::id() == $id)?true:false;
-            if (!$is_my_profile){
-                return false;
-            }
-            return true;
-        }
-        return false;
+    public static function getHobbie($id) {
+        $user = User::find($id);
+        $hobbie = Hobbie::find($user->hobbies_id);
+        return $hobbie;
     }
-
-//    public function index($id) {
-//        if (!$this->secure($id)) return redirect('/404');
-//        $user = User::where('id', $id)->first();
-//        $hobbies_info = Hobbie::where('id', $user->hobbies_id)->first();
-//        return $hobbies_info;
-//    }
 
     protected function validator(array $data) {
         return Validator::make($data, [
