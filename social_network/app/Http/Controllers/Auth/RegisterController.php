@@ -83,7 +83,7 @@ class RegisterController extends Controller
         $gender = $data['gender']=="MA"?0:1;
         $profile = Profile::create([
             'about_me'=>null,
-            'birth_date'=>Carbon::parse($data['datetimepicker']),
+            'birth_date'=>Carbon::createFromFormat('d/m/Y',$data['datetimepicker']),
             'address'=>null,
             'gender'=>$gender,
             'phone'=>null,
