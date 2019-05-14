@@ -20,6 +20,11 @@
     <div class="tab-content">
         <div class="tab-pane" id="home" role="tabpanel" data-mh="log-tab">
             <div class="title h6">Đăng</div>
+                @if($errors->has('errorRegister'))
+                <div class="alert alert-danger" role="alert">
+                    {{$errors->first('errorRegister')}}
+                </div>
+                @endif
             <form class="content" action="{{url('register')}}" method="post">
             {{ csrf_field() }}
                 <div class="row">
