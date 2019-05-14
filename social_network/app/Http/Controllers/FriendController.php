@@ -29,7 +29,7 @@ class FriendController extends Controller
         return false;
     }
     public function index($id) {
-        if (!$this->secure($id)) return redirect('/404');
+//        if (!$this->secure($id)) return redirect('/404');
         $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
         $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
         $user = User::where('id', $id)->first();

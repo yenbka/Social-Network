@@ -19,7 +19,7 @@
     <!-- Tab panes -->
     <div class="tab-content">
         <div class="tab-pane" id="home" role="tabpanel" data-mh="log-tab">
-            <div class="title h6">Đăng</div>
+            <div class="title h6">Đăng ký tài khoản mới</div>
             <form class="content" action="{{url('register')}}" method="post">
             {{ csrf_field() }}
                 <div class="row">
@@ -77,11 +77,11 @@
                             <div class="checkbox">
                                 <label>
                                     <input name="optionsCheckboxes" type="checkbox" checked>
-                                    I accept the <a href="#">Terms and Conditions</a> of the website
+                                    Tôi đồng ý với <a href="#">Điều khoản và điều kiện</a> của trang web
                                 </label>
                             </div>
                         </div>
-                        <input type="submit" value="Complete Registration!" class="btn btn-purple btn-lg full-width">
+                        <input type="submit" value="Hoàn thành đăng ký!" class="btn btn-purple btn-lg full-width">
                     </div>
                 </div>
             </form>
@@ -123,7 +123,7 @@
                             </div>
                             <a href="#" class="forgot">Quên mật khẩu</a>
                         </div>
-                        <input type="submit" value="Login" class="btn btn-lg btn-primary full-width">
+                        <input type="submit" value="Đăng nhập" class="btn btn-lg btn-primary full-width">
                         <p>Bạn chưa có tài khoản? <a href="#">Đăng ký ngay!</a></p>
                     </div>
                 </div>

@@ -43,7 +43,12 @@ class ChatController extends Controller
             'Success' => true
         ]);
     }
-    public function index(){
-
+    public static function getListUser($id){
+        return User::with("profile")->where('id','!=',Auth::user()->id)->get();
     }
+
+    public static function getListMess($id) {
+        return messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
+    }
+
 }

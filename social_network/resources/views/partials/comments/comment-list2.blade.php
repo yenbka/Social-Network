@@ -8,7 +8,7 @@
 			<img src="/{{$comment->user->profile->avatar_path}}" alt="author">
 
 			<div class="author-date">
-				<a class="h6 post__author-name fn" href="02-ProfilePage.html">{{$comment->user->last_name}} {{$comment->user->first_name}}</a>
+				<a class="h6 post__author-name fn" href="{{route('profile', ['id' => $comment->user->id])}}">{{$comment->user->last_name}} {{$comment->user->first_name}}</a>
 				<div class="post__date">
 					<time class="published" >
 						<?php
@@ -20,9 +20,6 @@
 					</time>
 				</div>
 			</div>
-
-{{--			<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>--}}
-
 		</div>
 
 		<p>{{$comment->content}}</p>

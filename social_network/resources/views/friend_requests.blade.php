@@ -23,7 +23,6 @@
                 <div class="ui-block">
                     <div class="ui-block-title">
                         <h6 class="title">Gợi ý kết bạn</h6>
-                        <a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
                     </div>
 
                     @include('partials.notification-list.notification-list-friend-requests')

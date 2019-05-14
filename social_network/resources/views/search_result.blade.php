@@ -31,16 +31,7 @@
                         @include('partials.search-results.search-result1')
                     </div>
                 @endfor
-
-
-
 			</div>
-
-			<a id="load-more-button" href="#" class="btn btn-control btn-more" data-load-link="search-items-to-load.html" data-container="search-items-grid">
-				<svg class="olymp-three-dots-icon">
-					<use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use>
-				</svg>
-			</a>
 		</div>
 
 		<!-- ... end Main Content -->
@@ -69,14 +60,6 @@
 
 					</div>
 				</div>
-			<div class="ui-block">
-					<div class="ui-block-title">
-						<h6 class="title">Friend Suggestions</h6>
-						<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg></a>
-					</div>
-				</div>
-
-
 		</div>
 
 		<!-- ... end Left Sidebar -->
@@ -88,7 +71,6 @@
 			<div class="ui-block">
 				<div class="ui-block-title">
 					<h6 class="title">Gợi ý kết bạn</h6>
-					<a href="#" class="more"><svg class="olymp-three-dots-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-three-dots-icon"></use></svg></a>
 				</div>
 			</div>
 		</div>

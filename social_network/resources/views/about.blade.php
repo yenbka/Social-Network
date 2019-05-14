@@ -56,12 +56,16 @@
 	</div>
 
 
+
 	@include('partials.windows-popup.update-header-photo')
+	@include('partials.windows-popup.update-avatar-photo')
 
 	@include('partials.windows-popup.choose-from-my-photo')
 
+	@include('partials.windows-popup.playlist-popup')
+
 	@include('partials.back-to-top')
 
-	@include('partials.windows-popup.window-chat-responsive')'
+	@include('partials.windows-popup.window-chat-responsive')
 
 @endsection
