@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Friend;
 use App\Hobbie;
 use App\Profile;
 use App\User;
@@ -33,38 +34,52 @@ class HomeController extends Controller
         return false;
     }
 
-    public function index() {
-        // if (!$this->secure($id)) return redirect('/404');
-        $listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
-        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
-        $user = User::with("profile")->whereId(Auth::user()->id)->first();
-        $profile = Profile::where('id', Auth::user()->id)->first();
-        // dd($profile->toArray(), $user->profile->toArray());
-        $hobbies = Hobbie::where('id', Auth::user()->id)->first();
-        $posts = Posts::orderBy('id','desc')->get();
-        $photos = Medias::where('user_id', Auth::user()->id)->Where('type', 1)->get();
-        // dd($posts);
-        return view('newsfeed', compact('profile','user','hobbies','listUser','posts','listMess','photos'));
+    public function index($id) {
+         if (!$this->secure($id)) return redirect('/404');
+        return view('newsfeed', []);
     }
-	
-	public function search(Request $request) {
-		$listUser = User::with("profile")->where('id','!=',Auth::user()->id)->get();
-        $listMess = messages::distinct()->with('profile')->with('user')->where('to',Auth::user()->id)->where('read_date',NULL)->get();
 
+    public function getSearchResult(Request $request, $id) {
         $search = $request->input('search');
         if (empty($search)) return redirect()->back();
 
-        $user = Auth::user();
-        $profile = Profile::find($user->profile_id);
-        $hobbie = Hobbie::find($user->profile_id);
-
         $user_result = User::where('first_name', 'like', '%'.$search.'%')->orWhere('last_name', 'like', '%'.$search.'%')->orderBy('first_name', 'ASC')->get();
         $profile_result = array();
-        foreach ($user_result as $user_temp)
+        $relationship_result = array();
+        foreach ($user_result as $user_temp) {
             $profile_result[] = Profile::find($user_temp->profile_id);
-        $photos = Medias::where('user_id', Auth::user()->id)->Where('type', 1)->get();
-
-        return view('search_result', ['user'=>$user, 'user_result'=>$user_result, 'profile'=>$profile, 'profile_result'=>$profile_result, 'search'=>$search, 'listUser'=>$listUser, 'listMess'=>$listMess, 'hobbies'=>$hobbie, 'photos'=>$photos]);
-
+            $is_friend = Friend::where('user_id_1', Auth::id())->where('user_id_2', $user_temp->id)->first();
+            if ($is_friend != null) {
+                if ($is_friend->allow == 0) {
+                    $relationship_result[] = 1;
+                }
+                elseif ($is_friend->allow == 1) {
+                    $relationship_result[] = -2;
+                }
+                continue;
+            }
+            $is_friend = Friend::where('user_id_1', $user_temp->id)->where('user_id_2', Auth::id())->first();
+            if ($is_friend != null) {
+                if ($is_friend->allow == 0) {
+                    $relationship_result[] = -1;
+                }
+                elseif ($is_friend->allow == 1) {
+                    $relationship_result[] = -2;
+                }
+                continue;
+            }
+            if ($user_temp->id == Auth::id()) {
+                $relationship_result[] = 2;
+                continue;
+            }
+            $relationship_result[] = 0;
+        }
+        $ret = ['user_result'=>$user_result, 'profile_result'=>$profile_result, 'search'=>$search, 'relationship_result'=>$relationship_result];
+        return $ret;
+    }
+	
+	public function search(Request $request, $id) {
+        $result = $this->getSearchResult($request, $id);
+        return view('search_result', $result);
     }
 }

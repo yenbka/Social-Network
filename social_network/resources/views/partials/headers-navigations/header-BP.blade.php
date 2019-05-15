@@ -3,6 +3,10 @@
 <!-- Header-BP -->
 
 <header class="header" id="site-header">
+	@php
+		$myProfile = \App\Http\Controllers\ProfileController::getProfile(\Illuminate\Support\Facades\Auth::id());
+		$friendRequests = \App\Http\Controllers\FriendController::getFriendRequest(\Illuminate\Support\Facades\Auth::id());
+	@endphp
 	<div class="fixed-sidebar">
 		<a href="{{route('home', ['id' => Auth::id()])}}" class="logo">
 			<div class="img-wrap">
@@ -15,10 +19,9 @@
 	</div>
 
 	<div class="header-content-wrapper">
-		<form method="POST" action="{{action('HomeController@search')}}" class="search-bar w-search notification-list friend-requests">
+		<form method="POST" action="{{action('HomeController@search', ['id' => Auth::id()])}}" class="search-bar w-search notification-list friend-requests">
 			<input type="hidden" name="_token" value="{{ csrf_token() }}">
 			<div class="form-group with-button">
-				<!-- <input class="form-control js-user-search" placeholder="Search here people or pages..." type="text"> -->
 				<input name="search" class="form-control" placeholder="Tìm bạn bè..." type="text">
 				<button>
 					<svg class="olymp-magnifying-glass-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-magnifying-glass-icon')}}"></use></svg>
@@ -26,157 +29,45 @@
 			</div>
 		</form>
 
-		<a href="#" class="link-find-friend">Tìm kiếm</a>
-
 		<div class="control-block">
 
 			<div class="control-icon more has-items">
 				<svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
-				<div class="label-avatar bg-blue">6</div>
-
+				@if(count($friendRequests[0])>0)
+					<div class="label-avatar bg-blue">{{count($friendRequests[0])}}</div>
+				@endif
 				<div class="more-dropdown more-with-triangle triangle-top-center">
 					<div class="ui-block-title ui-block-title-small">
 						<h6 class="title">Lời mời kết bạn</h6>
-						<a href="#">Tìm bạn</a>
-						<a href="#">Cài đặt</a>
 					</div>
 
 					<div class="mCustomScrollbar" data-mcs-theme="dark">
 						<ul class="notification-list friend-requests">
-							<li>
-								<div class="author-thumb">
-									<img src="{{asset('images/avatar55-sm.jpg')}}" alt="author">
+							@if(count($friendRequests[0])>0)
+								@for ($i = 0; $i < count($friendRequests[0]); $i++)
+									<li id="noti_relationship{{$i}}">
+										<div class="author-thumb">
+											<img src="{{asset($friendRequests[1][$i]->avatar_path)}}" alt="author" width="34px" height="34px">
+										</div>
+										<div class="notification-event">
+											<a href="{{route('profile', ['id' => $friendRequests[0][$i]->id])}}" class="h6">{{$friendRequests[0][$i]->first_name.' '.$friendRequests[0][$i]->last_name}}</a>
+										</div>
+									</li>
+									@if($i==3)
+										@break
+									@endif
+								@endfor
+							@else
+								<div class="alert alert-success">
+									<i class="fa" aria-hidden="true"></i>
+									<strong>Không có lời mời nào!</strong>
 								</div>
-								<div class="notification-event">
-									<a href="#" class="h6 notification-friend">Tamara Romanoff</a>
-									<span class="chat-message-item">Mutual Friend: Sarah Hetfield</span>
-								</div>
-								<span class="notification-icon">
-									<a href="#" class="accept-request">
-										<span class="icon-add without-text">
-											<svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
-										</span>
-									</a>
-
-									<a href="#" class="accept-request request-del">
-										<span class="icon-minus">
-											<svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
-										</span>
-									</a>
-
-								</span>
-
-								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg>
-								</div>
-							</li>
-
-							<li>
-								<div class="author-thumb">
-									<img src="{{asset('images/avatar56-sm.jpg')}}" alt="author">
-								</div>
-								<div class="notification-event">
-									<a href="#" class="h6 notification-friend">Tony Stevens</a>
-									<span class="chat-message-item">4 Friends in Common</span>
-								</div>
-								<span class="notification-icon">
-									<a href="#" class="accept-request">
-										<span class="icon-add without-text">
-											<svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
-										</span>
-									</a>
-
-									<a href="#" class="accept-request request-del">
-										<span class="icon-minus">
-											<svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
-										</span>
-									</a>
-
-								</span>
-
-								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg>
-								</div>
-							</li>
-
-							<li class="accepted">
-								<div class="author-thumb">
-									<img src="{{asset('images/avatar57-sm.jpg')}}" alt="author">
-								</div>
-								<div class="notification-event">
-									You and <a href="#" class="h6 notification-friend">Mary Jane Stark</a> just became friends. Write on <a href="#" class="notification-link">her wall</a>.
-								</div>
-								<span class="notification-icon">
-									<svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
-								</span>
-
-								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg>
-									<svg class="olymp-little-delete"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-little-delete')}}"></use></svg>
-								</div>
-							</li>
-
-							<li>
-								<div class="author-thumb">
-									<img src="{{asset('images/avatar58-sm.jpg')}}" alt="author">
-								</div>
-								<div class="notification-event">
-									<a href="#" class="h6 notification-friend">Stagg Clothing</a>
-									<span class="chat-message-item">9 Friends in Common</span>
-								</div>
-								<span class="notification-icon">
-									<a href="#" class="accept-request">
-										<span class="icon-add without-text">
-											<svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
-										</span>
-									</a>
-
-									<a href="#" class="accept-request request-del">
-										<span class="icon-minus">
-											<svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
-										</span>
-									</a>
-
-								</span>
-
-								<div class="more">
-									<svg class="olymp-three-dots-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-three-dots-icon')}}"></use></svg>
-								</div>
-							</li>
+							@endif
 
 						</ul>
 					</div>
 
 					<a href="{{route('friend_requests', ['id' => Auth::id()])}}" class="view-all bg-blue">Xem tất cả</a>
-				</div>
-			</div>
-
-			<div class="control-icon more has-items">
-				<svg class="olymp-chat---messages-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-chat---messages-icon')}}"></use></svg>
-				<div class="more-dropdown more-with-triangle triangle-top-center pb-0">
-					<div class="ui-block-title ui-block-title-small">
-						<h6 class="title">Tin nhắn</h6>
-					</div>
-
-					<div class="mCustomScrollbar" data-mcs-theme="dark">
-						<ul class="notification-list chat-message ">
-							@foreach ($listMess as $mess)
-								<li>
-									<div class="author-thumb">
-										<img src="{{asset($mess->profile->avatar_path)}}" alt="author" class="avatar">
-									</div>
-									<div class="notification-event">
-									{{--<a href="#" class="h6 notification-friend">{{$mess->user->first_name.' '.$mess->user->last_name}}</a>
-									<span class="chat-message-item">{{$mess->content}}</span>--}}
-									</div>
-									<span class="notification-icon">
-										<svg class="olymp-chat---messages-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-chat---messages')}}-icon"></use></svg>
-									</span>
-								</li>
-							@endforeach
-						</ul>
-					</div>
-
 				</div>
 			</div>
 
@@ -188,8 +79,6 @@
 				<div class="more-dropdown more-with-triangle triangle-top-center">
 					<div class="ui-block-title ui-block-title-small">
 						<h6 class="title">Thông báo</h6>
-						<a href="#">Đánh dấu đã đọc</a>
-						<a href="#">Cài đặt</a>
 					</div>
 
 					<div class="mCustomScrollbar" data-mcs-theme="dark">
@@ -290,16 +179,14 @@
 							</li>
 						</ul>
 					</div>
-
-					<a href="#" class="view-all bg-primary">Xem tất cả</a>
 				</div>
 			</div>
 
 			<div class="author-page author vcard inline-items more">
 				<div class="author-thumb">
 					<a href="{{route('profile', ['id' => Auth::id()])}}">
-						@if (($profile->avatar_path) != null)
-							<img alt="author" src="{{asset($profile->avatar_path)}}" width="36" height="36" class="avatar">
+						@if (($myProfile->avatar_path) != null)
+							<img alt="author" src="{{asset($myProfile->avatar_path)}}" width="36" height="36" class="avatar">
 						@else
 							<img alt="author" src="{{asset('images/avatar67-sm.jpg')}}" width="36" height="36" class="avatar">
 						@endif
@@ -346,7 +233,6 @@
 
 		</div>
 	</div>
-
 </header>
 
 <!-- ... end Header-BP -->

@@ -1,7 +1,9 @@
 
 
 <!-- Your Profile  -->
-
+@php
+	$friendRequests = \App\Http\Controllers\FriendController::getFriendRequest(\Illuminate\Support\Facades\Auth::id());
+@endphp
 <div class="your-profile">
 	<div class="ui-block-title ui-block-title-small">
 		<h6 class="title">Thông tin cá nhân</h6>
@@ -26,9 +28,6 @@
 					<li>
 						<a href="{{route('get_hobbies_update_info', ['id'=>Auth::id()])}}">Sở thích</a>
 					</li>
-					<li>
-						<a href="{{route('get_change_password')}}">Đổi mật khẩu</a>
-					</li>
 				</ul>
 			</div>
 		</div>
@@ -38,11 +37,8 @@
 		<a href="#" class="items-round-little bg-primary">8</a>
 	</div>
 	<div class="ui-block-title">
-		<a href="34-YourAccount-ChatMessages.html" class="h6 title">Tin nhắn</a>
-	</div>
-	<div class="ui-block-title">
 		<a href="{{route('friend_requests', ['id' => Auth::id()])}}" class="h6 title">Lời mời kết bạn</a>
-		<a href="#" class="items-round-little bg-blue">{{count($friends)}}</a>
+		<a href="#" class="items-round-little bg-blue">{{count($friendRequests[0])}}</a>
 	</div>
 </div>
 

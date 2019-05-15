@@ -1,4 +1,7 @@
 <!-- Personal Information Form  -->
+@php
+	$currentProfile = \App\Http\Controllers\ProfileController::getProfile(Auth::id());
+@endphp
 @if(count($errors) > 0)
     <div class="alert alert-danger">
         @foreach ($errors->all() as $err)
@@ -19,18 +22,18 @@
 
 		<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 			<div class="form-group label-floating">
-				<label class="control-label">Họ</label>
-				<input name="first_name" class="form-control" placeholder="" type="text" value="{{$user->first_name}}" required>
+				<label class="control-label">Tên</label>
+				<input name="first_name" class="form-control" placeholder="" type="text" value="{{Auth::user()->first_name}}" required>
 			</div>
 
 			<div class="form-group label-floating">
 				<label class="control-label">Địa chỉ email</label>
-				<input name="email" class="form-control" placeholder="" type="email" value="{{$user->email}}" readonly>
+				<input name="email" class="form-control" placeholder="" type="email" value="{{Auth::user()->email}}" readonly>
 			</div>
 
 			<div class="form-group date-time-picker label-floating">
 				<label class="control-label">Ngày sinh</label>
-				<input name="birth_date" value="{{$profile->birth_date}}" />
+				<input name="birth_date" value="{{$currentProfile->birth_date}}" />
 				<span class="input-group-addon">
 					<svg class="olymp-month-calendar-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-month-calendar-icon')}}"></use></svg>
 				</span>
@@ -40,32 +43,32 @@
 		<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 			<div class="form-group label-floating">
 				<label class="control-label">Họ</label>
-				<input name="last_name" class="form-control" placeholder="" type="text" value="{{$user->last_name}}">
+				<input name="last_name" class="form-control" placeholder="" type="text" value="{{Auth::user()->last_name}}">
 			</div>
 
 			<div class="form-group label-floating">
 				<label class="control-label">Địa chỉ</label>
-				<input name="address" class="form-control" placeholder="" type="text" value="{{$profile->address}}">
+				<input name="address" class="form-control" placeholder="" type="text" value="{{$currentProfile->address}}">
 			</div>
 
 
 			<div class="form-group label-floating">
 				<label class="control-label">Số điện thoại</label>
-				<input name="phone" class="form-control" placeholder="" type="text" value="{{$profile->phone}}">
+				<input name="phone" class="form-control" placeholder="" type="text" value="{{$currentProfile->phone}}">
 			</div>
 		</div>
 
 		<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 			<div class="form-group label-floating">
 				<label class="control-label">Thông tin</label>
-				<textarea name="about_me" class="form-control" placeholder="">{{$profile->about_me}}</textarea>
+				<textarea name="about_me" class="form-control" placeholder="">{{$currentProfile->about_me}}</textarea>
 			</div>
 		</div>
 		<div class="col col-lg-6 col-md-6 col-sm-12 col-12">
 			<div class="form-group label-floating is-select">
 				<label class="control-label">Giới tính</label>
 				<select name="gender" class="selectpicker form-control">
-					@if ($profile->gender==0)
+					@if ($currentProfile->gender==0)
 					<option value="MA" selected>Nam</option>
 					<option value="FE">Nữ</option>
 					@else
@@ -77,12 +80,12 @@
 			<div class="form-group label-floating is-select">
 				<label class="control-label">Tình trạng quan hệ</label>
 				<select name="status" class="selectpicker form-control">
-					@if ($profile->status == 1)
-					<option value="Married" selected>Đã cưới</option>
-					<option value="NotMarried">Độc thân</option>
+					@if ($currentProfile->status == 1)
+						<option value="Married" selected>Đã cưới</option>
+						<option value="NotMarried">Độc thân</option>
 					@else
-					<option value="NotMarried" selected>Độc thân</option>
-					<option value="Married">Đã cưới</option>
+						<option value="NotMarried" selected>Độc thân</option>
+						<option value="Married">Đã cưới</option>
 					@endif
 				</select>
 			</div>

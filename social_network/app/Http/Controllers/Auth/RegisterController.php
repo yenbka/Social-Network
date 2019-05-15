@@ -83,7 +83,7 @@ class RegisterController extends Controller
         $gender = $data['gender']=="MA"?0:1;
         $profile = Profile::create([
             'about_me'=>null,
-            'birth_date'=>Carbon::parse($data['datetimepicker']),
+            'birth_date'=>Carbon::createFromFormat('d/m/Y',$data['datetimepicker']),
             'address'=>null,
             'gender'=>$gender,
             'phone'=>null,
@@ -108,12 +108,18 @@ class RegisterController extends Controller
             return  redirect()->back()->withErrors($validator)->withInput();
         }
         else{
-            $user = $this->create($request->all());
-            if(Auth::attempt(['email'=>$request->input('registerEmail'),'password'=>$request->input('registerPassword')], 1)){
-                return redirect()->route('home');
-            }else{
-                $errors = new MessageBag(['errorlogin'=>'Email hoặc mật khẩu không đúng']);
+            $email = User::where('email','=',$request->input('registerEmail'))->first();
+            if ($email != null){
+                $errors = new MessageBag(['errorRegister'=>'Email đã tồn tại']);
                 return redirect()->back()->withInput()->withErrors($errors);
+            }else{
+                $user = $this->create($request->all());
+                if(Auth::attempt(['email'=>$request->input('registerEmail'),'password'=>$request->input('registerPassword')], 1)){
+                    return redirect()->route('home', ['id' => Auth::id()]);
+                }else{
+                    $errors = new MessageBag(['errorlogin'=>'Email hoặc mật khẩu không đúng']);
+                    return redirect()->back()->withInput()->withErrors($errors);
+                }
             }
         }
     }

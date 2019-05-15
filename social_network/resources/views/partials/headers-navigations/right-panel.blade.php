@@ -1,6 +1,9 @@
 
 
 <!-- Fixed Sidebar Right -->
+@php
+	$listUser = \App\Http\Controllers\ChatController::getListUser(Auth::id());
+@endphp
 
 <div class="fixed-sidebar right">
 	<div class="fixed-sidebar-right sidebar--small" id="sidebar-right">
