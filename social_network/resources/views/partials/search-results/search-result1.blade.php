@@ -14,7 +14,7 @@
 			@if ($relationship_result[$i] == 0)
 				<a id="add{{$i}}" href="javascript:;" class="accept-request" onclick="send_request({{$user_result[$i]->id}}, {{$i}})">
 				<span class="icon-add without-text">
-					<svg class="olymp-happy-face-icon"><use xlink:href="svg-icons/sprites/icons.svg#olymp-happy-face-icon"></use></svg>
+					<svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
 				</span>
 				Thêm bạn
 			</a>
@@ -44,10 +44,6 @@
 			<button id="error{{$i}}" type="button" class="btn btn-warning d-none">Đã có lỗi xảy ra!</button>
 		</span>
 	</div>
-
-	<p class="user-description">
-		<span class="title">Giới thiệu: {{$profile_result[$i]->about_me}}</span>
-	</p>
 
 </article>
 <!-- ... end Search Result -->

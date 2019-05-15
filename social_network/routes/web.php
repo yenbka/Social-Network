@@ -125,9 +125,11 @@ Route::post('/friend/unfriend', [
 /*
  * Route created by ngavuong
  */
-Route::get('/newsfeed', ['as'=>'newsfeed','uses'=>'PostController@getPost']);
+Route::get('/newsfeed', ['as'=>'newsfeed','uses'=>'PostController@index']);
 
 Route::post('/newsfeed',['as'=>'add-post','uses'=>'PostController@addPost']);
+
+Route::get('/post/{id}', ['as'=>'post', 'uses'=>'PostController@getPost']);
 
 Route::get('/delete-post/{pid}', ['as'=>'delete-post','uses'=>'PostController@deletePost']);
 

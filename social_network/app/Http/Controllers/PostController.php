@@ -69,14 +69,13 @@ class PostController extends Controller
 
     }
 
+    public function index(){
+        $uid = Auth::id();
+        return redirect()->route('home',['id'=>$uid]);
+    }
 
-    public function getPost(){
-    $uid = Auth::id();
-    $medias = Medias::all();
-    $posts = Posts::orderBy('id','desc')->get();
-
-    //return view('newsfeed',['posts'=> $posts,'medias'=>$medias]);
-    return redirect()->route('home',['id'=>$uid]);
+    public function getPost($post_id) {
+        return Posts::find($post_id);
     }
 
     public function deletePost($pid){

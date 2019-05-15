@@ -38,9 +38,6 @@
             @for ($i = 0; $i < count($friends); $i++)
                 <div id="friend-item{{$i}}" class="col col-xl-3 col-lg-6 col-md-6 col-sm-6 col-6 ">
                     <div class="ui-block">
-
-                        <!-- Friend Item -->
-
                         <div class="friend-item">
                             <div class="friend-header-thumb">
                                 <img src="{{asset($profile_friends[$i]->header_path)}}" alt="friend" width="318" height="122">
@@ -53,25 +50,18 @@
                                     </div>
                                     <div class="author-content">
                                         <a href="{{route('profile', ['id' => $friends[$i]->id])}}" class="h5 author-name">{{$friends[$i]->first_name.' '.$friends[$i]->last_name}}</a>
-                                        <div class="country">{{$profile_friends[$i]->address}}</div>
-                                    </div>
-                                </div>
-                                <div class="h6" data-swiper-parallax="-100">
-                                    <div class="friend-about" data-swiper-parallax="-500">
-                                        <span class="title">{{$profile_friends[$i]->about_me}}</span>
                                     </div>
                                 </div>
                                 <div class="control-block-button" data-swiper-parallax="-100">
-                                    <a href="javascript:;" class="btn btn-control bg-blue" onclick="unfriend({{$friends[$i]->id}}, {{$i}})">
-                                        <svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
-                                    </a>
-                                    <a href="javascript:;" class="btn btn-control bg-purple">
-                                        <svg class="olymp-chat---messages-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-chat---messages-icon')}}"></use></svg>
+                                    <a href="javascript:;" class="accept-request" onclick="unfriend({{$friends[$i]->id}}, {{$i}})">
+                                        <span class="icon-minus">
+                                            <svg class="olymp-happy-face-icon"><use xlink:href="{{asset('svg-icons/sprites/icons.svg#olymp-happy-face-icon')}}"></use></svg>
+                                        </span>
+                                        Huỷ kết bạn
                                     </a>
                                 </div>
                             </div>
                         </div>
-                        <!-- ... end Friend Item -->
                     </div>
                 </div>
             @endfor
